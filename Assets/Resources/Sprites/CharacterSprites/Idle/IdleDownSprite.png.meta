@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: af3696e91cff26844a7aa5a04767f26d
+timeCreated: 1463321002
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: IdleDownSprite_0
+    21300002: IdleDownSprite_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: IdleDownSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55, y: -218}
+        - {x: -52, y: -217}
+        - {x: -52, y: -214}
+        - {x: -55, y: -213}
+        - {x: -57, y: -215}
+      - - {x: 93, y: 102}
+        - {x: 77, y: 166}
+        - {x: 43, y: 200}
+        - {x: -39, y: 200}
+        - {x: -60, y: 198}
+        - {x: -89, y: 127}
+        - {x: -89, y: -7}
+        - {x: -86, y: -34}
+        - {x: -85, y: -52}
+        - {x: -81, y: -66}
+        - {x: -67, y: -162}
+        - {x: -56, y: -207}
+        - {x: -48, y: -213}
+        - {x: -21, y: -215}
+        - {x: 12, y: -166}
+        - {x: 33, y: -216}
+        - {x: 59, y: -216}
+        - {x: 64, y: -213}
+        - {x: 90, y: -64}
+        - {x: 73, y: 34}
+        - {x: 93, y: 74}
+      - - {x: 21, y: -188}
+        - {x: 22, y: -194}
+        - {x: 26, y: -197}
+        - {x: 29, y: -196}
+        - {x: 29, y: -190}
+        - {x: 28, y: -184}
+        - {x: 24, y: -181}
+        - {x: 21, y: -182}
+      - - {x: -7, y: -127}
+        - {x: -4, y: -126}
+        - {x: -4, y: -123}
+        - {x: -7, y: -122}
+        - {x: -9, y: -124}
+      - - {x: -76, y: -118}
+        - {x: -74, y: -120}
+        - {x: -71, y: -119}
+        - {x: -71, y: -116}
+        - {x: -73, y: -114}
+        - {x: -76, y: -115}
+      - - {x: -75, y: -110}
+        - {x: -73, y: -112}
+        - {x: -70, y: -111}
+        - {x: -70, y: -108}
+        - {x: -72, y: -106}
+        - {x: -75, y: -107}
+      - - {x: 69, y: -79}
+        - {x: 72, y: -78}
+        - {x: 72, y: -75}
+        - {x: 69, y: -74}
+        - {x: 67, y: -76}
+      - - {x: 77, y: -43}
+        - {x: 77, y: -45}
+        - {x: 79, y: -47}
+        - {x: 80, y: -47}
+        - {x: 83, y: -44}
+        - {x: 82, y: -41}
+        - {x: 79, y: -41}
+      - - {x: 84, y: -22}
+        - {x: 81, y: -22}
+        - {x: 80, y: -24}
+        - {x: 80, y: -34}
+        - {x: 82, y: -35}
+        - {x: 84, y: -35}
+        - {x: 86, y: -32}
+        - {x: 86, y: -23}
+      - - {x: -89, y: -23}
+        - {x: -87, y: -25}
+        - {x: -84, y: -24}
+        - {x: -84, y: -19}
+        - {x: -86, y: -17}
+        - {x: -89, y: -18}
+      - - {x: -80, y: 64}
+        - {x: -81, y: 62}
+        - {x: -81, y: 59}
+        - {x: -79, y: 58}
+        - {x: -75, y: 58}
+        - {x: -74, y: 60}
+        - {x: -74, y: 63}
+        - {x: -76, y: 64}
+      - - {x: 74, y: 62}
+        - {x: 75, y: 59}
+        - {x: 79, y: 59}
+        - {x: 81, y: 61}
+        - {x: 80, y: 64}
+        - {x: 76, y: 64}
+    - name: IdleDownSprite_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61, y: -49}
+        - {x: 61, y: -53}
+        - {x: 63, y: -57}
+        - {x: 63, y: -64}
+        - {x: 75, y: -75}
+        - {x: 84, y: -74}
+        - {x: 106, y: -71}
+        - {x: 111, y: -62}
+        - {x: 111, y: -46}
+        - {x: 90, y: -4}
+        - {x: 103, y: 72}
+        - {x: 84, y: 170}
+        - {x: 40, y: 200}
+        - {x: -57, y: 200}
+        - {x: -100, y: 87}
+        - {x: -110, y: 18}
+        - {x: -110, y: -166}
+        - {x: -101, y: -215}
+        - {x: 85, y: -215}
+        - {x: 67, y: -85}
+        - {x: 62, y: -56}
+        - {x: 61, y: -55}
+      - - {x: 87, y: -76}
+        - {x: 89, y: -78}
+        - {x: 92, y: -77}
+        - {x: 92, y: -74}
+        - {x: 90, y: -72}
+        - {x: 87, y: -73}
+      - - {x: -92, y: -73}
+        - {x: -91, y: -76}
+        - {x: -88, y: -76}
+        - {x: -86, y: -74}
+        - {x: -87, y: -71}
+        - {x: -90, y: -71}
+      - - {x: 68, y: -75}
+        - {x: 71, y: -74}
+        - {x: 71, y: -71}
+        - {x: 68, y: -70}
+        - {x: 66, y: -72}
+      - - {x: -78, y: 65}
+        - {x: -78, y: 58}
+        - {x: -72, y: 58}
+        - {x: -71, y: 60}
+        - {x: -71, y: 64}
+        - {x: -73, y: 65}
+      - - {x: 80, y: 65}
+        - {x: 77, y: 62}
+        - {x: 78, y: 59}
+        - {x: 82, y: 59}
+        - {x: 84, y: 61}
+        - {x: 84, y: 63}
+        - {x: 82, y: 65}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 586d3a1b97fdf2640a6c5496fc1ed145
+timeCreated: 1463321044
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: WalkDownSprite_0
+    21300002: WalkDownSprite_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: WalkDownSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54, y: 53}
+        - {x: 91, y: 89}
+        - {x: 91, y: 123}
+        - {x: 58, y: 205}
+        - {x: 33, y: 210}
+        - {x: -38, y: 210}
+        - {x: -44, y: 207}
+        - {x: -79, y: 174}
+        - {x: -91, y: 117}
+        - {x: -91, y: 87}
+        - {x: -54, y: 49}
+        - {x: -75, y: 26}
+        - {x: -87, y: -4}
+        - {x: -89, y: -101}
+        - {x: -83, y: -121}
+        - {x: -51, y: -175}
+        - {x: -31, y: -205}
+        - {x: -17, y: -210}
+        - {x: 6, y: -210}
+        - {x: 13, y: -206}
+        - {x: 39, y: -158}
+        - {x: 62, y: -92}
+        - {x: 71, y: 14}
+      - - {x: -31, y: -180}
+        - {x: -29, y: -182}
+        - {x: -26, y: -181}
+        - {x: -26, y: -178}
+        - {x: -28, y: -176}
+        - {x: -31, y: -177}
+      - - {x: -82, y: 68}
+        - {x: -76, y: 68}
+        - {x: -76, y: 73}
+        - {x: -77, y: 74}
+        - {x: -82, y: 74}
+      - - {x: 73, y: 71}
+        - {x: 76, y: 68}
+        - {x: 77, y: 68}
+        - {x: 80, y: 71}
+        - {x: 79, y: 74}
+        - {x: 74, y: 74}
+    - name: WalkDownSprite_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 64, y: 64}
+        - {x: 91, y: 85}
+        - {x: 91, y: 109}
+        - {x: 74, y: 180}
+        - {x: 31, y: 210}
+        - {x: -25, y: 210}
+        - {x: -44, y: 207}
+        - {x: -79, y: 174}
+        - {x: -91, y: 117}
+        - {x: -91, y: 87}
+        - {x: -57, y: 52}
+        - {x: -76, y: 18}
+        - {x: -72, y: -45}
+        - {x: -64, y: -115}
+        - {x: -40, y: -170}
+        - {x: -16, y: -209}
+        - {x: 8, y: -209}
+        - {x: 21, y: -203}
+        - {x: 65, y: -146}
+        - {x: 87, y: -98}
+        - {x: 84, y: -2}
+      - - {x: 20, y: -176}
+        - {x: 18, y: -178}
+        - {x: 18, y: -180}
+        - {x: 20, y: -182}
+        - {x: 22, y: -182}
+        - {x: 24, y: -180}
+        - {x: 24, y: -178}
+        - {x: 22, y: -176}
+      - - {x: -82, y: 68}
+        - {x: -76, y: 68}
+        - {x: -76, y: 73}
+        - {x: -77, y: 74}
+        - {x: -82, y: 74}
+      - - {x: 73, y: 71}
+        - {x: 76, y: 68}
+        - {x: 77, y: 68}
+        - {x: 80, y: 71}
+        - {x: 79, y: 74}
+        - {x: 74, y: 74}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
