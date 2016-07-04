@@ -1,13 +1,24 @@
 Jacky: 
 
 1) research: What type of clothes should the character wear at the start? 
-  description: Should it be underwear? Already some sort of Armor, if yes why? 
-  Is the starting clothing the clothes you have underneath the later clothes, or just exchanged? 
+	description: Should it be underwear? Already some sort of Armor, if yes why? 
+	Is the starting clothing the clothes you have underneath the later clothes, or just exchanged? 
 
 2) research / small drawing task: Eyes and Hair for Characters.
-  description: Research Ideas for Eye shapes/ Colour patterns. There are multiple ways of drawing eyes, diffrent forms of pupils, size
-  and more, including eyebrows. I am also looking into the direction of "anime"-style eyes, but also more serious ones.  
-  What type of Hair would make sense in the game? Hair with flowers in it? Or shaped like roots?  
-  Ideas can be drawn, but don`t have to. Pictures of other peoples creation are fine as well. 
+  	description: Research Ideas for Eye shapes/ Colour patterns. There are multiple ways of drawing eyes, diffrent forms of pupils, size
+  	and more, including eyebrows. I am also looking into the direction of "anime"-style eyes, but also more serious ones.  
+  	What type of Hair would make sense in the game? Hair with flowers in it? Or shaped like roots?  
+  	Ideas can be drawn, but don`t have to. Pictures of other peoples creation are fine as well. 
   
-3) find out how github works
+3) research: Basically almost anything about GUIs. What kind of colours/design are good. 
+	How and where should the GUI elements be placed? We had the talk about synapses. Which I liked. 
+	Maybe approch with some learning algorithm? Elements that are used more recently are bigger, than others? Or diffrent colours? 
+	How is the overall GUI presented. Above the head of the character?   
+	How viable is that thought? (Maybe look at the Sherlock Holmes games as examples of that sort of GUI)
+	
+
+All:
+
+1) find out how github works
+
+asd
