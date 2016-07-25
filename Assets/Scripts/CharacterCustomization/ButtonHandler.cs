@@ -13,6 +13,11 @@ public class ButtonHandler : MonoBehaviour {
     
     public Text EyecolorIndexText;   // Text that displays additional information of currently selected eyecolor (number / color)
     public EyecolorHandler Eye;      // Actual Eyecolor-gameObject
+
+    public Text ClothTorsoIndexText;// Text that displays additional information of currently selected torso-cloth (number)
+    public ClothHandler Torso;      // Actual Torso-gameObject
+    public Text ClothLegIndexText;  // Text that displays additional information of currently selected leg-cloth (number)
+    public ClothHandler Leg;        // Actual Leg-gameObject
     
     public SkincolorHandler Skin;   // Actual Skincolor-gameObject
     
@@ -34,6 +39,8 @@ public class ButtonHandler : MonoBehaviour {
         Hair.LoadHairCuts();
         Eye.LoadEyeColors();
         Skin.LoadSkinColors();
+        Torso.LoadTorsoCloth();
+        Leg.LoadLegCloth();
 
         if (PlayerPrefs.HasKey("Haircut"))
         {
@@ -57,6 +64,30 @@ public class ButtonHandler : MonoBehaviour {
             Debug.Log("Eyecolorindex could not be found and a random one was taken.");
             Eye.EyecolorIndex = Random.Range(1, Eye.EyecolorIndexMax);
             EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);  // Needed for initial text (when no button was clicked yet)
+        }
+
+        if (PlayerPrefs.HasKey("TorsoCloth"))
+        {
+            Torso.ClothTorsoIndex = PlayerPrefs.GetInt("TorsoCloth");
+            ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);  // Needed for initial text (when no button was clicked yet)
+        }
+        else
+        {
+            Debug.Log("TorsoIndex could not be found and a random one was taken.");
+            Torso.ClothTorsoIndex = Random.Range(1, Torso.ClothTorsoIndexMax);
+            ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);  // Needed for initial text (when no button was clicked yet)
+        }
+
+        if (PlayerPrefs.HasKey("LegCloth"))
+        {
+            Leg.ClothLegsIndex = PlayerPrefs.GetInt("LegCloth");
+            ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);  // Needed for initial text (when no button was clicked yet)
+        }
+        else
+        {
+            Debug.Log("LegIndex could not be found and a random one was taken.");
+            Leg.ClothLegsIndex = Random.Range(1, Leg.ClothLegsIndexMax);
+            ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);  // Needed for initial text (when no button was clicked yet)
         }
         
         if (PlayerPrefs.HasKey("SkincolorR") && PlayerPrefs.HasKey("SkincolorG") && PlayerPrefs.HasKey("SkincolorB"))
@@ -175,6 +206,66 @@ public class ButtonHandler : MonoBehaviour {
         PlayerPrefs.SetInt("Eyecolor", Eye.EyecolorIndex);
         EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);
     }
+
+    // Button: Torso left
+    public void previousTorso()
+    {
+        if (Torso.ClothTorsoIndex == 0)
+        {
+            Torso.ClothTorsoIndex = Torso.ClothTorsoIndexMax - 1;
+        }
+        else
+        {
+            Torso.ClothTorsoIndex = Torso.ClothTorsoIndex - 1;
+        }
+        PlayerPrefs.SetInt("TorsoCloth", Torso.ClothTorsoIndex);
+        ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);
+    }
+
+    // Button: Torso right
+    public void nextTorso()
+    {
+        if (Torso.ClothTorsoIndex == Torso.ClothTorsoIndexMax - 1)
+        {
+            Torso.ClothTorsoIndex = 0;
+        }
+        else
+        {
+            Torso.ClothTorsoIndex = Torso.ClothTorsoIndex + 1;
+        }
+        PlayerPrefs.SetInt("TorsoCloth", Torso.ClothTorsoIndex);
+        ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);
+    }
+
+    // Button: Legs left
+    public void previousLegs()
+    {
+        if (Leg.ClothLegsIndex == 0)
+        {
+            Leg.ClothLegsIndex = Leg.ClothLegsIndexMax - 1;
+        }
+        else
+        {
+            Leg.ClothLegsIndex = Leg.ClothLegsIndex - 1;
+        }
+        PlayerPrefs.SetInt("LegCloth", Leg.ClothLegsIndex);
+        ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);
+    }
+
+    // Button: Legs right
+    public void nextLegs()
+    {
+        if (Leg.ClothLegsIndex == Leg.ClothLegsIndexMax - 1)
+        {
+            Leg.ClothLegsIndex = 0;
+        }
+        else
+        {
+            Leg.ClothLegsIndex = Leg.ClothLegsIndex + 1;
+        }
+        PlayerPrefs.SetInt("LegCloth", Leg.ClothLegsIndex);
+        ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);
+    }
     
     public void changeSkinColor() // Is called when a slider changes
     {
@@ -212,6 +303,12 @@ public class ButtonHandler : MonoBehaviour {
 
         PlayerPrefs.SetInt("Eyecolor", Random.Range(0, (Eye.EyecolorIndexMax)));
         EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);
+
+        PlayerPrefs.SetInt("TorsoCloth", Random.Range(0, (Torso.ClothTorsoIndexMax)));
+        ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);
+
+        PlayerPrefs.SetInt("LegCloth", Random.Range(0, (Leg.ClothLegsIndexMax)));
+        ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);
 
         HueSlider.value = Random.Range(0f, 360f);
         SatSlider.value = Random.Range(0f, 0.5f);

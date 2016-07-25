@@ -10,6 +10,16 @@ public class OptionsHandler : MonoBehaviour {
 
     // Later on this script could overlay a rectangle GUI with buttons to have all options bundled together visually..
     public Text SoundstatusText;
+    public Text CustomizationStatusText;
+
+    public SpriteRenderer Skin;
+    public SpriteRenderer Hair;
+    public SpriteRenderer Eye;
+    public SpriteRenderer Torso;
+    public SpriteRenderer Leg;
+
+    private bool CustToggle = true;
+
     public float hSliderValue = 1.0f;
     // Use this for initialization
     void Start () {
@@ -40,6 +50,11 @@ public class OptionsHandler : MonoBehaviour {
         {
             ToggleAudio();
         }
+        if (GUI.Button(new Rect(25, 60, 80, 20), "Toggle Cust."))
+        {
+            ToggleCustomization();
+        }
+
         hSliderValue = GUI.HorizontalSlider(new Rect(25,25,100,30), hSliderValue, 0.0f, 1.0f);  // Rect(x, y, width, height)
         GUI.Label(new Rect(25,35,150,20), "Audiovolume: " + (Mathf.Round(hSliderValue * 100f) / 100f).ToString());
         AudioListener.volume = hSliderValue;
@@ -57,5 +72,26 @@ public class OptionsHandler : MonoBehaviour {
                 AudioListener.pause = false;
                 SoundstatusText.text = "";
             }
+    }
+
+    void ToggleCustomization()
+    {
+        //Skin.enabled = !Skin.enabled;
+        Hair.enabled = !Hair.enabled;
+        Eye.enabled = !Eye.enabled;
+        Torso.enabled = !Torso.enabled;
+        Leg.enabled = !Leg.enabled;
+
+        if (CustToggle == false)
+        {
+            CustToggle = true;
+            SoundstatusText.text = "";
+        }
+        else if (CustToggle == true)
+        {
+
+            CustToggle = false;
+            SoundstatusText.text = "Customization is toggled";
+        }
     }
 }
