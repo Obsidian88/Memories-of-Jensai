@@ -29,18 +29,18 @@ public class OptionsHandler : MonoBehaviour {
     // Update is called once per frame
     void Update () 
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        { 
-            Application.Quit();
-        }
-        if(Input.GetKeyDown(KeyCode.C))
-        {
-            SceneManager.LoadScene("Character Customization");
-        }
-        if(Input.GetKeyDown(KeyCode.M))
-        {
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //{ 
+        //    Application.Quit();
+        //}
+        //if(Input.GetKeyDown(KeyCode.C))
+        //{
+        //    SceneManager.LoadScene("Character Customization");
+        //}
+        //if(Input.GetKeyDown(KeyCode.M))
+        //{
 
-        }
+        //}
     }
 
     void OnGUI()

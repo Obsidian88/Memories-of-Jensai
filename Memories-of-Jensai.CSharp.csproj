@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\CharacterCustomization\EyecolorHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\HaircutHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\SkincolorHandler.cs" />
+    <Compile Include="Assets\Scripts\GUI\Menu.cs" />
     <Compile Include="Assets\Scripts\GUI\OptionsHandler.cs" />
     <Compile Include="Assets\Scripts\General\ColorConverter.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerController.cs" />
