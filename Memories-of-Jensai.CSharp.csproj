@@ -68,9 +68,12 @@
     <Compile Include="Assets\Scripts\CharacterCustomization\EyecolorHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\HaircutHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\SkincolorHandler.cs" />
+    <Compile Include="Assets\Scripts\GUI\ButtonAudioClick.cs" />
     <Compile Include="Assets\Scripts\GUI\Menu.cs" />
-    <Compile Include="Assets\Scripts\GUI\OptionsHandler.cs" />
+    <Compile Include="Assets\Scripts\GUI\SliderAudioClick.cs" />
+    <Compile Include="Assets\Scripts\GUI\UIAudio.cs" />
     <Compile Include="Assets\Scripts\General\ColorConverter.cs" />
+    <Compile Include="Assets\Scripts\Scene\LoadingHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Scene\SoundEngine.cs" />
   </ItemGroup>

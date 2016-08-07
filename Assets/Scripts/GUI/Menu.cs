@@ -2,258 +2,367 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class Menu : MonoBehaviour
 {
-    private bool showOptions = false;
-    private bool showMenu = false;
-    public float shadowDrawDistance;
-    public int ResX;
-    public int ResY;
-    public bool Fullscreen;
+    // Used for menu UI
+    public int ResX = 1920;
+    public int ResY = 1080;
+    public bool Fullscreen = true;
 
     public Text SoundstatusText;
     public Text CustomizationStatusText;
+    public Text AudiovolumeText;
 
+    // Used for toggle customization button
     public SpriteRenderer Skin;
     public SpriteRenderer Hair;
     public SpriteRenderer Eye;
     public SpriteRenderer Torso;
     public SpriteRenderer Leg;
 
+    public Image MenuPanel;
+    public Image OptionsPanel;
+    public Image OutsideMask; 
+
     private bool CustToggle = true;
 
-    public float hSliderValue = 1.0f;
+    private float hSliderValue = 1.0f;
+
+    public Dropdown Resolution;
+    public Dropdown Refreshrate;
+    public Dropdown Antialiasing;
+    public Slider Audiovolume;    
 
     // Use this for initialization
     void Start()
     {
-        showMenu = false;
-        showOptions = false;
-        AudioListener.pause = false;
-        if (PlayerPrefs.HasKey("Audiovolume"))
-        { 
-            hSliderValue = PlayerPrefs.GetFloat("Audiovolume");
-            AudioListener.volume = hSliderValue;
-        }
-        else
-        {
-            AudioListener.volume = 1f;
-        }
+        MenuPanel.gameObject.SetActive(false);
+        OptionsPanel.gameObject.SetActive(false);
+        OutsideMask.gameObject.SetActive(false);
+        LoadSettings();
+        Resolution.onValueChanged.AddListener(delegate { ChangeResolution(); });
+        Refreshrate.onValueChanged.AddListener(delegate { ChangeRefreshrate(); });
+        Antialiasing.onValueChanged.AddListener(delegate { ChangeAntiAliasing(); });
+        Audiovolume.onValueChanged.AddListener(delegate { ChangeAudiovolume(); });
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.F10)) && showOptions == false)
+        // What happens if you press escape or f10..
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.F10))
         {
-            showMenu = !showMenu;
-        }
-        if (Input.GetKeyDown(KeyCode.Escape) && showOptions == true)
-        {
-            showOptions = false;
-            showMenu = true;
+            if (MenuPanel.gameObject.activeSelf == true)
+            {
+                if(OptionsPanel.gameObject.activeSelf == true)
+                {
+                    LeaveOptions();
+                }
+                else
+                {
+                    LeaveMenu();
+                }
+            }
+            else
+            {
+                if (OptionsPanel.gameObject.activeSelf == true)
+                {
+                    LeaveOptions();
+                }
+                else
+                {
+                    LoadMenu();
+                }
+            }
         }
     }
 
-    void OnGUI()
+    public void LoadCustomization()
     {
-        if(showMenu == true)
+        SceneManager.LoadScene("Character Customization");
+    }
+
+    public void LoadMenu()
+    {
+        MenuPanel.gameObject.SetActive(true);
+        OutsideMask.gameObject.SetActive(true);
+    }
+
+    public void LoadOptions()
+    {
+        MenuPanel.gameObject.SetActive(false);
+        OptionsPanel.gameObject.SetActive(true);
+    }
+
+    public void LeaveOptions()
+    {
+        MenuPanel.gameObject.SetActive(true);
+        OptionsPanel.gameObject.SetActive(false);
+    }
+
+    public void LeaveMenu()
+    {
+        MenuPanel.gameObject.SetActive(false);
+        OutsideMask.gameObject.SetActive(false);
+    }
+
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
+    public void ToggleVsync()
+    {
+        if(QualitySettings.vSyncCount == 1)
         { 
-            if (GUI.Button(new Rect(500, 100, 200, 80), "Customization"))
-            {
-                SceneManager.LoadScene("Character Customization");
-            }
-            if (GUI.Button(new Rect(500, 210, 200, 80), "Options"))
-            {
-                showOptions = true;
-                showMenu = false;
-            }
-            if (GUI.Button(new Rect(500, 320, 200, 80), "Quit"))
-            {
-                Application.Quit();
-            }
+            QualitySettings.vSyncCount = 0;
+            Debug.Log("Graphics: vSync was deactivated");
         }
-
-        if (showOptions == true)
+        else if (QualitySettings.vSyncCount == 0)
         {
-
-            if (GUI.Button(new Rect(500, 150, 140, 50), "Vsync On"))
-            {
-                QualitySettings.vSyncCount = 1;
-            }
-            if (GUI.Button(new Rect(645, 150, 140, 50), "Vsync Off"))
-            {
-                QualitySettings.vSyncCount = 0;
-            }
-
-
-            //INCREASE QUALITY PRESET
-            if (GUI.Button(new Rect(500, 210, 140, 50), "Increase Quality"))
-            {
-                QualitySettings.IncreaseLevel();
-                Debug.Log("Increased quality");
-            }
-            //DECREASE QUALITY PRESET
-            if (GUI.Button(new Rect(645, 210, 140, 50), "Decrease Quality"))
-            {
-                QualitySettings.DecreaseLevel();
-                Debug.Log("Decreased quality");
-            }
-
-
-            //1080p
-            if (GUI.Button(new Rect(500, 270, 92, 50), "1080p"))
-            {
-                Screen.SetResolution(1920, 1080, Fullscreen);
-                ResX = 1920;
-                ResY = 1080;
-                Debug.Log("1080p");
-            }
-            //720p
-            if (GUI.Button(new Rect(597, 270, 92, 50), "720p"))
-            {
-                Screen.SetResolution(1280, 720, Fullscreen);
-                ResX = 1280;
-                ResY = 720;
-                Debug.Log("720p");
-            }
-            //480p
-            if (GUI.Button(new Rect(694, 270, 92, 50), "480p"))
-            {
-                Screen.SetResolution(640, 480, Fullscreen);
-                ResX = 640;
-                ResY = 480;
-                Debug.Log("480p");
-            }
-
-
-
-            //RESOLUTION SETTINGS
-            //60Hz
-            if (GUI.Button(new Rect(500, 327, 140, 50), "60Hz"))
-            {
-                Screen.SetResolution(ResX, ResY, Fullscreen, 60);
-                Debug.Log("60Hz");
-            }
-            //120Hz
-            if (GUI.Button(new Rect(645, 327, 140, 50), "120Hz"))
-            {
-                Screen.SetResolution(ResX, ResY, Fullscreen, 120);
-                Debug.Log("120Hz");
-            }
-
-
-            //ANISOTROPIC FILTERING SETTINGS
-            if (GUI.Button(new Rect(500, 385, 140, 50), "Aniso. Filtering On"))
-            {
-                QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
-                Debug.Log("Force enable anisotropic filtering!");
-            }
-            if (GUI.Button(new Rect(645, 385, 140, 50), "Aniso. Filtering Off"))
-            {
-                QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
-                Debug.Log("Disable anisotropic filtering!");
-            }
-
-
-
-            //TRIPLE BUFFERING SETTINGS
-            if (GUI.Button(new Rect(500, 445, 140, 50), "Triple Buffering On"))
-            {
-                QualitySettings.maxQueuedFrames = 3;
-                Debug.Log("Triple buffering on");
-            }
-            if (GUI.Button(new Rect(645, 445, 140, 50), "Triple Buffering Off"))
-            {
-                QualitySettings.maxQueuedFrames = 0;
-                Debug.Log("Triple buffering off");
-            }
-
-
-            //0 X AA SETTINGS
-            if (GUI.Button(new Rect(500, 505, 67, 50), "No AA"))
-            {
-                QualitySettings.antiAliasing = 0;
-                Debug.Log("0 AA");
-            }
-            //2 X AA SETTINGS
-            if (GUI.Button(new Rect(572, 505, 67, 50), "2x AA"))
-            {
-                QualitySettings.antiAliasing = 2;
-                Debug.Log("2 x AA");
-            }
-            //4 X AA SETTINGS
-            if (GUI.Button(new Rect(644, 505, 67, 50), "4x AA"))
-            {
-                QualitySettings.antiAliasing = 4;
-                Debug.Log("4 x AA");
-            }
-            //8 x AA SETTINGS
-            if (GUI.Button(new Rect(716, 505, 67, 50), "8x AA"))
-            {
-                QualitySettings.antiAliasing = 8;
-                Debug.Log("8 x AA");
-            }
-
-
-
-            if (GUI.Button(new Rect(500, 570, 140, 50), "Mute Audio"))
-            {
-                ToggleAudio();
-            }
-            if (GUI.Button(new Rect(645, 570, 140, 50), "Toggle Cust."))
-            {
-                ToggleCustomization();
-            }
-
-            hSliderValue = GUI.HorizontalSlider(new Rect(500, 650, 280, 30), hSliderValue, 0.0f, 1.0f);  // Rect(x, y, width, height)
-            GUI.Label(new Rect(500, 675, 150, 20), "Audiovolume: " + (Mathf.Round(hSliderValue * 100f) / 100f).ToString());
-            AudioListener.volume = hSliderValue;
-            PlayerPrefs.SetFloat("Audiovolume", hSliderValue);
-
-
-            //BACK
-            if (GUI.Button(new Rect(596, 700, 100, 50), "Back"))
-            {
-                showOptions = false;
-                showMenu = true;
-            }
-
+            QualitySettings.vSyncCount = 1;
+            Debug.Log("Graphics: vSync was activated");
         }
     }
 
-    void ToggleAudio()
+    // TODO: Need a different item like a button or so ..
+    public void IncreaseQuality()
     {
-        if (AudioListener.pause == false)
+        QualitySettings.IncreaseLevel();
+        Debug.Log("Graphics: Quality was increased");
+    }
+
+    public void DecreaseQuality()
+    {
+        QualitySettings.DecreaseLevel();
+        Debug.Log("Graphics: Quality was decreased");
+    }
+
+    private void ChangeResolution()
+    {
+        if(Resolution.value == 0)
         {
-            AudioListener.pause = true;
+            ResX = 1920;
+            ResY = 1080;
+            Debug.Log("Graphics: Resolution set to 1080p");
+        }
+        else if (Resolution.value == 1)
+        {
+            ResX = 1280;
+            ResY = 720;
+            Debug.Log("Graphics: Resolution set to 720p");
+        }
+        else if (Resolution.value == 2)
+        {
+            ResX = 640;
+            ResY = 480;
+            Debug.Log("Graphics: Resolution set to 480p");
+        }
+        else
+        {
+            ResX = 1280;
+            ResY = 720;
+            Debug.Log("Graphics: Resolution set to standard (720p)");
+        }
+        Screen.SetResolution(ResX, ResY, Fullscreen);
+    }
+
+    public void ToggleAniso()
+    {
+        if(QualitySettings.anisotropicFiltering == AnisotropicFiltering.ForceEnable)
+        {
+            QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
+            Debug.Log("Graphics: Anisotropic Filtering was disabled");
+        }
+        else if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.Disable)
+        {
+            QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
+            Debug.Log("Graphics: Anisotropic Filtering was enabled");
+        }
+
+    }
+
+    public void ToggleTripleBuffering()
+    {
+        if(QualitySettings.maxQueuedFrames == 3)
+        {
+            QualitySettings.maxQueuedFrames = 2;
+            Debug.Log("Graphics: Tripple Buffering was disabled");
+        }
+        else if (QualitySettings.maxQueuedFrames == 2)
+        {
+            QualitySettings.maxQueuedFrames = 3;
+            Debug.Log("Graphics: Tripple Buffering was enabled");
+        }
+    }
+
+    public void ChangeRefreshrate()
+    {
+        if(Refreshrate.value == 0)
+        {
+            Screen.SetResolution(ResX, ResY, Fullscreen, 60);
+            Debug.Log("Graphics: Refreshrate is now 60Hz");
+        }
+        else if (Refreshrate.value == 1)
+        {
+            Screen.SetResolution(ResX, ResY, Fullscreen, 120);
+            Debug.Log("Graphics: Refreshrate is now 120Hz");
+        }
+        else
+        {
+            Screen.SetResolution(ResX, ResY, Fullscreen, 60);
+            Debug.Log("Graphics: Refreshrate is now standard (60Hz)");
+        }
+    }
+
+    public void ChangeAntiAliasing()
+    {
+        if(Antialiasing.value == 0)
+        {
+            QualitySettings.antiAliasing = 0;
+            Debug.Log("Graphics: Antialiasing is now disabled");
+        }
+        else if(Antialiasing.value == 1)
+        {
+            QualitySettings.antiAliasing = 2;
+            Debug.Log("Graphics: Antialiasing is 2x");
+        }
+        else if (Antialiasing.value == 2)
+        {
+            QualitySettings.antiAliasing = 4;
+            Debug.Log("Graphics: Antialiasing is 4x");
+        }
+        else if (Antialiasing.value == 3)
+        {
+            QualitySettings.antiAliasing = 8;
+            Debug.Log("Graphics: Antialiasing is 8x");
+        }
+        else
+        {
+            QualitySettings.antiAliasing = 0;
+            Debug.Log("Graphics: Antialiasing is now standard (disabled)");
+        }
+    }
+
+    public void ChangeAudiovolume()
+    {
+        AudioListener.volume = Audiovolume.value;
+        PlayerPrefs.SetFloat("Audiovolume", Audiovolume.value);
+        AudiovolumeText.text = "Volume: " + (Mathf.Round(Audiovolume.value * 100f) / 100f).ToString();
+    }
+
+    void LoadSettings()
+    {
+        // Load Saved Audio Volume
+        if (PlayerPrefs.HasKey("Audiovolume"))
+        {
+            Audiovolume.value = PlayerPrefs.GetFloat("Audiovolume");
+            AudioListener.volume = Audiovolume.value;
+            AudiovolumeText.text = "Volume: " + (Mathf.Round(Audiovolume.value * 100f) / 100f).ToString();
+        }
+        else
+        {
+            Audiovolume.value = 1f;
+            AudioListener.volume = 1f;
+            AudiovolumeText.text = "Volume: " + (Mathf.Round(Audiovolume.value * 100f) / 100f).ToString();
+        }
+
+        // Load Saved Audio Mute
+        if (PlayerPrefs.HasKey("AudioMute"))
+        {
+            var audioMute = PlayerPrefs.GetInt("AudioMute");
+            if (audioMute == 1)
+            {
+                Audiovolume.value = PlayerPrefs.GetFloat("Audiovolume");
+                AudioListener.volume = 0f;
+                SoundstatusText.text = "Sound muted";
+            }
+            else
+            {
+                Audiovolume.value = PlayerPrefs.GetFloat("Audiovolume");
+                AudioListener.volume = Audiovolume.value;
+                SoundstatusText.text = "";
+            }
+        }
+        else
+        {
+            AudioListener.volume = 1f;
+        }
+
+        // Load Saved Customization Toggle
+        if (PlayerPrefs.HasKey("CustToggle"))
+        {
+            var customizationToggle = PlayerPrefs.GetInt("CustToggle");
+            if (customizationToggle == 1)
+            {
+                CustToggle = true;
+                DisableCustomization();
+                CustomizationStatusText.text = "Custom. toggled";
+            }
+            else
+            {
+                CustToggle = false;
+                EnableCustomization();
+                CustomizationStatusText.text = "";
+            }
+        }
+        else
+        {
+            CustToggle = true;
+            DisableCustomization();
+            CustomizationStatusText.text = "Custom. toggled";
+        }
+    }
+
+    public void ToggleAudio()
+    {
+        if (AudioListener.volume > 0f)
+        {
+            AudioListener.volume = 0f;
+            PlayerPrefs.SetInt("AudioMute", 1);
             SoundstatusText.text = "Sound muted";
         }
-        else if (AudioListener.pause == true)
+        else if (AudioListener.volume == 0f)
         {
-            AudioListener.pause = false;
+            AudioListener.volume = hSliderValue;
+            PlayerPrefs.SetInt("AudioMute", 0);
             SoundstatusText.text = "";
         }
     }
 
-    void ToggleCustomization()
+    public void ToggleCustomization()
     {
-        Hair.enabled = !Hair.enabled;
-        Eye.enabled = !Eye.enabled;
-        Torso.enabled = !Torso.enabled;
-        Leg.enabled = !Leg.enabled;
-
         if (CustToggle == false)
         {
+            DisableCustomization();
             CustToggle = true;
-            CustomizationStatusText.text = "";
+            PlayerPrefs.SetInt("CustToggle", 1);
+            CustomizationStatusText.text = "Custom. toggled";
         }
         else if (CustToggle == true)
         {
-
+            EnableCustomization();
             CustToggle = false;
-            CustomizationStatusText.text = "Custom. toggled";
+            PlayerPrefs.SetInt("CustToggle", 0);
+            CustomizationStatusText.text = "";
         }
+    }
+
+    void EnableCustomization()
+    {
+        Hair.enabled = true;
+        Eye.enabled = true;
+        Torso.enabled = true;
+        Leg.enabled = true;
+    }
+
+    void DisableCustomization()
+    {
+        Hair.enabled = false;
+        Eye.enabled = false;
+        Torso.enabled = false;
+        Leg.enabled = false;
     }
 }

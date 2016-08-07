@@ -100,7 +100,7 @@ public class ButtonHandler : MonoBehaviour {
             HueSlider.value = h;
             SatSlider.value = s;
             ValSlider.value = v;
-            HueText.text = "Hue: " + h.ToString();
+            HueText.text = "Hue: " + (Mathf.Round(h * 100f) / 100f).ToString();
             if ((Mathf.Round(SatSlider.value * 100f) / 100f) == 0)
             {
                 SatText.text = "Saturation: " + "0.00";
@@ -135,7 +135,7 @@ public class ButtonHandler : MonoBehaviour {
         { 
             Application.Quit();
         }
-        if(Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKeyDown(KeyCode.Return))
         { 
             SceneManager.LoadScene("Scene1");
         }
@@ -274,6 +274,7 @@ public class ButtonHandler : MonoBehaviour {
         PlayerPrefs.SetFloat("SkincolorR", Playersprite.color.r);
         PlayerPrefs.SetFloat("SkincolorG", Playersprite.color.g);
         PlayerPrefs.SetFloat("SkincolorB", Playersprite.color.b);
+
         // Refresh textvalues..
         HueText.text = "Hue: " + (Mathf.Round(HueSlider.value * 1f) / 1f).ToString();
 
@@ -310,8 +311,8 @@ public class ButtonHandler : MonoBehaviour {
         PlayerPrefs.SetInt("LegCloth", Random.Range(0, (Leg.ClothLegsIndexMax)));
         ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);
 
-        HueSlider.value = Random.Range(0f, 360f);
-        SatSlider.value = Random.Range(0f, 0.5f);
+        HueSlider.value = Random.Range(-90f, 90f);
+        SatSlider.value = Random.Range(0f, 0.25f);
         ValSlider.value = Random.Range(0.5f, 1.0f);
     }
 
