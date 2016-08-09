@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Scene\LoadingHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Scene\SoundEngine.cs" />
+    <Compile Include="Assets\Scripts\Scene\StaticData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

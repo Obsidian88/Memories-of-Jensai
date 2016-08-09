@@ -136,15 +136,16 @@ public class ButtonHandler : MonoBehaviour {
             Application.Quit();
         }
         if(Input.GetKeyDown(KeyCode.Return))
-        { 
-            SceneManager.LoadScene("Scene1");
+        {
+            applyCustomization();
         }
     }
 
     // Button: Apply
     public void applyCustomization()
     {
-        SceneManager.LoadScene("Scene1");
+        StaticData.currentLevel = "Scene1";
+        SceneManager.LoadScene("LoadingScreen");
     }
     
     // Button: Haircut left

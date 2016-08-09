@@ -21,7 +21,7 @@ public class SoundEngine : MonoBehaviour
     private AudioClip[] ambientClips;
 
     private int lastMusic = 0;
-    //private int lastAmbient = 0;
+    private int lastAmbient = 0;
 
     private bool musicPause = false;
     private float musicPauseDuration = 15f;
@@ -31,7 +31,7 @@ public class SoundEngine : MonoBehaviour
         musicPauseDuration = Random.Range(15.0f, 30.0f);
         LoadAudioClips();
         lastMusic = PlayMusic();
-        //lastAmbient = PlayAmbient();
+        lastAmbient = PlayAmbient();
     }
 
     void Update()
@@ -49,8 +49,6 @@ public class SoundEngine : MonoBehaviour
         {
             SetText(musicClips[lastMusic].ToString());
         }
-
-
 
         if (!audioAmbient1.isPlaying || !audioAmbient2.isPlaying)
         {
@@ -122,17 +120,32 @@ public class SoundEngine : MonoBehaviour
         return clipToPlay;
     }
 
+    IEnumerator RandomMusicPause()
+    {
+        musicPause = true;
+        musicPauseDuration = Random.Range(15.0f, 30.0f);
+        yield return new WaitForSeconds(musicPauseDuration); // Wait between 15 and 30 seconds, then play next musicClip
+        lastMusic = PlayMusic();
+        musicPause = false;
+    }
+
+    IEnumerator RandomAmbientPause()
+    {
+        yield return new WaitForSeconds(7); // Wait 7 seconds, then play next ambientClip
+        lastAmbient = PlayAmbient();
+    }
+	
     private void SetText(string Songname)
     {
         Songname = Songname.Remove(Songname.Length - 24); // Get rid of automatic stringending "(UnityEngine.AudioClip)"
-        string currentTime = TimeToMinutesSeconds(audioMusic.time);
-        string totalTime = TimeToMinutesSeconds(musicClips[lastMusic].length);
+        string currentTime = TimeToMinutesAndSeconds(audioMusic.time);
+        string totalTime = TimeToMinutesAndSeconds(musicClips[lastMusic].length);
 
         // Display everything onscreen
-        CurrentlyPlaying.text = "Currently playing: " + "\n" + "\u0022" + Songname + ".mp3\u0022 - " + currentTime + " / " + totalTime;
+        CurrentlyPlaying.text = "Currently playing: " + "\n" + "\u0022" + Songname + ".mp3\u0022" + "\n" + currentTime + " / " + totalTime;
     }
 
-    private string TimeToMinutesSeconds(float time)
+    private string TimeToMinutesAndSeconds(float time)
     {
         // Get current playtime's minute and second
         string minutes = ((time / 60) % 60).ToString();
@@ -156,20 +169,5 @@ public class SoundEngine : MonoBehaviour
         }
 
         return minutes + ":" + seconds;
-    }
-
-    IEnumerator RandomMusicPause()
-    {
-        musicPause = true;
-        musicPauseDuration = Random.Range(15.0f, 30.0f);
-        yield return new WaitForSeconds(musicPauseDuration); // Wait between 15 and 30 seconds, then play next musicClip
-        lastMusic = PlayMusic();
-        musicPause = false;
-    }
-
-    IEnumerator RandomAmbientPause()
-    {
-        yield return new WaitForSeconds(7); // Wait 7 seconds, then play next ambientClip
-        //lastAmbient = PlayAmbient();
     }
 }
