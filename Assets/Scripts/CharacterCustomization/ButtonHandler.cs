@@ -14,10 +14,9 @@ public class ButtonHandler : MonoBehaviour {
     public Text EyecolorIndexText;   // Text that displays additional information of currently selected eyecolor (number / color)
     public EyecolorHandler Eye;      // Actual Eyecolor-gameObject
 
+    public ClothHandler Cloth;      // Actual Torso-gameObject
     public Text ClothTorsoIndexText;// Text that displays additional information of currently selected torso-cloth (number)
-    public ClothHandler Torso;      // Actual Torso-gameObject
     public Text ClothLegIndexText;  // Text that displays additional information of currently selected leg-cloth (number)
-    public ClothHandler Leg;        // Actual Leg-gameObject
     
     public SkincolorHandler Skin;   // Actual Skincolor-gameObject
     
@@ -31,6 +30,14 @@ public class ButtonHandler : MonoBehaviour {
     public Slider ValSlider;
     public Text ValText;
 
+    private int TempHaircut;
+    private int TempEyecolor;
+    private int TempTorso;
+    private int TempLegs;
+    private float TempR;
+    private float TempG;
+    private float TempB;
+
     // Use this for initialization
     void Start () {
         Playersprite = Player.GetComponent<SpriteRenderer>();
@@ -39,56 +46,21 @@ public class ButtonHandler : MonoBehaviour {
         Hair.LoadHairCuts();
         Eye.LoadEyeColors();
         Skin.LoadSkinColors();
-        Torso.LoadTorsoCloth();
-        Leg.LoadLegCloth();
+        Cloth.LoadTorsoCloth();
+        Cloth.LoadLegCloth();
 
-        if (PlayerPrefs.HasKey("Haircut"))
-        {
-            Hair.HaircutIndex = PlayerPrefs.GetInt("Haircut");
+        TempHaircut = PlayerPrefs.GetInt("Haircut");
+        TempEyecolor = PlayerPrefs.GetInt("Eyecolor");
+        TempTorso = PlayerPrefs.GetInt("TorsoCloth");
+        TempLegs = PlayerPrefs.GetInt("LegCloth");
+        TempR = PlayerPrefs.GetFloat("SkincolorR");
+        TempG = PlayerPrefs.GetFloat("SkincolorG");
+        TempB = PlayerPrefs.GetFloat("SkincolorB");
+
             HaircutIndexText.text = FillUpDigit(Hair.HaircutIndex + 1) + "/" + FillUpDigit(Hair.HaircutIndexMax); // Needed for initial text (when no button was clicked yet)
-        }
-        else
-        {
-            Debug.Log("Haircutindex could not be found and a random one was taken.");
-            Hair.HaircutIndex = Random.Range(1, Hair.HaircutIndexMax);
-            HaircutIndexText.text = FillUpDigit(Hair.HaircutIndex + 1) + "/" + FillUpDigit(Hair.HaircutIndexMax); // Needed for initial text (when no button was clicked yet)
-        }
-
-        if (PlayerPrefs.HasKey("Eyecolor"))
-        {
-            Eye.EyecolorIndex = PlayerPrefs.GetInt("Haircut");
             EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);  // Needed for initial text (when no button was clicked yet)
-        }
-        else
-        {
-            Debug.Log("Eyecolorindex could not be found and a random one was taken.");
-            Eye.EyecolorIndex = Random.Range(1, Eye.EyecolorIndexMax);
-            EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);  // Needed for initial text (when no button was clicked yet)
-        }
-
-        if (PlayerPrefs.HasKey("TorsoCloth"))
-        {
-            Torso.ClothTorsoIndex = PlayerPrefs.GetInt("TorsoCloth");
-            ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);  // Needed for initial text (when no button was clicked yet)
-        }
-        else
-        {
-            Debug.Log("TorsoIndex could not be found and a random one was taken.");
-            Torso.ClothTorsoIndex = Random.Range(1, Torso.ClothTorsoIndexMax);
-            ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);  // Needed for initial text (when no button was clicked yet)
-        }
-
-        if (PlayerPrefs.HasKey("LegCloth"))
-        {
-            Leg.ClothLegsIndex = PlayerPrefs.GetInt("LegCloth");
-            ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);  // Needed for initial text (when no button was clicked yet)
-        }
-        else
-        {
-            Debug.Log("LegIndex could not be found and a random one was taken.");
-            Leg.ClothLegsIndex = Random.Range(1, Leg.ClothLegsIndexMax);
-            ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);  // Needed for initial text (when no button was clicked yet)
-        }
+            ClothTorsoIndexText.text = FillUpDigit(Cloth.ClothTorsoIndex + 1) + "/" + FillUpDigit(Cloth.ClothTorsoIndexMax);  // Needed for initial text (when no button was clicked yet)
+            ClothLegIndexText.text = FillUpDigit(Cloth.ClothLegsIndex + 1) + "/" + FillUpDigit(Cloth.ClothLegsIndexMax);  // Needed for initial text (when no button was clicked yet)
         
         if (PlayerPrefs.HasKey("SkincolorR") && PlayerPrefs.HasKey("SkincolorG") && PlayerPrefs.HasKey("SkincolorB"))
         {
@@ -131,23 +103,44 @@ public class ButtonHandler : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        { 
-            Application.Quit();
-        }
         if(Input.GetKeyDown(KeyCode.Return))
         {
             applyCustomization();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            cancelCustomization();
         }
     }
 
     // Button: Apply
     public void applyCustomization()
     {
+        PlayerPrefs.SetInt("Haircut", TempHaircut);
+        PlayerPrefs.SetInt("Eyecolor", TempEyecolor);
+        PlayerPrefs.SetInt("TorsoCloth", TempTorso);
+        PlayerPrefs.SetInt("LegCloth", TempLegs);
+        PlayerPrefs.SetFloat("SkincolorR", TempR);
+        PlayerPrefs.SetFloat("SkincolorG", TempG);
+        PlayerPrefs.SetFloat("HSkincolorB", TempB);
+
         StaticData.currentLevel = "Scene1";
         SceneManager.LoadScene("LoadingScreen");
     }
-    
+
+    // Button: Cancel
+    public void cancelCustomization()
+    {
+        //Hair.HaircutIndex = PlayerPrefs.GetInt("Haircut");
+        //Eye.EyecolorIndex = PlayerPrefs.GetInt("Eyecolor");
+        //Cloth.ClothTorsoIndex = PlayerPrefs.GetInt("TorsoCloth");
+        //Cloth.ClothLegsIndex = PlayerPrefs.GetInt("LegCloth");
+        //Playersprite.color = new Color(PlayerPrefs.GetFloat("SkincolorR"), PlayerPrefs.GetFloat("SkincolorG"), PlayerPrefs.GetFloat("SkincolorB"));
+
+        StaticData.currentLevel = "Scene1";
+        SceneManager.LoadScene("LoadingScreen");
+    }
+
     // Button: Haircut left
     public void previousHaircut()
     {
@@ -159,7 +152,7 @@ public class ButtonHandler : MonoBehaviour {
         {
             Hair.HaircutIndex = Hair.HaircutIndex - 1;
         }
-        PlayerPrefs.SetInt("Haircut", Hair.HaircutIndex);
+        TempHaircut = Hair.HaircutIndex;
         HaircutIndexText.text = FillUpDigit(Hair.HaircutIndex + 1) + "/" + FillUpDigit(Hair.HaircutIndexMax);
     }
     
@@ -174,7 +167,7 @@ public class ButtonHandler : MonoBehaviour {
         {
             Hair.HaircutIndex = Hair.HaircutIndex + 1;
         }
-        PlayerPrefs.SetInt("Haircut", Hair.HaircutIndex);
+        TempHaircut = Hair.HaircutIndex;
         HaircutIndexText.text = FillUpDigit(Hair.HaircutIndex + 1) + "/" + FillUpDigit(Hair.HaircutIndexMax);
     }
     
@@ -189,7 +182,7 @@ public class ButtonHandler : MonoBehaviour {
         {
             Eye.EyecolorIndex = Eye.EyecolorIndex - 1;
         }
-        PlayerPrefs.SetInt("Eyecolor", Eye.EyecolorIndex);
+        TempEyecolor = Eye.EyecolorIndex;
         EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);
     }
     
@@ -204,77 +197,77 @@ public class ButtonHandler : MonoBehaviour {
         {
             Eye.EyecolorIndex = Eye.EyecolorIndex + 1;
         }
-        PlayerPrefs.SetInt("Eyecolor", Eye.EyecolorIndex);
+        TempEyecolor = Eye.EyecolorIndex;
         EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);
     }
 
     // Button: Torso left
     public void previousTorso()
     {
-        if (Torso.ClothTorsoIndex == 0)
+        if (Cloth.ClothTorsoIndex == 0)
         {
-            Torso.ClothTorsoIndex = Torso.ClothTorsoIndexMax - 1;
+            Cloth.ClothTorsoIndex = Cloth.ClothTorsoIndexMax - 1;
         }
         else
         {
-            Torso.ClothTorsoIndex = Torso.ClothTorsoIndex - 1;
+            Cloth.ClothTorsoIndex = Cloth.ClothTorsoIndex - 1;
         }
-        PlayerPrefs.SetInt("TorsoCloth", Torso.ClothTorsoIndex);
-        ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);
+        TempTorso = Cloth.ClothTorsoIndex;
+        ClothTorsoIndexText.text = FillUpDigit(Cloth.ClothTorsoIndex + 1) + "/" + FillUpDigit(Cloth.ClothTorsoIndexMax);
     }
 
     // Button: Torso right
     public void nextTorso()
     {
-        if (Torso.ClothTorsoIndex == Torso.ClothTorsoIndexMax - 1)
+        if (Cloth.ClothTorsoIndex == Cloth.ClothTorsoIndexMax - 1)
         {
-            Torso.ClothTorsoIndex = 0;
+            Cloth.ClothTorsoIndex = 0;
         }
         else
         {
-            Torso.ClothTorsoIndex = Torso.ClothTorsoIndex + 1;
+            Cloth.ClothTorsoIndex = Cloth.ClothTorsoIndex + 1;
         }
-        PlayerPrefs.SetInt("TorsoCloth", Torso.ClothTorsoIndex);
-        ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);
+        TempTorso = Cloth.ClothTorsoIndex;
+        ClothTorsoIndexText.text = FillUpDigit(Cloth.ClothTorsoIndex + 1) + "/" + FillUpDigit(Cloth.ClothTorsoIndexMax);
     }
 
     // Button: Legs left
     public void previousLegs()
     {
-        if (Leg.ClothLegsIndex == 0)
+        if (Cloth.ClothLegsIndex == 0)
         {
-            Leg.ClothLegsIndex = Leg.ClothLegsIndexMax - 1;
+            Cloth.ClothLegsIndex = Cloth.ClothLegsIndexMax - 1;
         }
         else
         {
-            Leg.ClothLegsIndex = Leg.ClothLegsIndex - 1;
+            Cloth.ClothLegsIndex = Cloth.ClothLegsIndex - 1;
         }
-        PlayerPrefs.SetInt("LegCloth", Leg.ClothLegsIndex);
-        ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);
+        TempLegs = Cloth.ClothLegsIndex;
+        ClothLegIndexText.text = FillUpDigit(Cloth.ClothLegsIndex + 1) + "/" + FillUpDigit(Cloth.ClothLegsIndexMax);
     }
 
     // Button: Legs right
     public void nextLegs()
     {
-        if (Leg.ClothLegsIndex == Leg.ClothLegsIndexMax - 1)
+        if (Cloth.ClothLegsIndex == Cloth.ClothLegsIndexMax - 1)
         {
-            Leg.ClothLegsIndex = 0;
+            Cloth.ClothLegsIndex = 0;
         }
         else
         {
-            Leg.ClothLegsIndex = Leg.ClothLegsIndex + 1;
+            Cloth.ClothLegsIndex = Cloth.ClothLegsIndex + 1;
         }
-        PlayerPrefs.SetInt("LegCloth", Leg.ClothLegsIndex);
-        ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);
+        TempLegs = Cloth.ClothLegsIndex;
+        ClothLegIndexText.text = FillUpDigit(Cloth.ClothLegsIndex + 1) + "/" + FillUpDigit(Cloth.ClothLegsIndexMax);
     }
     
     public void changeSkinColor() // Is called when a slider changes
     {
         ColorConverter Converter = GetComponent<ColorConverter>();
         Playersprite.color = Converter.ColorFromHSV(HueSlider.value, SatSlider.value, ValSlider.value, 1f);
-        PlayerPrefs.SetFloat("SkincolorR", Playersprite.color.r);
-        PlayerPrefs.SetFloat("SkincolorG", Playersprite.color.g);
-        PlayerPrefs.SetFloat("SkincolorB", Playersprite.color.b);
+        TempR = Playersprite.color.r;
+        TempG = Playersprite.color.g;
+        TempB = Playersprite.color.b;
 
         // Refresh textvalues..
         HueText.text = "Hue: " + (Mathf.Round(HueSlider.value * 1f) / 1f).ToString();
@@ -300,17 +293,17 @@ public class ButtonHandler : MonoBehaviour {
     
     public void randomize() // Need a randomize-button for people that don't care about selection
     {
-        PlayerPrefs.SetInt("Haircut", Random.Range(0, (Hair.HaircutIndexMax)));
+        TempHaircut = Random.Range(0, (Hair.HaircutIndexMax));
         HaircutIndexText.text = FillUpDigit(Hair.HaircutIndex + 1) + "/" + FillUpDigit(Hair.HaircutIndexMax);
 
-        PlayerPrefs.SetInt("Eyecolor", Random.Range(0, (Eye.EyecolorIndexMax)));
+        TempEyecolor = Random.Range(0, (Eye.EyecolorIndexMax));
         EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);
 
-        PlayerPrefs.SetInt("TorsoCloth", Random.Range(0, (Torso.ClothTorsoIndexMax)));
-        ClothTorsoIndexText.text = FillUpDigit(Torso.ClothTorsoIndex + 1) + "/" + FillUpDigit(Torso.ClothTorsoIndexMax);
+        TempTorso = Random.Range(0, (Cloth.ClothTorsoIndexMax));
+        ClothTorsoIndexText.text = FillUpDigit(Cloth.ClothTorsoIndex + 1) + "/" + FillUpDigit(Cloth.ClothTorsoIndexMax);
 
-        PlayerPrefs.SetInt("LegCloth", Random.Range(0, (Leg.ClothLegsIndexMax)));
-        ClothLegIndexText.text = FillUpDigit(Leg.ClothLegsIndex + 1) + "/" + FillUpDigit(Leg.ClothLegsIndexMax);
+        TempLegs = Random.Range(0, (Cloth.ClothLegsIndexMax));
+        ClothLegIndexText.text = FillUpDigit(Cloth.ClothLegsIndex + 1) + "/" + FillUpDigit(Cloth.ClothLegsIndexMax);
 
         HueSlider.value = Random.Range(-90f, 90f);
         SatSlider.value = Random.Range(0f, 0.25f);

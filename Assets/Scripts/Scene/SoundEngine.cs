@@ -107,6 +107,7 @@ public class SoundEngine : MonoBehaviour
     private int PlayAmbient()
     {
         int clipToPlay = Random.Range(0, ambientClips.Length);
+        Debug.Log("Last Ambient was: " + lastAmbient);
         if (audioAmbient1.isPlaying)
         {
             audioAmbient2.clip = ambientClips[clipToPlay];

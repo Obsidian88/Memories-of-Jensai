@@ -63,20 +63,50 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
+    <Compile Include="Assets\Environment\Water\Water\Scripts\Displace.cs" />
+    <Compile Include="Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
+    <Compile Include="Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
+    <Compile Include="Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
+    <Compile Include="Assets\Environment\Water\Water\Scripts\Water.cs" />
+    <Compile Include="Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
+    <Compile Include="Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\ButtonHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\ClothHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\EyecolorHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\HaircutHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\SkincolorHandler.cs" />
+    <Compile Include="Assets\Scripts\DayNight\GUI_ShowTime.cs" />
+    <Compile Include="Assets\Scripts\DayNight\GameTime.cs" />
+    <Compile Include="Assets\Scripts\DayNight\LookAtScriptC.cs" />
+    <Compile Include="Assets\Scripts\DayNight\MoonFeatures.cs" />
+    <Compile Include="Assets\Scripts\DayNight\SunSphereC.cs" />
+    <Compile Include="Assets\Scripts\DayNight2\AutoIntensity.cs" />
+    <Compile Include="Assets\Scripts\DayNight2\LightWall.cs" />
+    <Compile Include="Assets\Scripts\DayNight2\SetSunLight.cs" />
     <Compile Include="Assets\Scripts\GUI\ButtonAudioClick.cs" />
+    <Compile Include="Assets\Scripts\GUI\CameraHandler.cs" />
     <Compile Include="Assets\Scripts\GUI\Menu.cs" />
     <Compile Include="Assets\Scripts\GUI\SliderAudioClick.cs" />
     <Compile Include="Assets\Scripts\GUI\UIAudio.cs" />
     <Compile Include="Assets\Scripts\General\ColorConverter.cs" />
+    <Compile Include="Assets\Scripts\General\RecalculateCubeTexture.cs" />
+    <Compile Include="Assets\Scripts\Scene\ClockHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadingHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Scene\RespawnHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\SoundEngine.cs" />
     <Compile Include="Assets\Scripts\Scene\StaticData.cs" />
+    <Compile Include="Assets\Scripts\Scene\SunCycle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Shader\SpriteShadow.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -27,6 +27,7 @@ public class UIAudio : MonoBehaviour {
     public Dropdown dropdown1;
     public Dropdown dropdown2;
     public Dropdown dropdown3;
+    public Dropdown dropdown4;
 
     public Slider slider1;
 
@@ -61,6 +62,7 @@ public class UIAudio : MonoBehaviour {
         dropdown1.onValueChanged.AddListener(PlaysoundDropdown);
         dropdown2.onValueChanged.AddListener(PlaysoundDropdown);
         dropdown3.onValueChanged.AddListener(PlaysoundDropdown);
+        dropdown4.onValueChanged.AddListener(PlaysoundDropdown);
 
         slider1.onValueChanged.AddListener(PlaysoundSlider);
         //}

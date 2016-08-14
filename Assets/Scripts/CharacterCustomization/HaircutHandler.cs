@@ -19,10 +19,13 @@ public class HaircutHandler : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (PlayerPrefs.HasKey("Haircut"))
-        {
-            HaircutIndex = PlayerPrefs.GetInt("Haircut");
-        }
+        // Actual scene..
+        //if (PlayerPrefs.HasKey("Haircut"))
+        //{
+        //    HaircutIndex = PlayerPrefs.GetInt("Haircut");
+        //}
+
+        // Customization Screen..
         Renderer.sprite = HairSprites[HaircutIndex];
     }
 

@@ -25,17 +25,19 @@ public class ClothHandler : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        if (PlayerPrefs.HasKey("TorsoCloth"))
-        {
-            ClothTorsoIndex = PlayerPrefs.GetInt("TorsoCloth");
-        }
-        RendererTorso.sprite = TorsoSprites[ClothTorsoIndex];
 
-        if (PlayerPrefs.HasKey("LegCloth"))
-        {
-            ClothLegsIndex = PlayerPrefs.GetInt("LegCloth");
-        }
+        RendererTorso.sprite = TorsoSprites[ClothTorsoIndex];
         RendererLegs.sprite = LegSprites[ClothLegsIndex];
+
+        //if (PlayerPrefs.HasKey("TorsoCloth"))
+        //{
+        //    ClothTorsoIndex = PlayerPrefs.GetInt("TorsoCloth");
+        //}
+
+        //if (PlayerPrefs.HasKey("LegCloth"))
+        //{
+        //    ClothLegsIndex = PlayerPrefs.GetInt("LegCloth");
+        //}
     }
 
     public void LoadTorsoCloth()

@@ -19,10 +19,10 @@ public class EyecolorHandler : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        if (PlayerPrefs.HasKey("Eyecolor"))
-        {
-            EyecolorIndex = PlayerPrefs.GetInt("Eyecolor");
-        }
+        //if (PlayerPrefs.HasKey("Eyecolor"))
+        //{
+        //    EyecolorIndex = PlayerPrefs.GetInt("Eyecolor");
+        //}
         Renderer.sprite = EyeSprites[EyecolorIndex];
     }
 

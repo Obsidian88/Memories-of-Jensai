@@ -11,19 +11,40 @@ public class PlayerController : MonoBehaviour {
     private Animator Anim;
     private SpriteRenderer Renderer;
 
+    private CameraHandler CameraHandler;
+
     // Use this for initialization
     void Start () {
         Rigidbody = GetComponent<Rigidbody>();
         Anim = GetComponent<Animator>();
        // Renderer.shadowCastingMode = DontDestroyOnLoad;
        // transform.GetComponent<Renderer>().shadowCastingMode = shadowCastingMode.On;
+       CameraHandler = GameObject.Find("Main Camera").GetComponent<CameraHandler>();
     }
-    
+
     // Update is called once per frame
     void FixedUpdate () {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        Rigidbody.velocity = new Vector3(moveHorizontal * MaxSpeed, Rigidbody.velocity.y, moveVertical * MaxSpeed);
+
+        // Different Axis for different Camera & Characterperspektives / Rotations
+        if (CameraHandler.Facing == 0)
+        {
+            Rigidbody.velocity = new Vector3(moveHorizontal * MaxSpeed, Rigidbody.velocity.y, moveVertical * MaxSpeed);
+        }
+        if (CameraHandler.Facing == 6 || CameraHandler.Facing == -6)
+        {
+            Rigidbody.velocity = new Vector3(-moveHorizontal * MaxSpeed, Rigidbody.velocity.y, -moveVertical * MaxSpeed);
+        }
+        if (CameraHandler.Facing == 3 || CameraHandler.Facing == -9)
+        {
+            Rigidbody.velocity = new Vector3(moveVertical * MaxSpeed, Rigidbody.velocity.y, -moveHorizontal * MaxSpeed);
+        }
+        if (CameraHandler.Facing == 9 || CameraHandler.Facing == -3)
+        {
+            Rigidbody.velocity = new Vector3(-moveVertical * MaxSpeed, Rigidbody.velocity.y, moveHorizontal * MaxSpeed);
+        }
+        
         //if (moveHorizontal > 0 && moveVertical > 0)
         //{
         //    Facing = 15;
