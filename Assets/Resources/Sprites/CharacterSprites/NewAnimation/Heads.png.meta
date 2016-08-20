@@ -65,7 +65,7 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 2048
+  maxTextureSize: 4096
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -84,7 +84,6 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings:
   - buildTarget: Standalone
@@ -93,10 +92,8 @@ TextureImporter:
     compressionQuality: 50
     allowsAlphaSplitting: 0
   spriteSheet:
-    serializedVersion: 2
     sprites:
-    - serializedVersion: 2
-      name: Heads_0
+    - name: Heads_0
       rect:
         serializedVersion: 2
         x: 0
@@ -106,10 +103,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_1
+      outline:
+      - - {x: -37, y: 145.77783}
+        - {x: -39, y: 132.77783}
+        - {x: -39, y: 73.77783}
+        - {x: -34, y: 63.777832}
+        - {x: 45, y: 63.777832}
+        - {x: 45, y: 142.77783}
+        - {x: 41, y: 145.77783}
+    - name: Heads_1
       rect:
         serializedVersion: 2
         x: 512
@@ -119,10 +121,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_2
+      outline:
+      - - {x: -16.888885, y: 108.77783}
+        - {x: -38.888885, y: 90.77783}
+        - {x: -38.888885, y: 40.777832}
+        - {x: -19.888885, y: 25.777832}
+        - {x: 30.111115, y: 25.777832}
+        - {x: 45.111115, y: 40.777832}
+        - {x: 45.111115, y: 73.77783}
+        - {x: 33.111115, y: 108.77783}
+    - name: Heads_2
       rect:
         serializedVersion: 2
         x: 0
@@ -132,10 +140,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_3
+      outline:
+      - - {x: -25, y: 145.66675}
+        - {x: -32, y: 143.66675}
+        - {x: -32, y: 64.66675}
+        - {x: 40, y: 64.66675}
+        - {x: 40, y: 128.66675}
+        - {x: 27, y: 145.66675}
+    - name: Heads_3
       rect:
         serializedVersion: 2
         x: 512
@@ -145,10 +157,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_4
+      outline:
+      - - {x: -51.888885, y: 109.66675}
+        - {x: -68.888885, y: 100.66675}
+        - {x: -68.888885, y: 38.666748}
+        - {x: -54.888885, y: 26.666748}
+        - {x: -27.888885, y: 26.666748}
+        - {x: 5.1111145, y: 34.666748}
+        - {x: 5.1111145, y: 104.66675}
+        - {x: -0.8888855, y: 109.66675}
+    - name: Heads_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -158,10 +176,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_5
+      outline:
+      - - {x: -45.77777, y: 50.666748}
+        - {x: -58.77777, y: 37.666748}
+        - {x: -58.77777, y: -19.333252}
+        - {x: -46.77777, y: -32.333252}
+        - {x: -18.777771, y: -32.333252}
+        - {x: 9.222229, y: -24.333252}
+        - {x: 15.222229, y: -14.333252}
+        - {x: 15.222229, y: 25.666748}
+        - {x: 3.222229, y: 50.666748}
+    - name: Heads_5
       rect:
         serializedVersion: 2
         x: 1536
@@ -171,10 +196,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_6
+      outline:
+      - - {x: 29.333374, y: 140.66675}
+        - {x: 18.333374, y: 127.66675}
+        - {x: 18.333374, y: 60.666748}
+        - {x: 22.333374, y: 57.666748}
+        - {x: 63.333374, y: 57.666748}
+        - {x: 91.333374, y: 68.66675}
+        - {x: 91.333374, y: 137.66675}
+        - {x: 77.333374, y: 140.66675}
+    - name: Heads_6
       rect:
         serializedVersion: 2
         x: 2048
@@ -184,10 +215,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_7
+      outline:
+      - - {x: 92.44446, y: 84.66675}
+        - {x: 61.444458, y: 70.66675}
+        - {x: 61.444458, y: 17.666748}
+        - {x: 90.44446, y: 4.666748}
+        - {x: 126.44446, y: 4.666748}
+        - {x: 146.44446, y: 23.666748}
+        - {x: 146.44446, y: 68.66675}
+        - {x: 135.44446, y: 84.66675}
+    - name: Heads_7
       rect:
         serializedVersion: 2
         x: 2560
@@ -197,10 +234,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_8
+      outline:
+      - - {x: 87.555664, y: 85.66675}
+        - {x: 60.555664, y: 63.666748}
+        - {x: 60.555664, y: 24.666748}
+        - {x: 89.555664, y: 7.666748}
+        - {x: 116.555664, y: 7.666748}
+        - {x: 144.55566, y: 23.666748}
+        - {x: 145.55566, y: 35.666748}
+        - {x: 145.55566, y: 69.66675}
+        - {x: 130.55566, y: 85.66675}
+    - name: Heads_8
       rect:
         serializedVersion: 2
         x: 3072
@@ -210,10 +254,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_9
+      outline:
+      - - {x: 111.66675, y: 17.666748}
+        - {x: 79.66675, y: -6.333252}
+        - {x: 79.66675, y: -37.333252}
+        - {x: 109.66675, y: -62.333252}
+        - {x: 127.66675, y: -62.333252}
+        - {x: 147.66675, y: -57.333252}
+        - {x: 164.66675, y: -40.333252}
+        - {x: 164.66675, y: -3.333252}
+        - {x: 155.66675, y: 17.666748}
+    - name: Heads_9
       rect:
         serializedVersion: 2
         x: 3584
@@ -223,10 +274,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_10
+      outline:
+      - - {x: 98.77783, y: 14.666748}
+        - {x: 80.77783, y: -1.333252}
+        - {x: 80.77783, y: -58.333252}
+        - {x: 98.77783, y: -62.333252}
+        - {x: 165.77783, y: -62.333252}
+        - {x: 165.77783, y: 3.666748}
+        - {x: 150.77783, y: 14.666748}
+    - name: Heads_10
       rect:
         serializedVersion: 2
         x: 4096
@@ -236,10 +292,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_11
+      outline:
+      - - {x: 87.888916, y: -57.333252}
+        - {x: 77.888916, y: -80.33325}
+        - {x: 77.888916, y: -112.33325}
+        - {x: 83.888916, y: -116.33325}
+        - {x: 114.888916, y: -134.33325}
+        - {x: 148.88892, y: -134.33325}
+        - {x: 162.88892, y: -122.33325}
+        - {x: 162.88892, y: -78.33325}
+        - {x: 144.88892, y: -57.333252}
+    - name: Heads_11
       rect:
         serializedVersion: 2
         x: 0
@@ -249,10 +312,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_12
+      outline:
+      - - {x: -19, y: 146.55566}
+        - {x: -35, y: 136.55566}
+        - {x: -35, y: 76.555664}
+        - {x: -31, y: 69.555664}
+        - {x: -1, y: 64.555664}
+        - {x: 28, y: 64.555664}
+        - {x: 38, y: 72.555664}
+        - {x: 38, y: 139.55566}
+        - {x: 32, y: 146.55566}
+    - name: Heads_12
       rect:
         serializedVersion: 2
         x: 512
@@ -262,10 +332,24 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_13
+      outline:
+      - - {x: 20.111115, y: 108.555664}
+        - {x: 1.1111145, y: 91.555664}
+        - {x: 1.1111145, y: 45.555664}
+        - {x: 35.111115, y: 25.555664}
+        - {x: 67.111115, y: 25.555664}
+        - {x: 75.111115, y: 38.555664}
+        - {x: 75.111115, y: 88.555664}
+        - {x: 65.111115, y: 108.555664}
+      - - {x: 0.1111145, y: 119.555664}
+        - {x: -4.8888855, y: 114.555664}
+        - {x: -4.8888855, y: 112.555664}
+        - {x: -2.8888855, y: 110.555664}
+        - {x: 1.1111145, y: 111.555664}
+        - {x: 4.1111145, y: 113.555664}
+        - {x: 4.1111145, y: 117.555664}
+        - {x: 3.1111145, y: 119.555664}
+    - name: Heads_13
       rect:
         serializedVersion: 2
         x: 1024
@@ -275,10 +359,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_14
+      outline:
+      - - {x: -18.777771, y: 49.555664}
+        - {x: -31.777771, y: 29.555664}
+        - {x: -31.777771, y: -10.444336}
+        - {x: -25.777771, y: -27.444336}
+        - {x: 1.222229, y: -31.444336}
+        - {x: 30.222229, y: -31.444336}
+        - {x: 41.22223, y: -24.444336}
+        - {x: 41.22223, y: 46.555664}
+        - {x: 26.222229, y: 49.555664}
+    - name: Heads_14
       rect:
         serializedVersion: 2
         x: 1536
@@ -288,10 +379,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_15
+      outline:
+      - - {x: -52.666626, y: 140.55566}
+        - {x: -61.666626, y: 115.555664}
+        - {x: -61.666626, y: 81.555664}
+        - {x: -51.666626, y: 64.555664}
+        - {x: -38.666626, y: 58.555664}
+        - {x: 1.333374, y: 58.555664}
+        - {x: 12.333374, y: 64.555664}
+        - {x: 12.333374, y: 124.555664}
+        - {x: -6.666626, y: 140.55566}
+    - name: Heads_15
       rect:
         serializedVersion: 2
         x: 2048
@@ -301,10 +399,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_16
+      outline:
+      - - {x: -154.55554, y: 34.555664}
+        - {x: -135.55554, y: 6.555664}
+        - {x: -90.55554, y: 6.555664}
+        - {x: -69.55554, y: 14.555664}
+        - {x: -69.55554, y: 58.555664}
+        - {x: -89.55554, y: 86.555664}
+        - {x: -133.55554, y: 86.555664}
+        - {x: -154.55554, y: 74.555664}
+    - name: Heads_16
       rect:
         serializedVersion: 2
         x: 2560
@@ -314,10 +418,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_17
+      outline:
+      - - {x: -135.44434, y: 87.555664}
+        - {x: -147.44434, y: 83.555664}
+        - {x: -152.44434, y: 65.555664}
+        - {x: -152.44434, y: 32.555664}
+        - {x: -131.44434, y: 10.555664}
+        - {x: -83.444336, y: 10.555664}
+        - {x: -76.444336, y: 12.555664}
+        - {x: -68.444336, y: 34.555664}
+        - {x: -68.444336, y: 69.555664}
+        - {x: -96.444336, y: 87.555664}
+    - name: Heads_17
       rect:
         serializedVersion: 2
         x: 3072
@@ -327,10 +439,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_18
+      outline:
+      - - {x: -159.33325, y: 20.555664}
+        - {x: -172.33325, y: 0.55566406}
+        - {x: -172.33325, y: -39.444336}
+        - {x: -155.33325, y: -54.444336}
+        - {x: -142.33325, y: -59.444336}
+        - {x: -109.33325, y: -59.444336}
+        - {x: -86.33325, y: -31.444336}
+        - {x: -86.33325, y: -1.4443359}
+        - {x: -110.33325, y: 20.555664}
+    - name: Heads_18
       rect:
         serializedVersion: 2
         x: 3584
@@ -340,10 +459,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_19
+      outline:
+      - - {x: -126.22217, y: 17.555664}
+        - {x: -154.22217, y: 17.555664}
+        - {x: -170.22217, y: 7.555664}
+        - {x: -172.22217, y: -7.444336}
+        - {x: -172.22217, y: -43.444336}
+        - {x: -168.22217, y: -59.444336}
+        - {x: -87.22217, y: -59.444336}
+        - {x: -87.22217, y: 2.555664}
+        - {x: -92.22217, y: 4.555664}
+    - name: Heads_19
       rect:
         serializedVersion: 2
         x: 4096
@@ -353,10 +479,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_20
+      outline:
+      - - {x: -152.11108, y: -54.444336}
+        - {x: -170.11108, y: -75.444336}
+        - {x: -170.11108, y: -121.444336}
+        - {x: -150.11108, y: -131.44434}
+        - {x: -106.111084, y: -131.44434}
+        - {x: -85.111084, y: -121.444336}
+        - {x: -85.111084, y: -60.444336}
+        - {x: -98.111084, y: -54.444336}
+    - name: Heads_20
       rect:
         serializedVersion: 2
         x: 0
@@ -366,10 +498,23 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_21
+      outline:
+      - - {x: -16, y: 145.44446}
+        - {x: -30, y: 128.44446}
+        - {x: -30, y: 66.44446}
+        - {x: -22, y: 63.444458}
+        - {x: 28, y: 63.444458}
+        - {x: 40, y: 76.44446}
+        - {x: 40, y: 141.44446}
+        - {x: 26, y: 145.44446}
+      - - {x: -53, y: 91.44446}
+        - {x: -53, y: 86.44446}
+        - {x: -51, y: 84.44446}
+        - {x: -49, y: 84.44446}
+        - {x: -47, y: 86.44446}
+        - {x: -47, y: 89.44446}
+        - {x: -50, y: 92.44446}
+    - name: Heads_21
       rect:
         serializedVersion: 2
         x: 512
@@ -379,10 +524,32 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_22
+      outline:
+      - - {x: -39.888885, y: 109.44446}
+        - {x: -57.888885, y: 96.44446}
+        - {x: -57.888885, y: 30.444458}
+        - {x: -51.888885, y: 26.444458}
+        - {x: -11.8888855, y: 26.444458}
+        - {x: 14.1111145, y: 40.444458}
+        - {x: 14.1111145, y: 82.44446}
+        - {x: 1.1111145, y: 109.44446}
+      - - {x: 34.111115, y: 97.44446}
+        - {x: 28.111115, y: 97.44446}
+        - {x: 28.111115, y: 93.44446}
+        - {x: 29.111115, y: 88.44446}
+        - {x: 33.111115, y: 86.44446}
+        - {x: 35.111115, y: 86.44446}
+        - {x: 37.111115, y: 88.44446}
+        - {x: 37.111115, y: 96.44446}
+      - - {x: -48.888885, y: 128.44446}
+        - {x: -54.888885, y: 123.44446}
+        - {x: -54.888885, y: 121.44446}
+        - {x: -53.888885, y: 119.44446}
+        - {x: -41.888885, y: 119.44446}
+        - {x: -37.888885, y: 122.44446}
+        - {x: -37.888885, y: 125.44446}
+        - {x: -40.888885, y: 128.44446}
+    - name: Heads_22
       rect:
         serializedVersion: 2
         x: 1024
@@ -392,10 +559,79 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_23
+      outline:
+      - - {x: 8.222229, y: 51.444458}
+        - {x: 6.222229, y: 47.444458}
+        - {x: 6.222229, y: 44.444458}
+        - {x: 9.222229, y: 43.444458}
+        - {x: 24.222229, y: 43.444458}
+        - {x: 26.222229, y: 46.444458}
+        - {x: 26.222229, y: 50.444458}
+        - {x: 24.222229, y: 51.444458}
+      - - {x: -4.777771, y: 48.444458}
+        - {x: -1.777771, y: 49.444458}
+        - {x: -1.777771, y: 52.444458}
+        - {x: -4.777771, y: 53.444458}
+        - {x: -6.777771, y: 51.444458}
+      - - {x: -43.77777, y: 68.44446}
+        - {x: -43.77777, y: 66.44446}
+        - {x: -38.77777, y: 57.444458}
+        - {x: -33.77777, y: 50.444458}
+        - {x: -28.777771, y: 50.444458}
+        - {x: -26.777771, y: 51.444458}
+        - {x: -26.777771, y: 55.444458}
+        - {x: -40.77777, y: 70.44446}
+        - {x: -42.77777, y: 70.44446}
+      - - {x: 26.222229, y: 141.44446}
+        - {x: -18.777771, y: 141.44446}
+        - {x: -35.77777, y: 132.44446}
+        - {x: -35.77777, y: 79.44446}
+        - {x: -19.777771, y: 59.444458}
+        - {x: 24.222229, y: 59.444458}
+        - {x: 40.22223, y: 68.44446}
+        - {x: 40.22223, y: 95.44446}
+        - {x: 32.22223, y: 131.44446}
+      - - {x: 145.22223, y: 79.44446}
+        - {x: 141.22223, y: 76.44446}
+        - {x: 141.22223, y: 68.44446}
+        - {x: 142.22223, y: 65.44446}
+        - {x: 147.22223, y: 65.44446}
+        - {x: 150.22223, y: 68.44446}
+        - {x: 150.22223, y: 76.44446}
+        - {x: 148.22223, y: 79.44446}
+      - - {x: 54.22223, y: 78.44446}
+        - {x: 47.22223, y: 71.44446}
+        - {x: 49.22223, y: 68.44446}
+        - {x: 54.22223, y: 69.44446}
+        - {x: 59.22223, y: 73.44446}
+        - {x: 59.22223, y: 75.44446}
+        - {x: 56.22223, y: 78.44446}
+      - - {x: 49.22223, y: 94.44446}
+        - {x: 47.22223, y: 92.44446}
+        - {x: 47.22223, y: 90.44446}
+        - {x: 49.22223, y: 88.44446}
+        - {x: 51.22223, y: 88.44446}
+        - {x: 53.22223, y: 90.44446}
+        - {x: 53.22223, y: 92.44446}
+        - {x: 51.22223, y: 94.44446}
+      - - {x: 131.22223, y: 126.44446}
+        - {x: 140.22223, y: 105.44446}
+        - {x: 142.22223, y: 105.44446}
+        - {x: 144.22223, y: 106.44446}
+        - {x: 144.22223, y: 111.44446}
+        - {x: 143.22223, y: 122.44446}
+        - {x: 135.22223, y: 133.44446}
+        - {x: 133.22223, y: 133.44446}
+        - {x: 131.22223, y: 132.44446}
+      - - {x: 36.22223, y: 138.44446}
+        - {x: 36.22223, y: 136.44446}
+        - {x: 40.22223, y: 128.44446}
+        - {x: 43.22223, y: 128.44446}
+        - {x: 46.22223, y: 129.44446}
+        - {x: 46.22223, y: 134.44446}
+        - {x: 42.22223, y: 139.44446}
+        - {x: 38.22223, y: 139.44446}
+    - name: Heads_23
       rect:
         serializedVersion: 2
         x: 1536
@@ -405,10 +641,30 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_24
+      outline:
+      - - {x: -11.666626, y: 141.44446}
+        - {x: -24.666626, y: 137.44446}
+        - {x: -35.666626, y: 104.44446}
+        - {x: -35.666626, y: 63.444458}
+        - {x: -33.666626, y: 59.444458}
+        - {x: 21.333374, y: 59.444458}
+        - {x: 40.333374, y: 69.44446}
+        - {x: 40.333374, y: 120.44446}
+        - {x: 25.333374, y: 141.44446}
+      - - {x: -46.666626, y: 71.44446}
+        - {x: -43.666626, y: 72.44446}
+        - {x: -43.666626, y: 75.44446}
+        - {x: -46.666626, y: 76.44446}
+        - {x: -48.666626, y: 74.44446}
+      - - {x: 54.333374, y: 124.44446}
+        - {x: 49.333374, y: 124.44446}
+        - {x: 49.333374, y: 112.44446}
+        - {x: 55.333374, y: 100.44446}
+        - {x: 59.333374, y: 100.44446}
+        - {x: 62.333374, y: 103.44446}
+        - {x: 62.333374, y: 111.44446}
+        - {x: 60.333374, y: 122.44446}
+    - name: Heads_24
       rect:
         serializedVersion: 2
         x: 0
@@ -418,10 +674,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_25
+      outline:
+      - - {x: -10, y: 146.33337}
+        - {x: -29, y: 140.33337}
+        - {x: -36, y: 123.333374}
+        - {x: -36, y: 89.333374}
+        - {x: -27, y: 68.333374}
+        - {x: -7, y: 63.333374}
+        - {x: 24, y: 63.333374}
+        - {x: 37, y: 74.333374}
+        - {x: 37, y: 131.33337}
+        - {x: 18, y: 146.33337}
+    - name: Heads_25
       rect:
         serializedVersion: 2
         x: 512
@@ -431,10 +695,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_26
+      outline:
+      - - {x: 8.1111145, y: 109.333374}
+        - {x: -10.8888855, y: 103.333374}
+        - {x: -10.8888855, y: 41.333374}
+        - {x: -2.8888855, y: 26.333374}
+        - {x: 52.111115, y: 26.333374}
+        - {x: 61.111115, y: 29.333374}
+        - {x: 61.111115, y: 97.333374}
+        - {x: 48.111115, y: 109.333374}
+    - name: Heads_26
       rect:
         serializedVersion: 2
         x: 1024
@@ -444,10 +714,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_27
+      outline:
+      - - {x: 25.222229, y: 141.33337}
+        - {x: -11.777771, y: 141.33337}
+        - {x: -35.77777, y: 127.333374}
+        - {x: -35.77777, y: 72.333374}
+        - {x: -15.777771, y: 58.333374}
+        - {x: 22.222229, y: 58.333374}
+        - {x: 40.22223, y: 81.333374}
+        - {x: 40.22223, y: 116.333374}
+        - {x: 37.22223, y: 131.33337}
+    - name: Heads_27
       rect:
         serializedVersion: 2
         x: 1536
@@ -457,10 +734,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_28
+      outline:
+      - - {x: 24.333374, y: 140.33337}
+        - {x: 12.333374, y: 141.33337}
+        - {x: -20.666626, y: 141.33337}
+        - {x: -34.666626, y: 125.333374}
+        - {x: -35.666626, y: 121.333374}
+        - {x: -35.666626, y: 81.333374}
+        - {x: -17.666626, y: 59.333374}
+        - {x: 26.333374, y: 59.333374}
+        - {x: 41.333374, y: 65.333374}
+        - {x: 41.333374, y: 104.333374}
+        - {x: 33.333374, y: 122.333374}
+    - name: Heads_28
       rect:
         serializedVersion: 2
         x: 0
@@ -470,10 +756,28 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_29
+      outline:
+      - - {x: -17, y: 146.22223}
+        - {x: -31, y: 137.22223}
+        - {x: -31, y: 64.22223}
+        - {x: 20, y: 64.22223}
+        - {x: 42, y: 86.22223}
+        - {x: 42, y: 139.22223}
+        - {x: 27, y: 146.22223}
+      - - {x: -50, y: 75.22223}
+        - {x: -47, y: 72.22223}
+        - {x: -44, y: 74.22223}
+        - {x: -45, y: 78.22223}
+        - {x: -47, y: 80.22223}
+        - {x: -50, y: 79.22223}
+      - - {x: 54, y: 145.22223}
+        - {x: 54, y: 141.22223}
+        - {x: 60, y: 132.22223}
+        - {x: 63, y: 131.22223}
+        - {x: 66, y: 132.22223}
+        - {x: 66, y: 139.22223}
+        - {x: 58, y: 145.22223}
+    - name: Heads_29
       rect:
         serializedVersion: 2
         x: 512
@@ -483,10 +787,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_30
+      outline:
+      - - {x: -54.888885, y: 109.22223}
+        - {x: -58.888885, y: 94.22223}
+        - {x: -58.888885, y: 29.222229}
+        - {x: -53.888885, y: 27.222229}
+        - {x: -4.8888855, y: 27.222229}
+        - {x: 2.1111145, y: 29.222229}
+        - {x: 15.1111145, y: 55.22223}
+        - {x: 15.1111145, y: 91.22223}
+        - {x: 5.1111145, y: 109.22223}
+    - name: Heads_30
       rect:
         serializedVersion: 2
         x: 1024
@@ -496,10 +807,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_31
+      outline:
+      - - {x: -54.77777, y: 49.22223}
+        - {x: -56.77777, y: 41.22223}
+        - {x: -56.77777, y: -28.777771}
+        - {x: -53.77777, y: -32.77777}
+        - {x: 3.222229, y: -32.77777}
+        - {x: 16.222229, y: -10.777771}
+        - {x: 16.222229, y: 44.22223}
+        - {x: 0.222229, y: 49.22223}
+    - name: Heads_31
       rect:
         serializedVersion: 2
         x: 1536
@@ -509,10 +826,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_32
+      outline:
+      - - {x: -12.666626, y: 143.22223}
+        - {x: -25.666626, y: 135.22223}
+        - {x: -28.666626, y: 123.22223}
+        - {x: -28.666626, y: 100.22223}
+        - {x: -27.666626, y: 93.22223}
+        - {x: -21.666626, y: 66.22223}
+        - {x: -10.666626, y: 58.22223}
+        - {x: 17.333374, y: 58.22223}
+        - {x: 45.333374, y: 74.22223}
+        - {x: 46.333374, y: 76.22223}
+        - {x: 46.333374, y: 124.22223}
+        - {x: 28.333374, y: 143.22223}
+    - name: Heads_32
       rect:
         serializedVersion: 2
         x: 0
@@ -522,10 +849,47 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_33
+      outline:
+      - - {x: -32, y: 63.111115}
+        - {x: -34, y: 63.111115}
+        - {x: -36, y: 61.111115}
+        - {x: -36, y: 58.111115}
+        - {x: -33, y: 54.111115}
+        - {x: -30, y: 53.111115}
+        - {x: -28, y: 53.111115}
+        - {x: -26, y: 55.111115}
+        - {x: -26, y: 57.111115}
+        - {x: -29, y: 61.111115}
+      - - {x: 30, y: 146.11111}
+        - {x: -17, y: 146.11111}
+        - {x: -31, y: 142.11111}
+        - {x: -31, y: 84.111115}
+        - {x: -12, y: 65.111115}
+        - {x: -2, y: 64.111115}
+        - {x: 32, y: 64.111115}
+        - {x: 42, y: 75.111115}
+        - {x: 42, y: 128.11111}
+        - {x: 41, y: 136.11111}
+      - - {x: 96, y: 166.11111}
+        - {x: 91, y: 166.11111}
+        - {x: 91, y: 85.111115}
+        - {x: 97, y: 71.111115}
+        - {x: 102, y: 71.111115}
+        - {x: 102, y: 119.111115}
+        - {x: 100, y: 154.11111}
+      - - {x: -46, y: 144.11111}
+        - {x: -46, y: 141.11111}
+        - {x: -45, y: 139.11111}
+        - {x: -43, y: 139.11111}
+        - {x: -40, y: 142.11111}
+        - {x: -41, y: 145.11111}
+        - {x: -44, y: 145.11111}
+      - - {x: 40, y: 157.11111}
+        - {x: 43, y: 158.11111}
+        - {x: 43, y: 161.11111}
+        - {x: 40, y: 162.11111}
+        - {x: 38, y: 160.11111}
+    - name: Heads_33
       rect:
         serializedVersion: 2
         x: 512
@@ -535,10 +899,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_34
+      outline:
+      - - {x: -0.8888855, y: 108.111115}
+        - {x: -8.8888855, y: 90.111115}
+        - {x: -8.8888855, y: 33.111115}
+        - {x: 10.1111145, y: 27.111115}
+        - {x: 64.111115, y: 27.111115}
+        - {x: 64.111115, y: 101.111115}
+        - {x: 61.111115, y: 108.111115}
+    - name: Heads_34
       rect:
         serializedVersion: 2
         x: 1024
@@ -548,10 +917,23 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_35
+      outline:
+      - - {x: 48.22223, y: 49.111115}
+        - {x: -1.777771, y: 49.111115}
+        - {x: -11.777771, y: 39.111115}
+        - {x: -11.777771, y: -24.888885}
+        - {x: 12.222229, y: -32.888885}
+        - {x: 55.22223, y: -32.888885}
+        - {x: 59.22223, y: -29.888885}
+        - {x: 61.22223, y: -24.888885}
+        - {x: 61.22223, y: 41.111115}
+      - - {x: 77.22223, y: -22.888885}
+        - {x: 79.22223, y: -24.888885}
+        - {x: 82.22223, y: -23.888885}
+        - {x: 82.22223, y: -20.888885}
+        - {x: 80.22223, y: -18.888885}
+        - {x: 77.22223, y: -19.888885}
+    - name: Heads_35
       rect:
         serializedVersion: 2
         x: 1536
@@ -561,10 +943,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_36
+      outline:
+      - - {x: -10.666626, y: 143.11111}
+        - {x: -28.666626, y: 133.11111}
+        - {x: -28.666626, y: 82.111115}
+        - {x: -21.666626, y: 63.111115}
+        - {x: -7.666626, y: 58.111115}
+        - {x: 25.333374, y: 58.111115}
+        - {x: 42.333374, y: 67.111115}
+        - {x: 45.333374, y: 91.111115}
+        - {x: 45.333374, y: 131.11111}
+        - {x: 31.333374, y: 143.11111}
+    - name: Heads_36
       rect:
         serializedVersion: 2
         x: 0
@@ -574,10 +964,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Heads_37
+      outline:
+      - - {x: -16, y: 146}
+        - {x: -37, y: 134}
+        - {x: -38, y: 122}
+        - {x: -38, y: 81}
+        - {x: -28, y: 64}
+        - {x: 41, y: 64}
+        - {x: 45, y: 74}
+        - {x: 45, y: 141}
+        - {x: 38, y: 146}
+    - name: Heads_37
       rect:
         serializedVersion: 2
         x: 512
@@ -587,8 +984,22 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
+      outline:
+      - - {x: -26.888885, y: 107}
+        - {x: -38.888885, y: 90}
+        - {x: -38.888885, y: 33}
+        - {x: -26.888885, y: 24}
+        - {x: 27.111115, y: 24}
+        - {x: 38.111115, y: 25}
+        - {x: 45.111115, y: 36}
+        - {x: 45.111115, y: 81}
+        - {x: 29.111115, y: 107}
+      - - {x: -55.888885, y: 43}
+        - {x: -53.888885, y: 41}
+        - {x: -50.888885, y: 42}
+        - {x: -50.888885, y: 45}
+        - {x: -52.888885, y: 47}
+        - {x: -55.888885, y: 46}
     outline: []
   spritePackingTag: 
   userData: 

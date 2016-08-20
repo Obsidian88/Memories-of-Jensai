@@ -13,32 +13,59 @@ public class CharacterAnimation : MonoBehaviour {
     void Start()
     {
         Anim = GetComponent<Animator>();
+        Anim.SetInteger("facing", Facing);
     }
 
     // Update is called once per frame
     void Update () {
         float moveVertical = Input.GetAxis("Vertical");
-        float moveHorizontal = 0f;
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        Anim.SetFloat("vSpeed", moveVertical);
+        Anim.SetFloat("hSpeed", moveHorizontal);
 
-        if (moveVertical == 0)
+        if (moveVertical == 0 && moveHorizontal == 0)
         {
             Anim.SetBool("idle", true);
         }
-        else if (moveVertical > 0)
+        else
         {
             Anim.SetBool("idle", false);
-            Facing = 12;
-            Anim.SetInteger("facing", 12);
-            Anim.SetFloat("vSpeed", moveVertical);
-        }
-        else if (moveVertical < 0)
-        {
-            Anim.SetBool("idle", false);
-            Facing = 6;
-            Anim.SetInteger("facing", 6);
-            Anim.SetFloat("vSpeed", moveVertical);
         }
 
+        if (moveHorizontal > 0 && moveVertical > 0)
+        {
+            Facing = 1;
+        }
+        if (moveHorizontal > 0 && moveVertical == 0)
+        {
+            Facing = 2;
+        }
+        if (moveHorizontal > 0 && moveVertical < 0)
+        {
+            Facing = 3;
+        }
+        else if (moveVertical < 0 && moveHorizontal == 0)
+        {
+            Facing = 4;
+        }
+        else if (moveVertical < 0 && moveHorizontal < 0)
+        {
+            Facing = 5;
+        }
+        else if (moveVertical == 0 && moveHorizontal < 0)
+        {
+            Facing = 6;
+        }
+        else if (moveVertical > 0 && moveHorizontal < 0)
+        {
+            Facing = 7;
+        }
+        else if (moveVertical > 0 && moveHorizontal == 0)
+        {
+            Facing = 0;
+        }
+
+        Anim.SetInteger("facing", Facing);
 
     }
 

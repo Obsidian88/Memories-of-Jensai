@@ -19,7 +19,7 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         float moveVertical = Input.GetAxis("Vertical");
-        float moveHorizontal = 0f;
+        float moveHorizontal = Input.GetAxis("Horizontal");
 
         Rigidbody.velocity = new Vector3(moveHorizontal * MaxSpeed, Rigidbody.velocity.y, moveVertical * MaxSpeed);
         
