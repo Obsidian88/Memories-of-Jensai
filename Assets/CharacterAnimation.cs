@@ -7,6 +7,7 @@ public class CharacterAnimation : MonoBehaviour {
 
     private Animator Anim;
     private SpriteRenderer Renderer;
+    private CharacterMovement move;
 
 
     // Use this for initialization
@@ -14,6 +15,7 @@ public class CharacterAnimation : MonoBehaviour {
     {
         Anim = GetComponent<Animator>();
         Anim.SetInteger("facing", Facing);
+        move = transform.parent.transform.parent.gameObject.GetComponent<CharacterMovement>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,8 @@ public class CharacterAnimation : MonoBehaviour {
         float moveHorizontal = Input.GetAxis("Horizontal");
         Anim.SetFloat("vSpeed", moveVertical);
         Anim.SetFloat("hSpeed", moveHorizontal);
+        Anim.SetFloat("Speed", Mathf.Min(1f, Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical)));
+        Anim.SetBool("Dash", move.Dash);
 
         if (moveVertical == 0 && moveHorizontal == 0)
         {

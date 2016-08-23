@@ -2,9 +2,11 @@
 using System.Collections;
 
 public class BorderController : MonoBehaviour {
+    
+    public Collider[] ignore;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -12,4 +14,14 @@ public class BorderController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnCollisionEnter(Collision collision)
+    {
+        foreach (Collider collider in ignore)
+        {
+            if (collision.collider == collider)
+                Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
+    }
+
 }

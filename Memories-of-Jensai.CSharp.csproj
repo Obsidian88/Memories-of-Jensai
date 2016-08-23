@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -81,6 +75,7 @@
     <Compile Include="Assets\Environment\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+    <Compile Include="Assets\ReceiveShadows.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\ButtonHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\ClothHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\EyecolorHandler.cs" />
@@ -108,6 +103,7 @@
     <Compile Include="Assets\Scripts\Scene\SoundEngine.cs" />
     <Compile Include="Assets\Scripts\Scene\StaticData.cs" />
     <Compile Include="Assets\Scripts\Scene\SunCycle.cs" />
+    <Compile Include="Assets\SortingLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
