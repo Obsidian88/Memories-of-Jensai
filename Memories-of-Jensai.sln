@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memories-of-Jensai.CSharp", "Memories-of-Jensai.CSharp.csproj", "{2949FE78-E4B5-254C-EFA0-F388B8B97358}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memories-of-Jensai.CSharp.Editor", "Memories-of-Jensai.CSharp.Editor.csproj", "{B27226FA-C5D5-974E-C2A4-66A26EDD5FB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{2949FE78-E4B5-254C-EFA0-F388B8B97358}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2949FE78-E4B5-254C-EFA0-F388B8B97358}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2949FE78-E4B5-254C-EFA0-F388B8B97358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27226FA-C5D5-974E-C2A4-66A26EDD5FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27226FA-C5D5-974E-C2A4-66A26EDD5FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27226FA-C5D5-974E-C2A4-66A26EDD5FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27226FA-C5D5-974E-C2A4-66A26EDD5FB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

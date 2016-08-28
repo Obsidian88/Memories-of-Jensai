@@ -63,8 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BorderController.cs" />
-    <Compile Include="Assets\CharacterAnimation.cs" />
     <Compile Include="Assets\CharacterMovement.cs" />
     <Compile Include="Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\Displace.cs" />
@@ -96,6 +94,8 @@
     <Compile Include="Assets\Scripts\GUI\UIAudio.cs" />
     <Compile Include="Assets\Scripts\General\ColorConverter.cs" />
     <Compile Include="Assets\Scripts\General\RecalculateCubeTexture.cs" />
+    <Compile Include="Assets\Scripts\Scene\BorderController.cs" />
+    <Compile Include="Assets\Scripts\Scene\CharacterAnimation.cs" />
     <Compile Include="Assets\Scripts\Scene\ClockHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadingHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerController.cs" />
@@ -112,7 +112,8 @@
     <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Resources\Sprites\CharacterSprites\NewAnimation\README.txt" />
-    <None Include="Assets\Shader\SpriteShadow.shader" />
+    <None Include="Assets\Scripts\Scene\Shader\SpriteShadow.shader" />
+    <None Include="Assets\Scripts\Scene\Shader\Sprites-BumpedDiffuse.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
