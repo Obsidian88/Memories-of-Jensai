@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CharacterMovement.cs" />
     <Compile Include="Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -73,7 +72,6 @@
     <Compile Include="Assets\Environment\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
-    <Compile Include="Assets\ReceiveShadows.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\ButtonHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\ClothHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\EyecolorHandler.cs" />
@@ -94,16 +92,25 @@
     <Compile Include="Assets\Scripts\GUI\UIAudio.cs" />
     <Compile Include="Assets\Scripts\General\ColorConverter.cs" />
     <Compile Include="Assets\Scripts\General\RecalculateCubeTexture.cs" />
+    <Compile Include="Assets\Scripts\Scene\ApplyDamage.cs" />
     <Compile Include="Assets\Scripts\Scene\BorderController.cs" />
     <Compile Include="Assets\Scripts\Scene\CharacterAnimation.cs" />
+    <Compile Include="Assets\Scripts\Scene\CharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\Scene\CharacterStatus.cs" />
     <Compile Include="Assets\Scripts\Scene\ClockHandler.cs" />
+    <Compile Include="Assets\Scripts\Scene\DestroyAfter.cs" />
+    <Compile Include="Assets\Scripts\Scene\EnemyStatus.cs" />
+    <Compile Include="Assets\Scripts\Scene\FireTile.cs" />
+    <Compile Include="Assets\Scripts\Scene\GridHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadingHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Scene\ReceiveShadows.cs" />
     <Compile Include="Assets\Scripts\Scene\RespawnHandler.cs" />
+    <Compile Include="Assets\Scripts\Scene\SortingLayer.cs" />
     <Compile Include="Assets\Scripts\Scene\SoundEngine.cs" />
     <Compile Include="Assets\Scripts\Scene\StaticData.cs" />
     <Compile Include="Assets\Scripts\Scene\SunCycle.cs" />
-    <Compile Include="Assets\SortingLayer.cs" />
+    <Compile Include="Assets\Scripts\Scene\TorchAI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
