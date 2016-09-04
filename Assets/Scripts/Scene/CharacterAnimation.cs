@@ -24,8 +24,8 @@ public class CharacterAnimation : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        float moveVertical = Input.GetAxis("Vertical");
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = move.moveVertical;
+        float moveHorizontal = move.moveHorizontal;
         Anim.SetFloat("vSpeed", moveVertical);
         Anim.SetFloat("hSpeed", moveHorizontal);
         Anim.SetFloat("Speed", Mathf.Min(1f, Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical)));

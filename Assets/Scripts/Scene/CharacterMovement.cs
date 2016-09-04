@@ -10,6 +10,9 @@ public class CharacterMovement : MonoBehaviour
     public float DashTime = 3f;
     public float DashCooldown = 3f;
 
+    public float moveVertical;
+    public float moveHorizontal;
+
     private float cooldown = 0f;
     private float duration = 0f;
     private float CurMaxSpeed = 0f;
@@ -26,14 +29,14 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveVertical = Input.GetAxis("Vertical");
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("Horizontal");
         float dash = Input.GetAxis("Jump");
         
         if (cooldown<=0)
         {
             if (dash > 0) { 
-                if (!Dash)
+                if (!Dash && moveHorizontal + moveVertical != 0)
                 {
                     Dash = true;
                     duration = DashTime;
