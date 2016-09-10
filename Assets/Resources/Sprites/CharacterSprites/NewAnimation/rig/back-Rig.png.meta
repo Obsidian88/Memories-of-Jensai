@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: 789cca2897d9b684ba3b19f7e472b20e
+timeCreated: 1473487372
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Shoulder
+    21300002: Ear
+    21300004: Head
+    21300006: UpperArm
+    21300008: Neck
+    21300010: LowerArm
+    21300012: UpperBody
+    21300014: Hand
+    21300016: UpperLeg
+    21300018: Chest
+    21300020: LowerLeg
+    21300022: LowerBody
+    21300024: Hip
+    21300026: Foot
+    21300028: UpperLeg
+    21300030: LowerLeg
+    21300032: Buttock
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Shoulder
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1740
+        width: 128
+        height: 92
+      alignment: 9
+      pivot: {x: 0.80803037, y: 0.5000013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.427887, y: 45.999878}
+        - {x: -103.42789, y: 3.999878}
+        - {x: -103.42789, y: -45.000122}
+        - {x: -92.42789, y: -46.000122}
+        - {x: 4.572113, y: -46.000122}
+        - {x: 24.572113, y: -33.000122}
+        - {x: 24.572113, y: 36.999878}
+        - {x: 20.572113, y: 45.999878}
+    - name: Ear
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 1768
+        width: 38
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6599667, y: 0.46123147}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.078735, y: 26.399658}
+        - {x: -25.078735, y: -5.600342}
+        - {x: -19.078735, y: -17.600342}
+        - {x: -6.0787354, y: -22.600342}
+        - {x: 12.921265, y: -22.600342}
+        - {x: 12.921265, y: 14.399658}
+        - {x: 4.9212646, y: 26.399658}
+    - name: Head
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1704
+        width: 211
+        height: 244
+      alignment: 9
+      pivot: {x: 0.50508124, y: 0.06939697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100.42786, y: 168.06714}
+        - {x: 69.42786, y: 214.06714}
+        - {x: 39.427856, y: 225.06714}
+        - {x: 15.427856, y: 227.06714}
+        - {x: -48.572144, y: 227.06714}
+        - {x: -59.572144, y: 226.06714}
+        - {x: -106.57214, y: 171.06714}
+        - {x: -106.57214, y: 67.06714}
+        - {x: -93.57214, y: 28.067139}
+        - {x: -81.57214, y: 5.0671387}
+        - {x: -42.572144, y: -13.932861}
+        - {x: -35.572144, y: -16.932861}
+        - {x: 20.427856, y: -16.932861}
+        - {x: 69.42786, y: -7.9328613}
+        - {x: 87.42786, y: 11.067139}
+        - {x: 104.42786, y: 60.06714}
+        - {x: 104.42786, y: 147.06714}
+    - name: UpperArm
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1423
+        width: 106
+        height: 185
+      alignment: 9
+      pivot: {x: 0.76568705, y: 0.8349095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.162827, y: 30.541748}
+        - {x: -44.162827, y: 22.541748}
+        - {x: -81.16283, y: -81.45825}
+        - {x: -81.16283, y: -141.45825}
+        - {x: -74.16283, y: -154.45825}
+        - {x: -37.162827, y: -154.45825}
+        - {x: -15.162827, y: -143.45825}
+        - {x: 24.837173, y: -54.458252}
+        - {x: 24.837173, y: 24.541748}
+        - {x: 22.837173, y: 30.541748}
+    - name: Neck
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1526
+        width: 72
+        height: 86
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13847457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 74.09119}
+        - {x: -28, y: 72.09119}
+        - {x: -36, y: 63.091187}
+        - {x: -36, y: -6.9088135}
+        - {x: -25, y: -11.908813}
+        - {x: 35, y: -11.908813}
+        - {x: 36, y: -10.908813}
+        - {x: 36, y: 71.09119}
+        - {x: 35, y: 74.09119}
+    - name: LowerArm
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1101
+        width: 80
+        height: 213
+      alignment: 9
+      pivot: {x: 0.6408138, y: 0.8569938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.734894, y: 28.460327}
+        - {x: 17.734894, y: 30.460327}
+        - {x: -31.265106, y: 30.460327}
+        - {x: -47.265106, y: 7.460327}
+        - {x: -51.265106, y: -42.539673}
+        - {x: -51.265106, y: -180.53967}
+        - {x: -49.265106, y: -181.53967}
+        - {x: -20.265106, y: -181.53967}
+        - {x: -6.265106, y: -174.53967}
+        - {x: 1.7348938, y: -160.53967}
+        - {x: 28.734894, y: -47.539673}
+        - {x: 28.734894, y: 13.460327}
+    - name: UpperBody
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1128
+        width: 192
+        height: 161
+      alignment: 9
+      pivot: {x: 0.49999937, y: 0.12617067}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 92.00012, y: 133.68652}
+        - {x: 68.00012, y: 140.68652}
+        - {x: -61.999878, y: 140.68652}
+        - {x: -82.99988, y: 138.68652}
+        - {x: -95.99988, y: 130.68652}
+        - {x: -95.99988, y: -6.3134766}
+        - {x: -66.99988, y: -20.313477}
+        - {x: 63.000122, y: -20.313477}
+        - {x: 89.00012, y: -7.3134766}
+        - {x: 96.00012, y: 11.686523}
+        - {x: 96.00012, y: 127.68652}
+    - name: Hand
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 874
+        width: 76
+        height: 115
+      alignment: 9
+      pivot: {x: 0.42588645, y: 0.7693842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.36737, y: 26.520813}
+        - {x: -32.36737, y: 19.520813}
+        - {x: -32.36737, y: -77.47919}
+        - {x: -29.36737, y: -88.47919}
+        - {x: 29.63263, y: -88.47919}
+        - {x: 43.63263, y: -78.47919}
+        - {x: 43.63263, y: -6.479187}
+        - {x: 30.63263, y: 26.520813}
+    - name: UpperLeg
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 672
+        width: 136
+        height: 285
+      alignment: 9
+      pivot: {x: 0.49999955, y: 0.90515006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 56.00006, y: -3.9677734}
+        - {x: 31.000061, y: 25.032227}
+        - {x: 25.000061, y: 27.032227}
+        - {x: -43.99994, y: 27.032227}
+        - {x: -67.99994, y: 6.0322266}
+        - {x: -67.99994, y: -46.967773}
+        - {x: -50.99994, y: -194.96777}
+        - {x: -19.999939, y: -257.96777}
+        - {x: 32.00006, y: -257.96777}
+        - {x: 61.00006, y: -219.96777}
+        - {x: 68.00006, y: -131.96777}
+        - {x: 68.00006, y: -21.967773}
+    - name: Chest
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 896
+        width: 192
+        height: 128
+      alignment: 9
+      pivot: {x: 0.49999937, y: 0.13407469}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.999878, y: 110.83844}
+        - {x: -79.99988, y: 106.83844}
+        - {x: -95.99988, y: 84.83844}
+        - {x: -95.99988, y: -8.16156}
+        - {x: -89.99988, y: -17.16156}
+        - {x: 96.00012, y: -17.16156}
+        - {x: 96.00012, y: 88.83844}
+        - {x: 73.00012, y: 110.83844}
+    - name: LowerLeg
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 332
+        width: 85
+        height: 280
+      alignment: 9
+      pivot: {x: 0.49999928, y: 0.9224426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41.50006, y: -212.28394}
+        - {x: 42.50006, y: -146.28394}
+        - {x: 42.50006, y: 10.716064}
+        - {x: 18.500061, y: 21.716064}
+        - {x: -42.49994, y: 21.716064}
+        - {x: -42.49994, y: -223.28394}
+        - {x: -24.499939, y: -258.28394}
+        - {x: 8.500061, y: -258.28394}
+        - {x: 20.500061, y: -246.28394}
+        - {x: 23.500061, y: -239.28394}
+    - name: LowerBody
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 572
+        width: 252
+        height: 233
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0840902}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 126, y: 69.40698}
+        - {x: 98, y: 174.40698}
+        - {x: 70, y: 208.40698}
+        - {x: 57, y: 213.40698}
+        - {x: -60, y: 213.40698}
+        - {x: -87, y: 197.40698}
+        - {x: -99, y: 173.40698}
+        - {x: -115, y: 118.40698}
+        - {x: -126, y: 60.406982}
+        - {x: -126, y: 40.406982}
+        - {x: -117, y: 23.406982}
+        - {x: -106, y: 12.406982}
+        - {x: -45, y: -19.593018}
+        - {x: 46, y: -19.593018}
+        - {x: 53, y: -17.593018}
+        - {x: 114, y: 15.406982}
+        - {x: 126, y: 34.406982}
+    - name: Hip
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 420
+        width: 48
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Buttock
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 214
+        width: 143
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.5, y: 60}
+        - {x: -71.5, y: 54}
+        - {x: -71.5, y: -18}
+        - {x: -47.5, y: -60}
+        - {x: 65.5, y: -60}
+        - {x: 70.5, y: -59}
+        - {x: 71.5, y: -37}
+        - {x: 71.5, y: 20}
+        - {x: -36.5, y: 60}
+      - - {x: -71.5, y: -20}
+        - {x: -70.5, y: -21}
+        - {x: -67.5, y: -20}
+        - {x: -67.5, y: -18}
+        - {x: -70.5, y: -15}
+        - {x: -71.5, y: -15}
+    - name: Foot
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 100
+        width: 62
+        height: 105
+      alignment: 9
+      pivot: {x: 0.6726872, y: 0.2054261}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.706604, y: 83.43026}
+        - {x: -41.706604, y: 21.43026}
+        - {x: -37.706604, y: -3.5697403}
+        - {x: -8.706604, y: -21.56974}
+        - {x: 20.293396, y: -21.56974}
+        - {x: 20.293396, y: 67.43026}
+        - {x: 17.293396, y: 83.43026}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
