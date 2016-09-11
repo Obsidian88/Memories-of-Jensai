@@ -7,6 +7,7 @@ public class EnemyStatus : MonoBehaviour {
     public int hp;
     public bool takingDamage = false;
     public float damageTime;
+    public GameObject AI;
 
     private Rigidbody body;
 
@@ -25,11 +26,13 @@ public class EnemyStatus : MonoBehaviour {
         if (countdown > 0)
         {
             takingDamage = true;
+            AI.SetActive(false);
             countdown -= Time.deltaTime;
         }
         else
         {
             takingDamage = false;
+            AI.SetActive(true);
         }
     }
 
@@ -46,7 +49,11 @@ public class EnemyStatus : MonoBehaviour {
         Vector3 direction = body.velocity;
         direction.Normalize();
         Vector3 force;
-        if (incoming.Equals(new Vector3(0, 0, 0)))
+        if (incoming.Equals(new Vector3(0, 0, 0)) & direction.Equals(new Vector3(0, 0, 0)))
+        {
+            force = transform.position - args.transform.position;
+        }
+        else if (incoming.Equals(new Vector3(0, 0, 0)))
         {
             force = -direction;
         }
@@ -57,8 +64,9 @@ public class EnemyStatus : MonoBehaviour {
         else
         {
             force = incoming + direction;
-            force.Normalize();
         }
+        force.Normalize();
+        print(force);
         if (force.Equals(direction)) force = -direction;
         body.velocity = new Vector3(0, 0, 0);
         body.AddForce(force * args.force, ForceMode.Impulse);

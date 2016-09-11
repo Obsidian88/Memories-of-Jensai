@@ -13,11 +13,13 @@ public class ApplyDamage : MonoBehaviour {
         public int damage;
         public float force;
         public Vector3 direction;
-        public Parameter(int x, float y, Vector3 v)
+        public Transform transform;
+        public Parameter(int x, float y, Vector3 v, Transform z)
         {
             damage = x;
             force = y;
             direction = v;
+            transform = z;
         }
     }
 
@@ -35,7 +37,7 @@ public class ApplyDamage : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         if (Array.IndexOf(damages, collision.gameObject.tag) > -1) {
-            Parameter args = new Parameter(damage, force,body.velocity);
+            Parameter args = new Parameter(damage, force,body.velocity, transform);
             collision.gameObject.SendMessage("ApplyDamage", args);
         }
     }
@@ -44,7 +46,7 @@ public class ApplyDamage : MonoBehaviour {
     {
         if (Array.IndexOf(damages, collision.gameObject.tag) > -1)
         {
-            Parameter args = new Parameter(damage, force, body.velocity);
+            Parameter args = new Parameter(damage, force, body.velocity, transform);
             collision.gameObject.SendMessage("ApplyDamage", args);
         }
     }
