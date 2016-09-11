@@ -62,6 +62,7 @@ public class CharacterStatus : MonoBehaviour {
             force.Normalize();
         }
         if (force.Equals(direction)) force = -direction;
+        move.enabled = false;
         body.velocity = new Vector3(0, 0, 0);
         body.AddForce(force * args.force, ForceMode.Impulse);
     }

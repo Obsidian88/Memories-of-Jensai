@@ -72,7 +72,9 @@ public class GridHandler : MonoBehaviour {
                 {
                     child.gameObject.SendMessage("Activate");
                 }
-                cdcd = cooldown;
+            move.enabled = false;
+            body.velocity = new Vector3(0, 0, 0);
+            cdcd = cooldown;
         }
         else if(iterrupted)
         {
