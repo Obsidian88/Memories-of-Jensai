@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 76e77e21bde9be44fa656f17778574d3
+timeCreated: 1473701215
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: EyeBrowsDown
+    21300002: EyeBrowsSide
+    21300004: EyeBrowsSideDown
+    21300006: EyeBrowsSideUp
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: EyeBrowsDown
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5055005, y: 0.6705171}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -205.81625, y: 26.695251}
+        - {x: -228.81625, y: 23.695251}
+        - {x: -247.81625, y: 9.695251}
+        - {x: -247.81625, y: -10.304749}
+        - {x: -220.81625, y: -12.304749}
+        - {x: -55.816254, y: -12.304749}
+        - {x: -55.816254, y: 13.695251}
+        - {x: -79.81625, y: 26.695251}
+      - - {x: 199.18375, y: 26.695251}
+        - {x: 85.18375, y: 26.695251}
+        - {x: 58.183746, y: 14.695251}
+        - {x: 58.183746, y: -12.304749}
+        - {x: 179.18375, y: -12.304749}
+        - {x: 197.18375, y: -11.304749}
+        - {x: 250.18375, y: -9.304749}
+        - {x: 250.18375, y: 4.6952515}
+        - {x: 247.18375, y: 7.6952515}
+    - name: EyeBrowsSide
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.55225515, y: 0.709021}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65.75464, y: 10.981262}
+        - {x: -112.75464, y: -36.018738}
+        - {x: -112.75464, y: -58.018738}
+        - {x: -97.75464, y: -58.018738}
+        - {x: 16.245361, y: -8.018738}
+        - {x: 16.245361, y: 10.981262}
+    - name: EyeBrowsSideDown
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.60176015, y: 0.72552264}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -116.1012, y: 12.53241}
+        - {x: -222.1012, y: -34.46759}
+        - {x: -222.1012, y: -67.46759}
+        - {x: -150.1012, y: -67.46759}
+        - {x: -47.101196, y: -16.46759}
+        - {x: -47.101196, y: 12.53241}
+      - - {x: 99.8988, y: 18.53241}
+        - {x: 56.898804, y: 18.53241}
+        - {x: 45.898804, y: 13.53241}
+        - {x: 45.898804, y: -7.4675903}
+        - {x: 118.8988, y: -30.46759}
+        - {x: 180.8988, y: -30.46759}
+        - {x: 180.8988, y: -15.46759}
+        - {x: 144.8988, y: 10.53241}
+    - name: EyeBrowsSideUp
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.560506, y: 0.66776687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.97906494, y: 10.103363}
+        - {x: -42.979065, y: 10.103363}
+        - {x: -89.979065, y: -10.896637}
+        - {x: -109.979065, y: -47.896637}
+        - {x: -109.979065, y: -61.896637}
+        - {x: -107.979065, y: -62.896637}
+        - {x: -98.979065, y: -62.896637}
+        - {x: 12.020935, y: -10.896637}
+        - {x: 12.020935, y: 6.103363}
+        - {x: 11.020935, y: 7.103363}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

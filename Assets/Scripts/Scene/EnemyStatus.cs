@@ -66,7 +66,6 @@ public class EnemyStatus : MonoBehaviour {
             force = incoming + direction;
         }
         force.Normalize();
-        print(force);
         if (force.Equals(direction)) force = -direction;
         body.velocity = new Vector3(0, 0, 0);
         body.AddForce(force * args.force, ForceMode.Impulse);
