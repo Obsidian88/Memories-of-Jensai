@@ -117,28 +117,32 @@ public class GridHandler : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0))
         {
-            for (int i = 0; i < positions.Length; i++)
+            if (!active & !channeling)
             {
-                GameObject tile = Instantiate(tiles[i]);
-                tile.transform.parent = transform;
-                Vector2 pos = positions[i];
-                Vector2 topcorner;
-                topcorner.x = -((scale * dimensions.x) / 2) + scale / 2;
-                topcorner.y = -offset - scale / 2;
-                tile.transform.localPosition = new Vector3(topcorner.x + scale * pos.x, tile.transform.localPosition.y, topcorner.y - scale * pos.y);
-                tile.transform.localRotation = new Quaternion(0, 0, 0, 0);
-                tile.transform.localScale = new Vector3(scale, transform.localScale.y, scale);
+                for (int i = 0; i < positions.Length; i++)
+                {
+                    GameObject tile = Instantiate(tiles[i]);
+                    tile.transform.parent = transform;
+                    Vector2 pos = positions[i];
+                    Vector2 topcorner;
+                    topcorner.x = -((scale * dimensions.x) / 2) + scale / 2;
+                    topcorner.y = -offset - scale / 2;
+                    tile.transform.localPosition = new Vector3(topcorner.x + scale * pos.x, tile.transform.localPosition.y, topcorner.y - scale * pos.y);
+                    tile.transform.localRotation = new Quaternion(0, 0, 0, 0);
+                    tile.transform.localScale = new Vector3(scale, transform.localScale.y, scale);
+                }
+                active = true;
             }
-            active = true;
 
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             
-            if (active)
+            if (active & !channeling & !attacking)
             {
                 channeling = true;
+                active = false;
                 normalSpeed = move.MaxSpeed;
                 move.MaxSpeed *= channelslow;
                 ccd = channel;
