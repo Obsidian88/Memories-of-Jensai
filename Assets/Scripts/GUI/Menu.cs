@@ -18,11 +18,11 @@ public class Menu : MonoBehaviour
     public Text AudiovolumeText; 			// Tells current SliderAudiovolume (in menu)
 
     // Used for toggle customization button
-    public SpriteRenderer Skin;
+    //public SpriteRenderer Skin;
     public SpriteRenderer Hair;
     public SpriteRenderer Eye;
-    public SpriteRenderer Torso;
-    public SpriteRenderer Leg;
+    //public SpriteRenderer Torso;
+    //public SpriteRenderer Leg;
 
 	// Different panels
     public Image MenuPanel;
@@ -33,7 +33,7 @@ public class Menu : MonoBehaviour
 	public Toggle ToggleAniso;
 	public Toggle ToggleTriple;
     public Toggle ToggleFullscreen;
-    public Toggle ToggleCustomization;
+    //public Toggle ToggleCustomization;
     public Dropdown DropdownResolution;
 	public Dropdown DropdownQuality;
     public Dropdown DropdownRefreshrate;
@@ -180,36 +180,36 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void ChangeCustomization()
-    {
-        if (ToggleCustomization.isOn == true)
-        {
-            PlayerPrefs.SetInt("HideCloth", 1);
-            DisableCustomization();
-            ClothstatusPanel.gameObject.SetActive(true);
-        }
-        else if (ToggleCustomization.isOn == false)
-        {
-            PlayerPrefs.SetInt("HideCloth", 0);
-            EnableCustomization();
-            ClothstatusPanel.gameObject.SetActive(false);
-        }
-    }
+    //public void ChangeCustomization()
+    //{
+    //    if (ToggleCustomization.isOn == true)
+    //    {
+    //        PlayerPrefs.SetInt("HideCloth", 1);
+    //        DisableCustomization();
+    //        ClothstatusPanel.gameObject.SetActive(true);
+    //    }
+    //    else if (ToggleCustomization.isOn == false)
+    //    {
+    //        PlayerPrefs.SetInt("HideCloth", 0);
+    //        EnableCustomization();
+    //        ClothstatusPanel.gameObject.SetActive(false);
+    //    }
+    //}
 
     void EnableCustomization()
     {
         Hair.enabled = true;
         Eye.enabled = true;
-        Torso.enabled = true;
-        Leg.enabled = true;
+        //Torso.enabled = true;
+        //Leg.enabled = true;
     }
 
     void DisableCustomization()
     {
         Hair.enabled = false;
         Eye.enabled = false;
-        Torso.enabled = false;
-        Leg.enabled = false;
+        //Torso.enabled = false;
+        //Leg.enabled = false;
     }
 
     public void ChangeFullscreen()
@@ -365,28 +365,28 @@ public class Menu : MonoBehaviour
     {
 
         // Customization Status Toggle
-        if (PlayerPrefs.HasKey("HideCloth"))
-        {
-            if (PlayerPrefs.GetInt("HideCloth") == 1)
-            {
-				ToggleCustomization.isOn = true;
-                DisableCustomization();
-                ClothstatusPanel.gameObject.SetActive(true);
-            }
-            else
-            {
-				ToggleCustomization.isOn = false;
-                EnableCustomization();
-                ClothstatusPanel.gameObject.SetActive(false);
-            }
-        }
-        else
-        {
-			ToggleCustomization.isOn = true;
-            DisableCustomization();
-            ClothstatusPanel.gameObject.SetActive(true);
-            PlayerPrefs.SetInt("CustToggle", 1);
-        }
+   //     if (PlayerPrefs.HasKey("HideCloth"))
+   //     {
+   //         if (PlayerPrefs.GetInt("HideCloth") == 1)
+   //         {
+			//	ToggleCustomization.isOn = true;
+   //             DisableCustomization();
+   //             ClothstatusPanel.gameObject.SetActive(true);
+   //         }
+   //         else
+   //         {
+			//	ToggleCustomization.isOn = false;
+   //             EnableCustomization();
+   //             ClothstatusPanel.gameObject.SetActive(false);
+   //         }
+   //     }
+   //     else
+   //     {
+			//ToggleCustomization.isOn = true;
+   //         DisableCustomization();
+   //         ClothstatusPanel.gameObject.SetActive(true);
+   //         PlayerPrefs.SetInt("CustToggle", 1);
+   //     }
 
 		// Vsync Toggle
         if(PlayerPrefs.HasKey("GraphicsVsync"))
