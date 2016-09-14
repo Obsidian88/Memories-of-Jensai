@@ -74,10 +74,14 @@ public class SoundEngine : MonoBehaviour
                 case "Scene1":
                     currentRegion = "Suntower_Day";
                     break;
+                case "CharacterAnimationTester":
+                    currentRegion = "Suntower_Day";
+                    break;
                 case "Scene2":
                     currentRegion = "Suntower_Night";
                     break;
                 default:
+                    currentRegion = "Suntower_Day";
                     Debug.LogWarning("Invalid scenename: Scene '" + currentScene + "' could not be found.");
                     break;
             }
