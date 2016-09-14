@@ -1,4 +1,2 @@
 # Memories-of-Jensai
-Prototype for Memories of Jensai
-
-# Test
+Prototype for the MMORPG "Memories of Jensai"

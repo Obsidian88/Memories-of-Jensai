@@ -41,6 +41,8 @@ public class Menu : MonoBehaviour
     public Slider SliderAudiovolume;
 	public Button ButtonAudioMute;
 
+    GridHandler GridHandler;
+
     // Use this for initialization
     void Start()
     {
@@ -48,7 +50,14 @@ public class Menu : MonoBehaviour
         MenuPanel.gameObject.SetActive(false);
         OptionsPanel.gameObject.SetActive(false);
         OutsideMask.gameObject.SetActive(false);
-		
+
+        // Get the Weapon-GameObject that uses mousebuttons.. we need to disable them while the menu is active
+        if (GameObject.Find("Weapon") != null)
+        {
+            GameObject Weapon = GameObject.Find("Weapon");
+            GridHandler = Weapon.GetComponent<GridHandler>();
+        }
+
         LoadSettings();
     }
 
@@ -69,24 +78,28 @@ public class Menu : MonoBehaviour
     {
         MenuPanel.gameObject.SetActive(true);
         OutsideMask.gameObject.SetActive(true);
+        GridHandler.enabled = false;
     }
 
     public void LoadOptions()
     {
         MenuPanel.gameObject.SetActive(false);
         OptionsPanel.gameObject.SetActive(true);
+        GridHandler.enabled = false;
     }
 
     public void LeaveOptions()
     {
         MenuPanel.gameObject.SetActive(true);
         OptionsPanel.gameObject.SetActive(false);
+        GridHandler.enabled = false;
     }
 
     public void LeaveMenu()
     {
         MenuPanel.gameObject.SetActive(false);
         OutsideMask.gameObject.SetActive(false);
+        GridHandler.enabled = true;
     }
 	
 	// What happens if you press Escape or F10 depending on currently opened menue..

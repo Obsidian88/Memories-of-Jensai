@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterStatus : MonoBehaviour {
 
@@ -38,9 +40,22 @@ public class CharacterStatus : MonoBehaviour {
     void ApplyDamage(ApplyDamage.Parameter args)
     {
         hp-=args.damage;
+		// TODO:
+		// Play Hurtanimation
+		// Play Hurtsound
+		// Refresh Healthbar-UI
+		// GameObject-That-Is-The-Healthbar.Value = Mathf.Max(hp - args.damage, 0)
         if (hp <= 0)
         {
-            Destroy(gameObject);
+			// TODO:
+			// PlayDeathSound
+			// Show text "You died"
+			// Start coroutine with 3 seconds ..
+			//.. then reload the current scene automatically
+			StartCoroutine(DelayedReloadScene(3f));
+			
+			
+            //Destroy(gameObject);
         }
         countdown = damageTime;
         Vector3 incoming = args.direction;
@@ -65,5 +80,11 @@ public class CharacterStatus : MonoBehaviour {
         move.enabled = false;
         body.velocity = new Vector3(0, 0, 0);
         body.AddForce(force * args.force, ForceMode.Impulse);
+    }
+	
+	IEnumerator DelayedReloadScene(float TimeToWait)
+    {
+        yield return new WaitForSeconds(TimeToWait);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

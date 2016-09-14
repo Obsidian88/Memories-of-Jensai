@@ -10,7 +10,7 @@ public class LoadingHandler : MonoBehaviour {
     public Texture2D emptyProgressBar;
 	public Texture2D fullProgressBar;
 	
-	private string levelname = "Scene1";
+	private string levelname = "CharacterAnimationTester";
 
     private AsyncOperation async = null;
 	//private int resolution = 0;

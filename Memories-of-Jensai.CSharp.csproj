@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\CharacterCustomization\ClothHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\EyecolorHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\HaircutHandler.cs" />
+    <Compile Include="Assets\Scripts\CharacterCustomization\RemoveMenu.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\SkincolorHandler.cs" />
     <Compile Include="Assets\Scripts\DayNight\GUI_ShowTime.cs" />
     <Compile Include="Assets\Scripts\DayNight\GameTime.cs" />
@@ -91,13 +92,14 @@
     <Compile Include="Assets\Scripts\DayNight2\AutoIntensity.cs" />
     <Compile Include="Assets\Scripts\DayNight2\LightWall.cs" />
     <Compile Include="Assets\Scripts\DayNight2\SetSunLight.cs" />
-    <Compile Include="Assets\Scripts\GUI\ButtonAudioClick.cs" />
     <Compile Include="Assets\Scripts\GUI\CameraHandler.cs" />
     <Compile Include="Assets\Scripts\GUI\CameraZoomHandler.cs" />
+    <Compile Include="Assets\Scripts\GUI\GUIAudio\ButtonAudioClick.cs" />
+    <Compile Include="Assets\Scripts\GUI\GUIAudio\GeneralAudio.cs" />
+    <Compile Include="Assets\Scripts\GUI\GUIAudio\SliderAudioClick.cs" />
     <Compile Include="Assets\Scripts\GUI\Menu.cs" />
-    <Compile Include="Assets\Scripts\GUI\SliderAudioClick.cs" />
-    <Compile Include="Assets\Scripts\GUI\UIAudio.cs" />
     <Compile Include="Assets\Scripts\General\ColorConverter.cs" />
+    <Compile Include="Assets\Scripts\General\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\General\RecalculateCubeTexture.cs" />
     <Compile Include="Assets\Scripts\Scene\ApplyDamage.cs" />
     <Compile Include="Assets\Scripts\Scene\BorderController.cs" />

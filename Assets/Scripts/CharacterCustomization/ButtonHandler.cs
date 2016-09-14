@@ -124,7 +124,7 @@ public class ButtonHandler : MonoBehaviour {
         PlayerPrefs.SetFloat("SkincolorG", TempG);
         PlayerPrefs.SetFloat("HSkincolorB", TempB);
 
-        StaticData.currentLevel = "Scene1";
+        StaticData.currentLevel = "CharacterAnimationTester";
         SceneManager.LoadScene("LoadingScreen");
     }
 
@@ -137,7 +137,7 @@ public class ButtonHandler : MonoBehaviour {
         //Cloth.ClothLegsIndex = PlayerPrefs.GetInt("LegCloth");
         //Playersprite.color = new Color(PlayerPrefs.GetFloat("SkincolorR"), PlayerPrefs.GetFloat("SkincolorG"), PlayerPrefs.GetFloat("SkincolorB"));
 
-        StaticData.currentLevel = "Scene1";
+        StaticData.currentLevel = "CharacterAnimationTester";
         SceneManager.LoadScene("LoadingScreen");
     }
 
