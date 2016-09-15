@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -78,6 +72,7 @@
     <Compile Include="Assets\Environment\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioFootstep.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\ButtonHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\ClothHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\EyecolorHandler.cs" />
@@ -98,6 +93,7 @@
     <Compile Include="Assets\Scripts\GUI\GUIAudio\GeneralAudio.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\SliderAudioClick.cs" />
     <Compile Include="Assets\Scripts\GUI\Menu.cs" />
+    <Compile Include="Assets\Scripts\GUI\TextIdlePulseAnimation.cs" />
     <Compile Include="Assets\Scripts\General\ColorConverter.cs" />
     <Compile Include="Assets\Scripts\General\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\General\RecalculateCubeTexture.cs" />

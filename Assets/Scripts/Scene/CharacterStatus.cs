@@ -15,6 +15,8 @@ public class CharacterStatus : MonoBehaviour {
 
     private float countdown = 0;
 
+    public Animator HealthAnimator;
+
     // Use this for initialization
     void Start () {
         hp = Mathf.Min(hp, maxHp);
@@ -40,11 +42,13 @@ public class CharacterStatus : MonoBehaviour {
     void ApplyDamage(ApplyDamage.Parameter args)
     {
         hp-=args.damage;
-		// TODO:
-		// Play Hurtanimation
-		// Play Hurtsound
-		// Refresh Healthbar-UI
-		// GameObject-That-Is-The-Healthbar.Value = Mathf.Max(hp - args.damage, 0)
+
+        // Refresh Healthbar-UI
+        HealthAnimator.SetFloat("HealthBar", Mathf.Max(hp - args.damage, 0));
+        // TODO:
+        // Play Hurtanimation
+        // Play Hurtsound
+
         if (hp <= 0)
         {
 			// TODO:

@@ -3,5 +3,5 @@ using System.Collections;
 
 public class StaticData
 {
-	static public string currentLevel = "CharacterAnimationTester";    // Holds current Levelname
+	static public string LevelToLoad = "CharacterAnimationTester";    // Holds current Levelname
 }

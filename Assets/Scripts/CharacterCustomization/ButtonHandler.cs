@@ -14,13 +14,13 @@ public class ButtonHandler : MonoBehaviour {
     public Text EyecolorIndexText;   // Text that displays additional information of currently selected eyecolor (number / color)
     public EyecolorHandler Eye;      // Actual Eyecolor-gameObject
 
-    public ClothHandler Cloth;      // Actual Torso-gameObject
+    public ClothHandler Cloth;      // Actual Cloth-gameObject
     public Text ClothTorsoIndexText;// Text that displays additional information of currently selected torso-cloth (number)
     public Text ClothLegIndexText;  // Text that displays additional information of currently selected leg-cloth (number)
     
     public SkincolorHandler Skin;   // Actual Skincolor-gameObject
     
-    public GameObject Player;       // Actual Player-gameObject
+    public GameObject Player;       // Actual Player-gameObject (needed for skincolor)
     private SpriteRenderer Playersprite;
 
     public Slider HueSlider;
@@ -124,7 +124,7 @@ public class ButtonHandler : MonoBehaviour {
         PlayerPrefs.SetFloat("SkincolorG", TempG);
         PlayerPrefs.SetFloat("HSkincolorB", TempB);
 
-        StaticData.currentLevel = "CharacterAnimationTester";
+        StaticData.LevelToLoad = "CharacterAnimationTester";
         SceneManager.LoadScene("LoadingScreen");
     }
 
@@ -137,7 +137,7 @@ public class ButtonHandler : MonoBehaviour {
         //Cloth.ClothLegsIndex = PlayerPrefs.GetInt("LegCloth");
         //Playersprite.color = new Color(PlayerPrefs.GetFloat("SkincolorR"), PlayerPrefs.GetFloat("SkincolorG"), PlayerPrefs.GetFloat("SkincolorB"));
 
-        StaticData.currentLevel = "CharacterAnimationTester";
+        StaticData.LevelToLoad = "CharacterAnimationTester";
         SceneManager.LoadScene("LoadingScreen");
     }
 

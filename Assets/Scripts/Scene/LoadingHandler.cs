@@ -24,9 +24,9 @@ public class LoadingHandler : MonoBehaviour {
 		// case 0:
 		// Screen.SetResolution(ResolutionWidth, ResolutionHeight, ToggleFullscreen.isOn)
 		// }
-		if(StaticData.currentLevel != "")
+		if(StaticData.LevelToLoad != "")
 		{
-		levelname = StaticData.currentLevel;
+		levelname = StaticData.LevelToLoad;
 		}
         StartCoroutine(LoadScene(levelname));
     }

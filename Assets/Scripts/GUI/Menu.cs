@@ -131,7 +131,7 @@ public class Menu : MonoBehaviour
 	
 	public void LoadCustomization()
     {
-		StaticData.currentLevel = "Character Customization";
+		StaticData.LevelToLoad = "Character Customization";
         SceneManager.LoadScene("LoadingScreen");
     }
 
