@@ -9,6 +9,7 @@ public class CharacterStatus : MonoBehaviour {
     public int hp;
     public bool takingDamage = false;
     public float damageTime;
+    public string gender = "male"; // Needed for genderspecific soundeffects
 
     private Rigidbody body;
     private CharacterMovement move;
@@ -16,6 +17,7 @@ public class CharacterStatus : MonoBehaviour {
     private float countdown = 0;
 
     public Animator HealthAnimator;
+    public Image PanelDeath;
 
     // Use this for initialization
     void Start () {
@@ -45,21 +47,16 @@ public class CharacterStatus : MonoBehaviour {
 
         // Refresh Healthbar-UI
         HealthAnimator.SetFloat("HealthBar", Mathf.Max(hp - args.damage, 0));
-        // TODO:
-        // Play Hurtanimation
-        // Play Hurtsound
-
         if (hp <= 0)
         {
-			// TODO:
-			// PlayDeathSound
-			// Show text "You died"
-			// Start coroutine with 3 seconds ..
-			//.. then reload the current scene automatically
-			StartCoroutine(DelayedReloadScene(3f));
+            // Death-event //
+            // Increase corpsemass to prevent postmortem movement
+            // Show DeathUI, start countdown on DeathUI and reload scene on countdown
+            body.mass = 500000;
+            PanelDeath.gameObject.SetActive(true);
+            PanelDeath.GetComponentInChildren<IntegerCountdown>().StartCountdown();
+            StartCoroutine(DelayedReloadScene(8f));
 			
-			
-            //Destroy(gameObject);
         }
         countdown = damageTime;
         Vector3 incoming = args.direction;
@@ -85,8 +82,13 @@ public class CharacterStatus : MonoBehaviour {
         body.velocity = new Vector3(0, 0, 0);
         body.AddForce(force * args.force, ForceMode.Impulse);
     }
-	
-	IEnumerator DelayedReloadScene(float TimeToWait)
+
+    public void PlayDeathSound()
+    {
+        //source.PlayOneShot(DeathSound, 1.0f);
+    }
+
+    IEnumerator DelayedReloadScene(float TimeToWait)
     {
         yield return new WaitForSeconds(TimeToWait);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

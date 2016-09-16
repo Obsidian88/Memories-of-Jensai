@@ -34,8 +34,6 @@ public class LoadingHandler : MonoBehaviour {
     // Updates once per frame
     void Update()
     {
-        loadingText.color = new Color(loadingText.color.r, loadingText.color.g, loadingText.color.b, Mathf.PingPong(Time.time, 1 - 0.5f) + 0.5f);
-        loadingText2.color = new Color(loadingText.color.r, loadingText.color.g, loadingText.color.b, Mathf.PingPong(Time.time, 1 - 0.5f) + 0.5f);
     }
 	
     // Progressbar.. maybe for later..

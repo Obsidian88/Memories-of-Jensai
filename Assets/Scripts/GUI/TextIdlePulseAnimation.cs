@@ -8,14 +8,19 @@ using UnityEngine.UI;
 public class TextIdlePulseAnimation : MonoBehaviour {
 
     public Text[] TextsToAnimate;
-	public float AnimationSpeed = 0.5f;
+
+    [Tooltip("The higher the value the more subtle is the opacitychange")]
+    public float OpacityMultiplier = 0.8f;
+
+    [Tooltip("The higher the value the slower the transition")]
+    public float TimeMultiplier = 4f;
 	
     // Updates once per frame
     void Update()
     {
 		foreach(Text CurrentText in TextsToAnimate)
 		{
-        CurrentText.color = new Color(CurrentText.color.r, CurrentText.color.g, CurrentText.color.b, Mathf.PingPong(Time.time, 1 - AnimationSpeed) + AnimationSpeed);
+        CurrentText.color = new Color(CurrentText.color.r, CurrentText.color.g, CurrentText.color.b, Mathf.PingPong(Time.time / 2, 1 - OpacityMultiplier) + OpacityMultiplier);
 		}
     }
 }

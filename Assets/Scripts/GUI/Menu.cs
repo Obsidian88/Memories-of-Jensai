@@ -78,28 +78,40 @@ public class Menu : MonoBehaviour
     {
         MenuPanel.gameObject.SetActive(true);
         OutsideMask.gameObject.SetActive(true);
-        GridHandler.enabled = false;
+        if(GridHandler != null)
+        { 
+            GridHandler.enabled = false;
+        }
     }
 
     public void LoadOptions()
     {
         MenuPanel.gameObject.SetActive(false);
         OptionsPanel.gameObject.SetActive(true);
-        GridHandler.enabled = false;
+        if (GridHandler != null)
+        {
+            GridHandler.enabled = false;
+        }
     }
 
     public void LeaveOptions()
     {
         MenuPanel.gameObject.SetActive(true);
         OptionsPanel.gameObject.SetActive(false);
-        GridHandler.enabled = false;
+        if (GridHandler != null)
+        {
+            GridHandler.enabled = false;
+        }
     }
 
     public void LeaveMenu()
     {
         MenuPanel.gameObject.SetActive(false);
         OutsideMask.gameObject.SetActive(false);
-        GridHandler.enabled = true;
+        if (GridHandler != null)
+        {
+            GridHandler.enabled = true;
+        }
     }
 	
 	// What happens if you press Escape or F10 depending on currently opened menue..
@@ -132,6 +144,12 @@ public class Menu : MonoBehaviour
 	public void LoadCustomization()
     {
 		StaticData.LevelToLoad = "Character Customization";
+        SceneManager.LoadScene("LoadingScreen");
+    }
+
+    public void LoadScenes()
+    {
+        StaticData.LevelToLoad = "SceneManager";
         SceneManager.LoadScene("LoadingScreen");
     }
 
