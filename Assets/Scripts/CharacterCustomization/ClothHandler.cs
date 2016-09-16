@@ -9,8 +9,8 @@ public class ClothHandler : MonoBehaviour {
     public int ClothLegsIndex;
     public int ClothLegsIndexMax;
     
-    private string absolutePathForTorso = "Sprites/CharacterSprites/Customization/Clothes/Torso";
-    private string absolutePathForLegs = "Sprites/CharacterSprites/Customization/Clothes/Legs";
+    private string absolutePathForTorso = "Sprites/CharacterSprites/Legacy/Customization/Clothes/Torso";
+    private string absolutePathForLegs = "Sprites/CharacterSprites/Legacy/Customization/Clothes/Legs";
     private Sprite[] TorsoSprites;
     private Sprite[] LegSprites;
 

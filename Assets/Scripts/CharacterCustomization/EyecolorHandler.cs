@@ -7,7 +7,7 @@ public class EyecolorHandler : MonoBehaviour {
     public int EyecolorIndex;
     public int EyecolorIndexMax;
     
-    private string absolutePathForSprites = "Sprites/CharacterSprites/Customization/Eyecolors";
+    private string absolutePathForSprites = "Sprites/CharacterSprites/Legacy/Customization/Eyecolors";
     private Sprite[] EyeSprites;
 
     public SpriteRenderer Renderer;

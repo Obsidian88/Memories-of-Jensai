@@ -7,7 +7,7 @@ public class HaircutHandler : MonoBehaviour {
     public int HaircutIndex;
     public int HaircutIndexMax;
 
-    private string absolutePathForSprites = "Sprites/CharacterSprites/Customization/Haircuts";
+    private string absolutePathForSprites = "Sprites/CharacterSprites/Legacy/Customization/Haircuts";
     private Sprite[] HairSprites;
 
     public SpriteRenderer Renderer;

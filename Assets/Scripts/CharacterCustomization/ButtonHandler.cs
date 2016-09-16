@@ -124,7 +124,7 @@ public class ButtonHandler : MonoBehaviour {
         PlayerPrefs.SetFloat("SkincolorG", TempG);
         PlayerPrefs.SetFloat("HSkincolorB", TempB);
 
-        StaticData.LevelToLoad = "CharacterAnimationTester";
+        StaticData.LevelToLoad = "Prototype";
         SceneManager.LoadScene("LoadingScreen");
     }
 
