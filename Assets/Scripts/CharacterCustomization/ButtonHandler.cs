@@ -137,7 +137,7 @@ public class ButtonHandler : MonoBehaviour {
         //Cloth.ClothLegsIndex = PlayerPrefs.GetInt("LegCloth");
         //Playersprite.color = new Color(PlayerPrefs.GetFloat("SkincolorR"), PlayerPrefs.GetFloat("SkincolorG"), PlayerPrefs.GetFloat("SkincolorB"));
 
-        StaticData.LevelToLoad = "CharacterAnimationTester";
+        StaticData.LevelToLoad = "Prototype";
         SceneManager.LoadScene("LoadingScreen");
     }
 
