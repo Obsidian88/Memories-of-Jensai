@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -78,7 +72,6 @@
     <Compile Include="Assets\Environment\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
-    <Compile Include="Assets\IntegerCountdown.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioCharacter.cs" />
     <Compile Include="Assets\Scripts\Audio\SoundEngine.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\ButtonHandler.cs" />
@@ -111,6 +104,7 @@
     <Compile Include="Assets\Scripts\Scene\EnemyStatus.cs" />
     <Compile Include="Assets\Scripts\Scene\FireTile.cs" />
     <Compile Include="Assets\Scripts\Scene\GridHandler.cs" />
+    <Compile Include="Assets\Scripts\Scene\IntegerCountdown.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadingHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Scene\ReceiveShadows.cs" />
