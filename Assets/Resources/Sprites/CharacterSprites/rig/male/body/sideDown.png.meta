@@ -61,11 +61,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Shoulder
+    - serializedVersion: 2
+      name: Shoulder
       rect:
         serializedVersion: 2
         x: 210
@@ -75,15 +78,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.75748026, y: 0.33676183}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -48.475586, y: 56.375244}
-        - {x: -73.475586, y: 44.375244}
-        - {x: -73.475586, y: -24.624756}
-        - {x: -65.475586, y: -28.624756}
-        - {x: 12.524414, y: -28.624756}
-        - {x: 23.524414, y: -6.624756}
-        - {x: 23.524414, y: 56.375244}
-    - name: Head
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Head
       rect:
         serializedVersion: 2
         x: 1612
@@ -93,25 +91,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.09118505}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 45.5, y: 224.38611}
-        - {x: 36.5, y: 225.38611}
-        - {x: -21.5, y: 225.38611}
-        - {x: -44.5, y: 217.38611}
-        - {x: -78.5, y: 189.38611}
-        - {x: -91.5, y: 171.38611}
-        - {x: -104.5, y: 133.38611}
-        - {x: -104.5, y: 77.38611}
-        - {x: -87.5, y: 40.38611}
-        - {x: -70.5, y: 20.386108}
-        - {x: -58.5, y: 10.386108}
-        - {x: -45.5, y: 0.3861084}
-        - {x: -12.5, y: -22.613892}
-        - {x: 61.5, y: -22.613892}
-        - {x: 104.5, y: 7.3861084}
-        - {x: 104.5, y: 154.38611}
-        - {x: 89.5, y: 191.38611}
-    - name: UpperArm
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: UpperArm
       rect:
         serializedVersion: 2
         x: 199
@@ -121,18 +104,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.64760995, y: 0.8827683}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 25.124664, y: 18.398315}
-        - {x: 14.124664, y: 20.398315}
-        - {x: -43.875336, y: 20.398315}
-        - {x: -60.875336, y: -22.601685}
-        - {x: -60.875336, y: -146.60168}
-        - {x: -50.875336, y: -153.60168}
-        - {x: 1.1246643, y: -153.60168}
-        - {x: 8.124664, y: -143.60168}
-        - {x: 33.124664, y: -47.601685}
-        - {x: 33.124664, y: 1.3983154}
-    - name: Ear
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Ear
       rect:
         serializedVersion: 2
         x: 1542
@@ -142,15 +117,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.69600326, y: 0.49999756}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28.536133, y: 25.000122}
-        - {x: -28.536133, y: -5.999878}
-        - {x: -2.5361328, y: -24.999878}
-        - {x: 12.463867, y: -24.999878}
-        - {x: 12.463867, y: -9.999878}
-        - {x: 2.4638672, y: 20.000122}
-        - {x: -2.5361328, y: 25.000122}
-    - name: LowerArm
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LowerArm
       rect:
         serializedVersion: 2
         x: 196
@@ -160,18 +130,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.53854245, y: 0.8803395}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4.224945, y: 23.57312}
-        - {x: -23.775055, y: 23.57312}
-        - {x: -38.775055, y: 14.57312}
-        - {x: -38.775055, y: -135.42688}
-        - {x: -31.775055, y: -170.42688}
-        - {x: -19.775055, y: -173.42688}
-        - {x: 8.224945, y: -173.42688}
-        - {x: 27.224945, y: -157.42688}
-        - {x: 33.224945, y: -38.42688}
-        - {x: 33.224945, y: 3.57312}
-    - name: Neck
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Neck
       rect:
         serializedVersion: 2
         x: 1700
@@ -181,14 +143,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.47760323, y: 0.15060337}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -37.25305, y: 59.457764}
-        - {x: -37.25305, y: -10.542236}
-        - {x: 20.746948, y: -10.542236}
-        - {x: 40.74695, y: -8.542236}
-        - {x: 40.74695, y: 57.457764}
-        - {x: 31.746948, y: 59.457764}
-    - name: Hand
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Hand
       rect:
         serializedVersion: 2
         x: 192
@@ -198,17 +156,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5693766, y: 0.81415945}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 14.449875, y: 19.699097}
-        - {x: -25.550125, y: 19.699097}
-        - {x: -45.550125, y: -18.300903}
-        - {x: -45.550125, y: -64.3009}
-        - {x: -39.550125, y: -86.3009}
-        - {x: 21.449875, y: -86.3009}
-        - {x: 34.449875, y: -72.3009}
-        - {x: 34.449875, y: -4.3009033}
-        - {x: 31.449875, y: 10.699097}
-    - name: UpperBody
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: UpperBody
       rect:
         serializedVersion: 2
         x: 1659
@@ -218,17 +169,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5432443, y: 0.1963501}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -92.894775, y: 81.90369}
-        - {x: -92.894775, y: -27.096313}
-        - {x: 33.105225, y: -27.096313}
-        - {x: 78.105225, y: -22.096313}
-        - {x: 78.105225, y: 83.90369}
-        - {x: 77.105225, y: 95.90369}
-        - {x: 68.105225, y: 110.90369}
-        - {x: -21.894775, y: 110.90369}
-        - {x: -81.894775, y: 100.90369}
-    - name: UpperLeg
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: UpperLeg
       rect:
         serializedVersion: 2
         x: 468
@@ -238,28 +182,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.46509364, y: 0.86540073}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 34.05011, y: 37.822388}
-        - {x: -32.94989, y: 37.822388}
-        - {x: -56.94989, y: 17.822388}
-        - {x: -73.94989, y: -11.177612}
-        - {x: -73.94989, y: -86.17761}
-        - {x: -51.94989, y: -191.17761}
-        - {x: -35.94989, y: -237.17761}
-        - {x: -30.94989, y: -243.17761}
-        - {x: 8.05011, y: -243.17761}
-        - {x: 32.05011, y: -233.17761}
-        - {x: 73.05011, y: -58.177612}
-        - {x: 73.05011, y: -5.1776123}
-        - {x: 66.05011, y: 19.822388}
-      - - {x: 80.05011, y: 8.822388}
-        - {x: 80.05011, y: 5.8223877}
-        - {x: 82.05011, y: 3.8223877}
-        - {x: 84.05011, y: 3.8223877}
-        - {x: 85.05011, y: 4.8223877}
-        - {x: 85.05011, y: 9.822388}
-        - {x: 82.05011, y: 10.822388}
-    - name: Chest
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Chest
       rect:
         serializedVersion: 2
         x: 1670
@@ -269,17 +195,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.526505, y: 0.19817244}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 66.07007, y: 117.86865}
-        - {x: -53.92993, y: 117.86865}
-        - {x: -97.92993, y: 84.86865}
-        - {x: -97.92993, y: -29.131348}
-        - {x: -13.929932, y: -29.131348}
-        - {x: 68.07007, y: -18.131348}
-        - {x: 88.07007, y: 0.86865234}
-        - {x: 88.07007, y: 87.86865}
-        - {x: 87.07007, y: 101.86865}
-    - name: rig-45_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: rig-45_10
       rect:
         serializedVersion: 2
         x: 556
@@ -290,7 +209,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: LowerLeg
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LowerLeg
       rect:
         serializedVersion: 2
         x: 491
@@ -300,15 +221,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.4687066, y: 0.83946335}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -39.183594, y: 35.960205}
-        - {x: -42.183594, y: 34.960205}
-        - {x: -42.183594, y: -188.0398}
-        - {x: 29.816406, y: -188.0398}
-        - {x: 47.816406, y: -99.039795}
-        - {x: 47.816406, y: 10.960205}
-        - {x: 23.816406, y: 35.960205}
-    - name: LowerBody
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LowerBody
       rect:
         serializedVersion: 2
         x: 1659
@@ -318,25 +234,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5589693, y: 0.09960566}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 81.175415, y: 161.37769}
-        - {x: 70.175415, y: 171.37769}
-        - {x: 55.175415, y: 177.37769}
-        - {x: -27.824585, y: 177.37769}
-        - {x: -46.824585, y: 176.37769}
-        - {x: -81.824585, y: 165.37769}
-        - {x: -96.824585, y: 154.37769}
-        - {x: -110.824585, y: 119.377686}
-        - {x: -116.824585, y: 72.377686}
-        - {x: -116.824585, y: 17.377686}
-        - {x: -113.824585, y: 13.377686}
-        - {x: -57.824585, y: -18.622314}
-        - {x: -44.824585, y: -19.622314}
-        - {x: 37.175415, y: -19.622314}
-        - {x: 65.175415, y: -5.6223145}
-        - {x: 92.175415, y: 21.377686}
-        - {x: 92.175415, y: 75.377686}
-    - name: Foot
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Foot
       rect:
         serializedVersion: 2
         x: 476
@@ -346,21 +247,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.27872008, y: 0.78934425}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 37.979187, y: -113.24426}
-        - {x: 39.979187, y: -115.24426}
-        - {x: 53.979187, y: -115.24426}
-        - {x: 52.979187, y: -112.24426}
-        - {x: 45.979187, y: -110.24426}
-        - {x: 38.979187, y: -110.24426}
-      - - {x: -11.020813, y: 30.755737}
-        - {x: -39.020813, y: 11.755737}
-        - {x: -39.020813, y: -67.24426}
-        - {x: 10.979187, y: -111.24426}
-        - {x: 100.97919, y: -111.24426}
-        - {x: 100.97919, y: -46.244263}
-        - {x: 60.979187, y: 30.755737}
-    - name: Hip
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Hip
       rect:
         serializedVersion: 2
         x: 1648
@@ -370,16 +260,8 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.62694895, y: 0.2792603}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 74.9209, y: 80.57912}
-        - {x: -52.0791, y: 96.57912}
-        - {x: -128.0791, y: 96.57912}
-        - {x: -146.0791, y: 69.57912}
-        - {x: -146.0791, y: -37.420883}
-        - {x: 23.920898, y: -37.420883}
-        - {x: 86.9209, y: -4.420883}
-        - {x: 86.9209, y: 74.57912}
-        - {x: 85.9209, y: 76.57912}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 
