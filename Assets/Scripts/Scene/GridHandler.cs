@@ -9,6 +9,7 @@ public class GridHandler : MonoBehaviour {
     public GameObject[] tiles;
     public Vector2[] positions;
     public float offset;
+    public float yoffset;
     public Vector2 dimensions;
     public float scale;
     public float channel;
@@ -127,9 +128,9 @@ public class GridHandler : MonoBehaviour {
                     Vector2 topcorner;
                     topcorner.x = -((scale * dimensions.x) / 2) + scale / 2;
                     topcorner.y = -offset - scale / 2;
-                    tile.transform.localPosition = new Vector3(topcorner.x + scale * pos.x, tile.transform.localPosition.y, topcorner.y - scale * pos.y);
+                    tile.transform.localPosition = new Vector3(topcorner.x + scale * pos.x, 0, topcorner.y - scale * pos.y);
                     tile.transform.localRotation = new Quaternion(0, 0, 0, 0);
-                    tile.transform.localScale = new Vector3(scale, transform.localScale.y, scale);
+                    tile.transform.localScale = new Vector3(scale, 1, scale);
                 }
                 active = true;
             }
