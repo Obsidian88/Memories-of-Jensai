@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ade428203db4b1d4286a4fe1a2c3ef04
-timeCreated: 1472998140
+timeCreated: 1475782050
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -19,6 +19,7 @@ TextureImporter:
     21300024: LowerBody
     21300026: Foot
     21300028: Hip
+    21300030: LegJoint
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -262,6 +263,19 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
+    - serializedVersion: 2
+      name: LegJoint
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 984
+        width: 149
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7653763}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
