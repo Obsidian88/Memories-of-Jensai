@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 049d06e7a9a39814ea6c62593593204f
-timeCreated: 1476107510
+timeCreated: 1476138493
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,13 +9,12 @@ TextureImporter:
     21300004: stoneborders_4
     21300006: stoneborders_5
     21300008: stoneborders_6
-    21300010: stoneborders_7
-    21300012: stoneborders_8
-    21300014: stoneborders_9
-    21300016: stoneborders_10
-    21300018: stoneborders_11
-    21300020: stoneborders_15
-    21300022: stoneborders_17
+    21300010: stoneborders_9
+    21300012: stoneborders_11
+    21300014: stoneborders_17
+    21300016: stoneborders_18
+    21300018: stoneborders_20
+    21300020: stoneborders_21
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,8 +52,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.44274953, y: 0.56516784}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -68,10 +67,10 @@ TextureImporter:
       name: stoneborders_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 875
-        width: 454
-        height: 151
+        x: 90
+        y: 1563
+        width: 437
+        height: 140
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -81,10 +80,10 @@ TextureImporter:
       name: stoneborders_2
       rect:
         serializedVersion: 2
-        x: 659
-        y: 885
-        width: 116
-        height: 142
+        x: 668
+        y: 1574
+        width: 97
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -94,10 +93,10 @@ TextureImporter:
       name: stoneborders_4
       rect:
         serializedVersion: 2
-        x: 975
-        y: 861
-        width: 730
-        height: 217
+        x: 985
+        y: 1545
+        width: 716
+        height: 207
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -108,9 +107,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 98
-        y: 566
+        y: 1246
         width: 422
-        height: 213
+        height: 211
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,38 +119,12 @@ TextureImporter:
       name: stoneborders_6
       rect:
         serializedVersion: 2
-        x: 592
-        y: 578
-        width: 385
-        height: 179
+        x: 631
+        y: 1258
+        width: 328
+        height: 166
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: stoneborders_7
-      rect:
-        serializedVersion: 2
-        x: 828
-        y: 754
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: stoneborders_8
-      rect:
-        serializedVersion: 2
-        x: 511
-        y: 698
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -159,25 +132,12 @@ TextureImporter:
       name: stoneborders_9
       rect:
         serializedVersion: 2
-        x: 1151
-        y: 495
-        width: 249
-        height: 258
+        x: 1150
+        y: 1187
+        width: 250
+        height: 246
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: stoneborders_10
-      rect:
-        serializedVersion: 2
-        x: 509
-        y: 628
-        width: 10
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -186,24 +146,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1571
-        y: 469
-        width: 273
-        height: 154
+        y: 1155
+        width: 275
+        height: 149
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: stoneborders_15
-      rect:
-        serializedVersion: 2
-        x: 1636
-        y: 627
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -211,10 +158,49 @@ TextureImporter:
       name: stoneborders_17
       rect:
         serializedVersion: 2
-        x: 90
-        y: 65
+        x: 73
+        y: 895
         width: 1935
-        height: 158
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: stoneborders_18
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 293
+        width: 781
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: stoneborders_20
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 323
+        width: 907
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: stoneborders_21
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 1884
+        height: 244
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
