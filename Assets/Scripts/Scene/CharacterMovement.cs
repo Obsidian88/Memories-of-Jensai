@@ -36,7 +36,7 @@ public class CharacterMovement : MonoBehaviour
         if (cooldown<=0)
         {
             if (dash > 0) { 
-                if (!Dash && moveHorizontal + moveVertical != 0)
+                if (!Dash && System.Math.Abs(moveHorizontal) + System.Math.Abs(moveVertical) != 0)
                 {
                     Dash = true;
                     duration = DashTime;
