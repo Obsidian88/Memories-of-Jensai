@@ -6,7 +6,7 @@ Shader "Sprites/Bumped Diffuse with Shadows"
 		_BumpMap ("Normalmap", 2D) = "bump" {}
 		_Color ("Tint", Color) = (1,1,1,1)
 		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
-				_Cutoff ("Alpha Cutoff", Range (0,1)) = 0.5
+				_Cutoff ("Shadow Alpha Cutoff", Range (0,1)) = 0.5
 
 	}
 
@@ -15,7 +15,7 @@ Shader "Sprites/Bumped Diffuse with Shadows"
 		Tags
 		{ 
 			"Queue"="Transparent" 
-			"IgnoreProjector"="True" 
+			"IgnoreProjector"="False" 
 			"RenderType"="TransparentCutOut" 
 			"PreviewType"="Plane"
 			"CanUseSpriteAtlas"="True"
@@ -33,6 +33,7 @@ Shader "Sprites/Bumped Diffuse with Shadows"
 		CGPROGRAM
 		#pragma surface surf Lambert alpha vertex:vert addshadow alphatest:_Cutoff 
 		#pragma multi_compile DUMMY PIXELSNAP_ON 
+		
 
 		sampler2D _MainTex;
 		sampler2D _BumpMap;
