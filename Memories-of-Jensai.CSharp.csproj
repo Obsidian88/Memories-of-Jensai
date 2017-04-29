@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\Scene\RespawnHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\SortingLayer.cs" />
     <Compile Include="Assets\Scripts\Scene\TorchAI.cs" />
+    <Compile Include="Assets\TriggerDoorDust.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
