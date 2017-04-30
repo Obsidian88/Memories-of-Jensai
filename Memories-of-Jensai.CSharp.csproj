@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\CharacterCustomization\HaircutHandler.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\RemoveMenu.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\SkincolorHandler.cs" />
+    <Compile Include="Assets\Scripts\Environment\TriggerDoorDust.cs" />
     <Compile Include="Assets\Scripts\GUI\CameraHandler.cs" />
     <Compile Include="Assets\Scripts\GUI\CameraZoomHandler.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\ButtonAudioClick.cs" />
@@ -112,7 +113,6 @@
     <Compile Include="Assets\Scripts\Scene\RespawnHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\SortingLayer.cs" />
     <Compile Include="Assets\Scripts\Scene\TorchAI.cs" />
-    <Compile Include="Assets\TriggerDoorDust.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
@@ -120,9 +120,9 @@
     <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Scripts\Scene\Shader\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Scripts\Scene\Shader\SpriteShadow.shader" />
     <None Include="Assets\Scripts\Scene\Shader\Sprites-BumpedDiffuse.shader" />
-    <None Include="Assets\Scripts\Scene\Shader\TestShader.shader" />
     <None Include="Assets\Scripts\Scene\Shader\TestShader2.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
