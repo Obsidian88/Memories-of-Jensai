@@ -21,7 +21,7 @@ public class ButtonHandler : MonoBehaviour {
     public SkincolorHandler Skin;   // Actual Skincolor-gameObject
     
     public GameObject Player;       // Actual Player-gameObject (needed for skincolor)
-    private SpriteRenderer Playersprite;
+    private SpriteRenderer[] PlayerSpriteRenderer; // Needed to cycle through the whole rig and change all SpriteRenderers' colors at once
 
     public Slider HueSlider;
     public Text HueText;
@@ -42,12 +42,11 @@ public class ButtonHandler : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Playersprite = Player.GetComponent<SpriteRenderer>();
         ColorConverter Converter = GetComponent<ColorConverter>(); // Used for conversions of RGB to HSV (Unity uses RGB - HSV is better for manipulating)
 
         Hair.LoadHairCuts();
         Eye.LoadEyeColors();
-        Skin.LoadSkinColors();
+        Skin.LoadSkinColors(new Color(1f, 1f, 1f));
         Cloth.LoadTorsoCloth();
         Cloth.LoadLegCloth();
 
@@ -67,7 +66,7 @@ public class ButtonHandler : MonoBehaviour {
         if (PlayerPrefs.HasKey("SkincolorR") && PlayerPrefs.HasKey("SkincolorG") && PlayerPrefs.HasKey("SkincolorB"))
         {
             Color color = new Color(PlayerPrefs.GetFloat("SkincolorR"), PlayerPrefs.GetFloat("SkincolorG"), PlayerPrefs.GetFloat("SkincolorB"));
-            Playersprite.color = color;
+            Skin.LoadSkinColors(color);
             float h, s, v;
 
             Converter.ColorToHSV(color, out h, out s, out v);
@@ -96,7 +95,7 @@ public class ButtonHandler : MonoBehaviour {
         else
         {
             Debug.Log("Skincolor could not be found and a standard one was taken.");
-            Playersprite.color = new Color(1f, 1f, 1f);
+            Skin.LoadSkinColors(new Color(1f, 1f, 1f));
             HueText.text = "Hue: " + "0";
             SatText.text = "Saturation: " + "0.00";
             ValText.text = "Lightness: " + "1.00";
@@ -266,10 +265,11 @@ public class ButtonHandler : MonoBehaviour {
     public void changeSkinColor() // Is called when a slider changes
     {
         ColorConverter Converter = GetComponent<ColorConverter>();
-        Playersprite.color = Converter.ColorFromHSV(HueSlider.value, SatSlider.value, ValSlider.value, 1f);
-        TempR = Playersprite.color.r;
-        TempG = Playersprite.color.g;
-        TempB = Playersprite.color.b;
+        var changedColor = Converter.ColorFromHSV(HueSlider.value, SatSlider.value, ValSlider.value, 1f);
+        Skin.LoadSkinColors(changedColor);
+        TempR = changedColor.r;
+        TempG = changedColor.g;
+        TempB = changedColor.b;
 
         // Refresh textvalues..
         HueText.text = "Hue: " + (Mathf.Round(HueSlider.value * 1f) / 1f).ToString();
