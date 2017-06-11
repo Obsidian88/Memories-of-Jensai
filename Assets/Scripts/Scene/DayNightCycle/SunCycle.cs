@@ -128,7 +128,11 @@ public class SunCycle : MonoBehaviour {
         TextTimeMultiplierStatus.text = "Timemultiplier: " + Mathf.Floor(SkySpeed) + " (press R/F)";
 
         // Transform the star-objects (stars, sun and moon)
-        Stars.playbackSpeed = SkySpeed;
+        //        Stars.playbackSpeed = SkySpeed;
+       // Stars.main.simulationSpeed = 
+        var main = Stars.main;
+        main.simulationSpeed = SkySpeed;
+        //Stars.simulationSpeed = SkySpeed;
         StarConstellation.transform.rotation = transform.rotation;
 	}
 
@@ -146,9 +150,10 @@ public class SunCycle : MonoBehaviour {
         }
         ParticleSystem.Particle[] Particles = new ParticleSystem.Particle[Stars.particleCount];
         Stars.GetParticles(Particles);
-        Color32 c = Particles[1].GetCurrentColor(Stars); // doesnt work somehow .. need to check again, for now 124, 210, 204 is hardcoded
+        // Color32 c = Particles[1].GetCurrentColor(Stars); // doesnt work somehow .. need to check again, for now 124, 210, 204 is hardcoded
 
-        Stars.startColor = new Color(124, 210, 204, alpha);
+        var main = Stars.main;
+        main.startColor = new Color(124, 210, 204, alpha);
     }
 
     IEnumerator SkyboxExposureUp()

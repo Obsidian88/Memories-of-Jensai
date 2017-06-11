@@ -293,16 +293,16 @@ public class ButtonHandler : MonoBehaviour {
     
     public void randomize() // Need a randomize-button for people that don't care about selection
     {
-        TempHaircut = Random.Range(0, (Hair.HaircutIndexMax));
+        Hair.HaircutIndex = Random.Range(0, (Hair.HaircutIndexMax));
         HaircutIndexText.text = FillUpDigit(Hair.HaircutIndex + 1) + "/" + FillUpDigit(Hair.HaircutIndexMax);
 
-        TempEyecolor = Random.Range(0, (Eye.EyecolorIndexMax));
+        Eye.EyecolorIndex = Random.Range(0, (Eye.EyecolorIndexMax));
         EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);
 
-        TempTorso = Random.Range(0, (Cloth.ClothTorsoIndexMax));
+        Cloth.ClothTorsoIndex = Random.Range(0, (Cloth.ClothTorsoIndexMax));
         ClothTorsoIndexText.text = FillUpDigit(Cloth.ClothTorsoIndex + 1) + "/" + FillUpDigit(Cloth.ClothTorsoIndexMax);
 
-        TempLegs = Random.Range(0, (Cloth.ClothLegsIndexMax));
+        Cloth.ClothLegsIndex = Random.Range(0, (Cloth.ClothLegsIndexMax));
         ClothLegIndexText.text = FillUpDigit(Cloth.ClothLegsIndex + 1) + "/" + FillUpDigit(Cloth.ClothLegsIndexMax);
 
         HueSlider.value = Random.Range(-90f, 90f);
