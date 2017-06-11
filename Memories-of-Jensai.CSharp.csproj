@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\Environment\TriggerDoorDust.cs" />
     <Compile Include="Assets\Scripts\GUI\CameraHandler.cs" />
     <Compile Include="Assets\Scripts\GUI\CameraZoomHandler.cs" />
+    <Compile Include="Assets\Scripts\GUI\FadeScript.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\ButtonAudioClick.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\GeneralAudio.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\SliderAudioClick.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\Scripts\Scene\FireTile.cs" />
     <Compile Include="Assets\Scripts\Scene\GridHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\IntegerCountdown.cs" />
+    <Compile Include="Assets\Scripts\Scene\IntroHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadingHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Scene\ReceiveShadows.cs" />

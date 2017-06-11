@@ -20,7 +20,7 @@ public class TextIdlePulseAnimation : MonoBehaviour {
     {
 		foreach(Text CurrentText in TextsToAnimate)
 		{
-        CurrentText.color = new Color(CurrentText.color.r, CurrentText.color.g, CurrentText.color.b, Mathf.PingPong(Time.time / 2, 1 - OpacityMultiplier) + OpacityMultiplier);
+        CurrentText.color = new Color(CurrentText.color.r, CurrentText.color.g, CurrentText.color.b, Mathf.PingPong(Time.time / TimeMultiplier, 1 - OpacityMultiplier) + OpacityMultiplier);
 		}
     }
 }
