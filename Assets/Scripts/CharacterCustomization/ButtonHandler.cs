@@ -38,6 +38,8 @@ public class ButtonHandler : MonoBehaviour {
     private float TempG;
     private float TempB;
 
+    private bool ClothToggled = false;
+
     // Use this for initialization
     void Start () {
         Playersprite = Player.GetComponent<SpriteRenderer>();
@@ -319,6 +321,31 @@ public class ButtonHandler : MonoBehaviour {
         else
         {
             return "0" + input.ToString();
+        }
+    }
+
+    public void ToggleCloth()
+    {
+        var Torso = GameObject.Find("TorsoSprite");
+        var Legs = GameObject.Find("LegSprite");
+        var currentColorT = Torso.GetComponent<SpriteRenderer>().color;
+        var currentColorL = Legs.GetComponent<SpriteRenderer>().color;
+
+        if (ClothToggled == false)
+        {
+            Color newColor = new Color(currentColorT.r, currentColorT.g, currentColorT.b, 0);
+            Torso.GetComponent<SpriteRenderer>().color = newColor;
+            newColor = new Color(currentColorL.r, currentColorL.g, currentColorL.b, 0);
+            Legs.GetComponent<SpriteRenderer>().color = newColor;
+            ClothToggled = true;
+        }
+        else if (ClothToggled == true)
+        {
+            Color newColor = new Color(currentColorT.r, currentColorT.g, currentColorT.b, 100);
+            Torso.GetComponent<SpriteRenderer>().color = newColor;
+            newColor = new Color(currentColorL.r, currentColorL.g, currentColorL.b, 100);
+            Legs.GetComponent<SpriteRenderer>().color = newColor;
+            ClothToggled = false;
         }
     }
 
