@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 70dbf32b155e3bd4e8bf50dbd4f1c0d5
-timeCreated: 1497290575
+timeCreated: 1497302461
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -23,13 +23,13 @@ TextureImporter:
     21300032: orb_3
     21300034: orb_4
     21300036: clockFace
-    21300038: leave_9
+    21300038: handle
     21300040: vine
     21300042: treeRoot_4
     21300044: treeRoot_5
-    21300046: leave_10
+    21300046: leave_9
     21300048: orb_5
-    21300050: leave_11
+    21300050: leave_10
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -156,7 +156,7 @@ TextureImporter:
         width: 123
         height: 127
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -182,7 +182,7 @@ TextureImporter:
         width: 122
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -195,7 +195,7 @@ TextureImporter:
         width: 358
         height: 721
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -312,7 +312,7 @@ TextureImporter:
         width: 124
         height: 122
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -325,7 +325,7 @@ TextureImporter:
         width: 123
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -338,12 +338,12 @@ TextureImporter:
         width: 127
         height: 134
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: leave_9
+      name: handle
       rect:
         serializedVersion: 2
         x: 2603
@@ -395,7 +395,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: leave_10
+      name: leave_9
       rect:
         serializedVersion: 2
         x: 2331
@@ -421,10 +421,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: leave_11
+      name: leave_10
       rect:
         serializedVersion: 2
-        x: 2327
+        x: 2324
         y: 221
         width: 51
         height: 54
