@@ -4,30 +4,24 @@ using UnityEngine.UI;
 
 public class SkincolorHandler : MonoBehaviour {
 
-    public SpriteRenderer Renderer;
+    public GameObject Player;
+    public SpriteRenderer[] PlayerSpriteRenderer;
 
     // Use this for initialization
     void Start () {
-        LoadSkinColors();
+        
     }
     
     // Update is called once per frame
     void Update () {
     }
-
-    public void LoadSkinColors()
+    
+    public void LoadSkinColors(Color newColor)
     {
-        if (PlayerPrefs.HasKey("SkincolorR") && PlayerPrefs.HasKey("SkincolorG") && PlayerPrefs.HasKey("SkincolorB"))
-        {
-            Renderer.color = new Color(PlayerPrefs.GetFloat("SkincolorR"),PlayerPrefs.GetFloat("SkincolorG"),PlayerPrefs.GetFloat("SkincolorB"));
-        }
-        else
-        {
-            Debug.Log("Skincolor could not be found and a standard one was taken.");
-            Renderer.color = new Color(1f, 1f, 1f);
-            PlayerPrefs.SetFloat("SkincolorR", 1f);
-            PlayerPrefs.SetFloat("SkincolorG", 1f);
-            PlayerPrefs.SetFloat("SkincolorB", 1f);
-        }
+    PlayerSpriteRenderer = Player.GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer Renderer in PlayerSpriteRenderer)
+            {
+                Renderer.color = newColor;
+            }
     }
 }

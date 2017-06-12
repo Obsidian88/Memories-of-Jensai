@@ -21,7 +21,7 @@ public class ButtonHandler : MonoBehaviour {
     public SkincolorHandler Skin;   // Actual Skincolor-gameObject
     
     public GameObject Player;       // Actual Player-gameObject (needed for skincolor)
-    private SpriteRenderer Playersprite;
+    private SpriteRenderer[] PlayerSpriteRenderer; // Needed to cycle through the whole rig and change all SpriteRenderers' colors at once
 
     public Slider HueSlider;
     public Text HueText;
@@ -38,14 +38,15 @@ public class ButtonHandler : MonoBehaviour {
     private float TempG;
     private float TempB;
 
+    private bool ClothToggled = false;
+
     // Use this for initialization
     void Start () {
-        Playersprite = Player.GetComponent<SpriteRenderer>();
         ColorConverter Converter = GetComponent<ColorConverter>(); // Used for conversions of RGB to HSV (Unity uses RGB - HSV is better for manipulating)
 
         Hair.LoadHairCuts();
         Eye.LoadEyeColors();
-        Skin.LoadSkinColors();
+        Skin.LoadSkinColors(new Color(1f, 1f, 1f));
         Cloth.LoadTorsoCloth();
         Cloth.LoadLegCloth();
 
@@ -65,7 +66,7 @@ public class ButtonHandler : MonoBehaviour {
         if (PlayerPrefs.HasKey("SkincolorR") && PlayerPrefs.HasKey("SkincolorG") && PlayerPrefs.HasKey("SkincolorB"))
         {
             Color color = new Color(PlayerPrefs.GetFloat("SkincolorR"), PlayerPrefs.GetFloat("SkincolorG"), PlayerPrefs.GetFloat("SkincolorB"));
-            Playersprite.color = color;
+            Skin.LoadSkinColors(color);
             float h, s, v;
 
             Converter.ColorToHSV(color, out h, out s, out v);
@@ -94,7 +95,7 @@ public class ButtonHandler : MonoBehaviour {
         else
         {
             Debug.Log("Skincolor could not be found and a standard one was taken.");
-            Playersprite.color = new Color(1f, 1f, 1f);
+            Skin.LoadSkinColors(new Color(1f, 1f, 1f));
             HueText.text = "Hue: " + "0";
             SatText.text = "Saturation: " + "0.00";
             ValText.text = "Lightness: " + "1.00";
@@ -264,10 +265,11 @@ public class ButtonHandler : MonoBehaviour {
     public void changeSkinColor() // Is called when a slider changes
     {
         ColorConverter Converter = GetComponent<ColorConverter>();
-        Playersprite.color = Converter.ColorFromHSV(HueSlider.value, SatSlider.value, ValSlider.value, 1f);
-        TempR = Playersprite.color.r;
-        TempG = Playersprite.color.g;
-        TempB = Playersprite.color.b;
+        var changedColor = Converter.ColorFromHSV(HueSlider.value, SatSlider.value, ValSlider.value, 1f);
+        Skin.LoadSkinColors(changedColor);
+        TempR = changedColor.r;
+        TempG = changedColor.g;
+        TempB = changedColor.b;
 
         // Refresh textvalues..
         HueText.text = "Hue: " + (Mathf.Round(HueSlider.value * 1f) / 1f).ToString();
@@ -293,16 +295,16 @@ public class ButtonHandler : MonoBehaviour {
     
     public void randomize() // Need a randomize-button for people that don't care about selection
     {
-        TempHaircut = Random.Range(0, (Hair.HaircutIndexMax));
+        Hair.HaircutIndex = Random.Range(0, (Hair.HaircutIndexMax));
         HaircutIndexText.text = FillUpDigit(Hair.HaircutIndex + 1) + "/" + FillUpDigit(Hair.HaircutIndexMax);
 
-        TempEyecolor = Random.Range(0, (Eye.EyecolorIndexMax));
+        Eye.EyecolorIndex = Random.Range(0, (Eye.EyecolorIndexMax));
         EyecolorIndexText.text = FillUpDigit(Eye.EyecolorIndex + 1) + "/" + FillUpDigit(Eye.EyecolorIndexMax);
 
-        TempTorso = Random.Range(0, (Cloth.ClothTorsoIndexMax));
+        Cloth.ClothTorsoIndex = Random.Range(0, (Cloth.ClothTorsoIndexMax));
         ClothTorsoIndexText.text = FillUpDigit(Cloth.ClothTorsoIndex + 1) + "/" + FillUpDigit(Cloth.ClothTorsoIndexMax);
 
-        TempLegs = Random.Range(0, (Cloth.ClothLegsIndexMax));
+        Cloth.ClothLegsIndex = Random.Range(0, (Cloth.ClothLegsIndexMax));
         ClothLegIndexText.text = FillUpDigit(Cloth.ClothLegsIndex + 1) + "/" + FillUpDigit(Cloth.ClothLegsIndexMax);
 
         HueSlider.value = Random.Range(-90f, 90f);
@@ -319,6 +321,31 @@ public class ButtonHandler : MonoBehaviour {
         else
         {
             return "0" + input.ToString();
+        }
+    }
+
+    public void ToggleCloth()
+    {
+        var Torso = GameObject.Find("TorsoSprite");
+        var Legs = GameObject.Find("LegSprite");
+        var currentColorT = Torso.GetComponent<SpriteRenderer>().color;
+        var currentColorL = Legs.GetComponent<SpriteRenderer>().color;
+
+        if (ClothToggled == false)
+        {
+            Color newColor = new Color(currentColorT.r, currentColorT.g, currentColorT.b, 0);
+            Torso.GetComponent<SpriteRenderer>().color = newColor;
+            newColor = new Color(currentColorL.r, currentColorL.g, currentColorL.b, 0);
+            Legs.GetComponent<SpriteRenderer>().color = newColor;
+            ClothToggled = true;
+        }
+        else if (ClothToggled == true)
+        {
+            Color newColor = new Color(currentColorT.r, currentColorT.g, currentColorT.b, 100);
+            Torso.GetComponent<SpriteRenderer>().color = newColor;
+            newColor = new Color(currentColorL.r, currentColorL.g, currentColorL.b, 100);
+            Legs.GetComponent<SpriteRenderer>().color = newColor;
+            ClothToggled = false;
         }
     }
 
