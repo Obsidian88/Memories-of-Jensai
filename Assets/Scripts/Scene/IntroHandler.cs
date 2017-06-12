@@ -12,10 +12,12 @@ public class IntroHandler : MonoBehaviour {
     //private int ObjectIndex = 0;
     //private int ObjectLength;
 
-    public VideoPlayer video;
+    public VideoPlayer video1;
+    public VideoPlayer video2;
+    public VideoPlayer video3;
     public GameObject text;
     private Text textcomponent;
-    private bool oneShot = false;
+    private bool cancelling = false;
 
     // Use this for initialization
     void Start () {
@@ -24,24 +26,87 @@ public class IntroHandler : MonoBehaviour {
         //Debug.Log("Length: " + ObjectLength);
         //GameObjectsToAnimate[ObjectIndex].SetActive(true);
         //StartCoroutine(Wait(Duration, ObjectIndex));
+        StartCoroutine(PlayVideoUntilLoop());
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+    // Update is called once per frame
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.Escape) && cancelling == false)
         {
-            cancelIntro();
+            cancelling = true;
+            StartCoroutine(PlayVideoAfterLoop());
+            // cancelIntro();
         }
-        if(!video.isPlaying && oneShot == false) //!video.isPlaying
+        if (Input.GetKeyDown(KeyCode.Space) && cancelling == false)
         {
-            oneShot = true;
-            text.SetActive(true);
-            StartCoroutine(Spass());
+            cancelling = true;
+            StartCoroutine(PlayVideoAfterLoop());
+            //cancelIntro();
         }
-        if (Input.GetKeyDown(KeyCode.Space) && oneShot)
+    }
+
+    IEnumerator PlayVideoUntilLoop()
+    {
+        video1.url = "Assets/Resources/Videos/MainTitleStart.mp4";
+        video1.Play();
+        video2.url = "Assets/Resources/Videos/MainTitleMiddleLoop.mp4";
+        video2.Prepare();
+
+        while (video1.isPlaying)
         {
-            cancelIntro();
+            yield return null;
         }
+        //video1.Stop();
+
+        video2.isLooping = true;
+        video2.Play();
+        video3.url = "Assets/Resources/Videos/MainTitleEnd.mp4";
+        video3.Prepare();
+    }
+
+    IEnumerator PlayVideoAfterLoop()
+    {
+        video2.isLooping = false;
+        while (video2.isPlaying)
+        {
+            yield return null;
+        }
+        video2.Stop();
+        video3.Play();
+        while (video3.isPlaying)
+        {
+            yield return null;
+        }
+        video3.Stop();
+        StaticData.LevelToLoad = "Prototype";
+        SceneManager.LoadScene("LoadingScreen");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    void cancelIntro()
+    {
+    }
+
+    void videoFinished(UnityEngine.Video.VideoPlayer vp)
+        {
+        vp.Stop();
+        text.SetActive(true);
+        StartCoroutine(Spass());
+        vp.url = "Assets/Resources/Videos/MainTitleMiddleLoop.mp4";
+        vp.Play();
     }
 
     IEnumerator Spass()
@@ -54,11 +119,7 @@ public class IntroHandler : MonoBehaviour {
         }
     }
 
-    void cancelIntro()
-    { 
-        StaticData.LevelToLoad = "Prototype";
-        SceneManager.LoadScene("LoadingScreen");
-    }
+
 
     //IEnumerator Wait(float duration, int index)
     //{
