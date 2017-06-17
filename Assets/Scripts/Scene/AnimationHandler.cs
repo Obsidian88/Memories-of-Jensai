@@ -112,8 +112,8 @@ public class AnimationHandler : MonoBehaviour {
             }
         }
 
-        // Space to continue from title on
-        if (Input.GetKeyDown(KeyCode.Space) && !Continue && inLoop)
+        // Space / leftMouse to continue from title on
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !Continue && inLoop)
         {
             Continue = true;
             PlayContinueSound();
