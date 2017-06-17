@@ -1,11 +1,9 @@
- using System;
- using System.Collections.Generic;
- using System.IO;
- using UnityEngine;
- using Debug = UnityEngine.Debug;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+using Debug = UnityEngine.Debug;
 using System.Linq;
-
-
 
 namespace Assets.Scenes.Scripts
 {
@@ -14,6 +12,7 @@ namespace Assets.Scenes.Scripts
     /// </summary>
     public static class Game
     {
+        private static bool showDebugMessages = false;  // Used to turn on and off the debug in the Unity DebugLog
 
         private static string[] ScenesToBeIgnored = new string[] {"LoadingScreen", "SceneManager"};
 
@@ -83,14 +82,14 @@ namespace Assets.Scenes.Scripts
                     {
                         string dataPath = Application.dataPath;
 
-                        Debug.Log(string.Format("Data path detected at '{0}'.", dataPath));
+                        if (showDebugMessages) { Debug.Log(string.Format("Data path detected at '{0}'.", dataPath)); }
 
                         directory = Path.Combine(dataPath ?? string.Empty, BUILD_LEVELS_FILE_DIRECTORY);
                     }
 
                     _levels = ReadLevelsFile(directory);
 
-                    Debug.Log(string.Format("Discovered level names: {0}.", string.Join(", ", _levels)));
+                    if (showDebugMessages) { Debug.Log(string.Format("Discovered level names: {0}.", string.Join(", ", _levels))); }
                 }
 
                 return _levels;
@@ -123,7 +122,7 @@ namespace Assets.Scenes.Scripts
         /// </summary>
         public static void Pause()
         {
-            Debug.Log("Game pausing.");
+            if (showDebugMessages) { Debug.Log("Game pausing."); }
 
             // Pause the game and indicate that the game is actually paused.
             _previousTimeScale = Time.timeScale;
@@ -136,7 +135,7 @@ namespace Assets.Scenes.Scripts
                 @object.BroadcastMessage(ON_GAME_PAUSED_EVENT, SendMessageOptions.DontRequireReceiver);
             }
 
-            Debug.Log(String.Format("Game paused on Time.TimeScale = {0}.", Time.timeScale));
+            if (showDebugMessages) { Debug.Log(String.Format("Game paused on Time.TimeScale = {0}.", Time.timeScale)); }
         }
 
         /// <summary>
@@ -144,7 +143,7 @@ namespace Assets.Scenes.Scripts
         /// </summary>
         public static void Resume()
         {
-            Debug.Log("Game resuming.");
+            if (showDebugMessages) { Debug.Log("Game resuming."); }
 
             // Indicate that the game is unpaused. Should anyone check this value, it would be in the game resume event, which is called just before the game is
             // actually resumed.
@@ -159,7 +158,7 @@ namespace Assets.Scenes.Scripts
             // Unpause the game.
             Time.timeScale = _previousTimeScale;
 
-            Debug.Log(String.Format("Game resumed on Time.TimeScale = {0}.", Time.timeScale));
+            if (showDebugMessages) { Debug.Log(String.Format("Game resumed on Time.TimeScale = {0}.", Time.timeScale)); }
         }
         #endregion
 
@@ -175,7 +174,10 @@ namespace Assets.Scenes.Scripts
         {
             const string DATA_FOLDER = "{0}_Data";
 
-            Debug.Log(string.Format("Post-processing build '{0}' at '{1}'.", target, pathToBuiltProject));
+            if (showDebugMessages)
+            {
+                Debug.Log(string.Format("Post-processing build '{0}' at '{1}'.", target, pathToBuiltProject));
+            }
 
             // The file name is integrated in some folder/file names of the built game. It may be needed to create references to these dynamic folders/files.
             string fileName = Path.GetFileNameWithoutExtension(pathToBuiltProject);
@@ -184,11 +186,11 @@ namespace Assets.Scenes.Scripts
                                                                 string.Format(DATA_FOLDER, fileName)),
                                                   BUILD_LEVELS_FILE_DIRECTORY);
 
-            Debug.Log(string.Format("Detected levels file directory '{0}'.", buildDirectory));
+                if (showDebugMessages) {Debug.Log(string.Format("Detected levels file directory '{0}'.", buildDirectory)); }
 
             WriteLevelsFile(buildDirectory);
 
-            Debug.Log("Post-processed build.");
+                if (showDebugMessages) { Debug.Log("Post-processed build."); }
         }
 
         /// <summary>
@@ -198,14 +200,20 @@ namespace Assets.Scenes.Scripts
         [UnityEditor.Callbacks.PostProcessScene]
         public static void PostProcessScene()
         {
-            Debug.Log("Post-processing scene.");
+            if (showDebugMessages)
+            {
+                Debug.Log("Post-processing scene.");
+            }
 
             if (!_hasUpdatedLevelsFile)
             {
                 // Only write a levels file if we're in the editor. If not, the PostProcessBuild method will do this, because the PostProcessScene is called for all scenes.
                 if (Application.isEditor)
                 {
-                    Debug.Log(string.Format("Detected editor, writing levels file to '{0}'.", EDITOR_LEVELS_FILE_DIRECTORY));
+                        if (showDebugMessages)
+                        {
+                            Debug.Log(string.Format("Detected editor, writing levels file to '{0}'.", EDITOR_LEVELS_FILE_DIRECTORY));
+                        }
 
                     WriteLevelsFile(EDITOR_LEVELS_FILE_DIRECTORY);
                     _hasUpdatedLevelsFile = true;
@@ -213,10 +221,10 @@ namespace Assets.Scenes.Scripts
             }
             else
             {
-                Debug.Log("Already updated levels file.");
+                        if (showDebugMessages){ Debug.Log("Already updated levels file."); }
             }
 
-            Debug.Log("Post-processed scene.");
+                        if (showDebugMessages){ Debug.Log("Post-processed scene."); }
         }
 
         /// <summary>
@@ -241,13 +249,16 @@ namespace Assets.Scenes.Scripts
                         levelNames.Add(name);
                     }
 
-                    Debug.Log(string.Format("Detected level at '{0}' with name '{1}'.", buildSettingsScene.path, name));
+                    if (showDebugMessages){ Debug.Log(string.Format("Detected level at '{0}' with name '{1}'.", buildSettingsScene.path, name)); }
                 }
             }
 
             string path = Path.Combine(directory, LEVEL_FILE_NAME);
 
-            Debug.Log(string.Format("Writing levels file to '{0}'.", path));
+            if (showDebugMessages)
+            {
+                Debug.Log(string.Format("Writing levels file to '{0}'.", path));
+            }
 
             // Write the names of all levels to a file, so that it can be retrieved when running.
             using (FileStream stream = File.Open(path, FileMode.Create, FileAccess.Write))
@@ -272,7 +283,10 @@ namespace Assets.Scenes.Scripts
         {
             string path = Path.Combine(directory, LEVEL_FILE_NAME);
 
-            Debug.Log(string.Format("Reading levels file from '{0}'.", path));
+            if (showDebugMessages)
+            {
+                Debug.Log(string.Format("Reading levels file from '{0}'.", path));
+            }
 
             List<string> levelNames = new List<string>();
 
@@ -293,7 +307,7 @@ namespace Assets.Scenes.Scripts
             }
             else
             {
-                Debug.LogWarning("Levels file does not exist, no level names available at run-time.");
+                if (showDebugMessages) { Debug.LogWarning("Levels file does not exist, no level names available at run-time."); }
             }
 
             return levelNames.ToArray();
