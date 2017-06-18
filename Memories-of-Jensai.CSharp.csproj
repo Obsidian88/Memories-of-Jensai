@@ -96,6 +96,8 @@
     <Compile Include="Assets\Scripts\CharacterCustomization\RemoveMenu.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomization\SkincolorHandler.cs" />
     <Compile Include="Assets\Scripts\Environment\TriggerDoorDust.cs" />
+    <Compile Include="Assets\Scripts\Environment\WindDirection.cs" />
+    <Compile Include="Assets\Scripts\Environment\leafAnimation.cs" />
     <Compile Include="Assets\Scripts\GUI\CameraHandler.cs" />
     <Compile Include="Assets\Scripts\GUI\CameraZoomHandler.cs" />
     <Compile Include="Assets\Scripts\GUI\FadeScript.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="Assets\Scripts\Scene\IntegerCountdown.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadingHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Scene\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Scene\ReceiveShadows.cs" />
     <Compile Include="Assets\Scripts\Scene\RespawnHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\SortingLayer.cs" />
