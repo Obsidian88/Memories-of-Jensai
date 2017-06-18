@@ -18,6 +18,7 @@ public class CharacterStatus : MonoBehaviour {
 
     public Animator HealthAnimator;
     public Image PanelDeath;
+    public Slider healthSlider;
 
     // Use this for initialization
     void Start () {
@@ -47,6 +48,7 @@ public class CharacterStatus : MonoBehaviour {
 
         // Refresh Healthbar-UI
         HealthAnimator.SetFloat("HealthBar", Mathf.Max(hp - args.damage, 0));
+        healthSlider.value = Mathf.Max(hp - args.damage, 0);
         if (hp <= 0)
         {
             // Death-event //
