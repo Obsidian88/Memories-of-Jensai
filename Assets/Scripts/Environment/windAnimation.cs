@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class leafAnimation : MonoBehaviour
+public class windAnimation : MonoBehaviour
 {
     private Animator anim;
     private WindDirection wind;
