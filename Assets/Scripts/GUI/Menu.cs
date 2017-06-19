@@ -6,6 +6,10 @@ using System;
 
 public class Menu : MonoBehaviour
 {
+    private bool enableDebug = false;
+
+    public Canvas MenuCanvas;
+
     // Used for menu UI
     private int ResolutionWidth = 1920;
     private int ResolutionHeight = 1080;
@@ -46,7 +50,8 @@ public class Menu : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		// Set all menues initially to invisible (just in case)
+        // Set all menues initially to invisible (just in case)
+        MenuCanvas.gameObject.SetActive(false);
         MenuPanel.gameObject.SetActive(false);
         OptionsPanel.gameObject.SetActive(false);
         OutsideMask.gameObject.SetActive(false);
@@ -66,7 +71,7 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.F10))
         {
-			ToggleMenues();
+            ToggleMenues();
 		}
     }
 
@@ -76,6 +81,7 @@ public class Menu : MonoBehaviour
 	// MENU
     public void LoadMenu()
     {
+        MenuCanvas.gameObject.SetActive(true);
         MenuPanel.gameObject.SetActive(true);
         OutsideMask.gameObject.SetActive(true);
         if(GridHandler != null)
@@ -86,6 +92,7 @@ public class Menu : MonoBehaviour
 
     public void LoadOptions()
     {
+        MenuCanvas.gameObject.SetActive(true);
         MenuPanel.gameObject.SetActive(false);
         OptionsPanel.gameObject.SetActive(true);
         if (GridHandler != null)
@@ -96,6 +103,7 @@ public class Menu : MonoBehaviour
 
     public void LeaveOptions()
     {
+        MenuCanvas.gameObject.SetActive(true);
         MenuPanel.gameObject.SetActive(true);
         OptionsPanel.gameObject.SetActive(false);
         if (GridHandler != null)
@@ -106,6 +114,7 @@ public class Menu : MonoBehaviour
 
     public void LeaveMenu()
     {
+        MenuCanvas.gameObject.SetActive(false);
         MenuPanel.gameObject.SetActive(false);
         OutsideMask.gameObject.SetActive(false);
         if (GridHandler != null)
@@ -168,13 +177,13 @@ public class Menu : MonoBehaviour
         {
             PlayerPrefs.SetInt("GraphicsVsync", 0);
             QualitySettings.vSyncCount = 0;
-            Debug.Log("Graphics: vSync was deactivated");
+            if (enableDebug) { Debug.Log("Graphics: vSync was deactivated"); }
         }
         else if (QualitySettings.vSyncCount == 0)
         {
             PlayerPrefs.SetInt("GraphicsVsync", 1);
             QualitySettings.vSyncCount = 1;
-            Debug.Log("Graphics: vSync was activated");
+            if (enableDebug) { Debug.Log("Graphics: vSync was activated"); }
         }
     }
 
@@ -184,13 +193,13 @@ public class Menu : MonoBehaviour
         {
             PlayerPrefs.SetInt("GraphicsAniso", 0);
             QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
-            Debug.Log("Graphics: Anisotropic Filtering was disabled");
+            if (enableDebug) { Debug.Log("Graphics: Anisotropic Filtering was disabled"); }
         }
         else if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.Disable)
         {
             PlayerPrefs.SetInt("GraphicsAniso", 1);
             QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
-            Debug.Log("Graphics: Anisotropic Filtering was enabled");
+            if (enableDebug) { Debug.Log("Graphics: Anisotropic Filtering was enabled"); }
         }
 
     }
@@ -201,13 +210,13 @@ public class Menu : MonoBehaviour
         {
             PlayerPrefs.SetInt("GraphicsTriple", 0);
             QualitySettings.maxQueuedFrames = 2;
-            Debug.Log("Graphics: Tripple Buffering was disabled");
+            if (enableDebug) { Debug.Log("Graphics: Tripple Buffering was disabled"); }
         }
         else if (QualitySettings.maxQueuedFrames == 2)
         {
             PlayerPrefs.SetInt("GraphicsTriple", 1);
             QualitySettings.maxQueuedFrames = 3;
-            Debug.Log("Graphics: Tripple Buffering was enabled");
+            if (enableDebug) { Debug.Log("Graphics: Tripple Buffering was enabled"); }
         }
     }
 
@@ -249,13 +258,13 @@ public class Menu : MonoBehaviour
         {
             PlayerPrefs.SetInt("GraphicsFullscreen", 1);
             Screen.SetResolution(ResolutionWidth, ResolutionHeight, true);
-            Debug.Log("Graphics: Fullscreen was set to true");
+            if(enableDebug) { Debug.Log("Graphics: Fullscreen was set to true"); }
         }
         else if (ToggleFullscreen.isOn == false)
         {
             PlayerPrefs.SetInt("GraphicsFullscreen", 0);
             Screen.SetResolution(ResolutionWidth, ResolutionHeight, false);
-            Debug.Log("Graphics: Fullscreen was set to false");
+            if(enableDebug) { Debug.Log("Graphics: Fullscreen was set to false"); }
         }
     }
 
@@ -286,28 +295,28 @@ public class Menu : MonoBehaviour
             ResolutionWidth = 1920;
             ResolutionHeight = 1080;
 			PlayerPrefs.SetInt("GraphicsResolution", 0);
-            Debug.Log("Graphics: Resolution set to 1080p");
+            if(enableDebug) { Debug.Log("Graphics: Resolution set to 1080p"); }
         }
         else if (DropdownResolution.value == 1)
         {
             ResolutionWidth = 1280;
             ResolutionHeight = 720;
 			PlayerPrefs.SetInt("GraphicsResolution", 1);
-            Debug.Log("Graphics: Resolution set to 720p");
+            if(enableDebug) { Debug.Log("Graphics: Resolution set to 720p"); }
         }
         else if (DropdownResolution.value == 2)
         {
             ResolutionWidth = 640;
             ResolutionHeight = 480;
 			PlayerPrefs.SetInt("GraphicsResolution", 2);
-            Debug.Log("Graphics: Resolution set to 480p");
+            if(enableDebug) { Debug.Log("Graphics: Resolution set to 480p"); }
         }
         else
         {
             ResolutionWidth = 1280;
             ResolutionHeight = 720;
 			PlayerPrefs.SetInt("GraphicsResolution", 1);
-            Debug.Log("Graphics: Resolution set to standard (720p)");
+            if(enableDebug) { Debug.Log("Graphics: Resolution set to standard (720p)"); }
         }
         Screen.SetResolution(ResolutionWidth, ResolutionHeight, ToggleFullscreen.isOn);
     }
@@ -316,7 +325,7 @@ public class Menu : MonoBehaviour
 	{
         PlayerPrefs.SetInt("GraphicsQuality", DropdownQuality.value);
         QualitySettings.SetQualityLevel(DropdownQuality.value, false);
-        Debug.Log("Graphics: Renderquality was set to " + QualitySettings.GetQualityLevel());
+        if (enableDebug) { Debug.Log("Graphics: Renderquality was set to " + QualitySettings.GetQualityLevel()); }
 	}
 	
 	public void ChangeRefreshrate()
@@ -325,19 +334,19 @@ public class Menu : MonoBehaviour
         {
             PlayerPrefs.SetInt("GraphicsRefreshrate", 0);
             Screen.SetResolution(ResolutionWidth, ResolutionHeight, ToggleFullscreen.isOn, 60);
-            Debug.Log("Graphics: Refreshrate is now 60Hz");
+            if (enableDebug) { Debug.Log("Graphics: Refreshrate is now 60Hz"); }
         }
         else if (DropdownRefreshrate.value == 1)
         {
             PlayerPrefs.SetInt("GraphicsRefreshrate", 1);
             Screen.SetResolution(ResolutionWidth, ResolutionHeight, ToggleFullscreen.isOn, 120);
-            Debug.Log("Graphics: Refreshrate is now 120Hz");
+            if (enableDebug) { Debug.Log("Graphics: Refreshrate is now 120Hz"); }
         }
         else
         {
             PlayerPrefs.SetInt("GraphicsRefreshrate", 0);
             Screen.SetResolution(ResolutionWidth, ResolutionHeight, ToggleFullscreen.isOn, 60);
-            Debug.Log("Graphics: Refreshrate is now standard (60Hz)");
+            if (enableDebug) { Debug.Log("Graphics: Refreshrate is now standard (60Hz)"); }
         }
     }
 
@@ -346,27 +355,27 @@ public class Menu : MonoBehaviour
         if(DropdownAntialiasing.value == 0)
         {
             QualitySettings.antiAliasing = 0;
-            Debug.Log("Graphics: Antialiasing is now disabled");
+            if (enableDebug) { Debug.Log("Graphics: Antialiasing is now disabled"); }
         }
         else if(DropdownAntialiasing.value == 1)
         {
             QualitySettings.antiAliasing = 2;
-            Debug.Log("Graphics: Antialiasing is 2x");
+            if (enableDebug) { Debug.Log("Graphics: Antialiasing is 2x"); }
         }
         else if (DropdownAntialiasing.value == 2)
         {
             QualitySettings.antiAliasing = 4;
-            Debug.Log("Graphics: Antialiasing is 4x");
+            if (enableDebug) { Debug.Log("Graphics: Antialiasing is 4x"); }
         }
         else if (DropdownAntialiasing.value == 3)
         {
             QualitySettings.antiAliasing = 8;
-            Debug.Log("Graphics: Antialiasing is 8x");
+            if (enableDebug) { Debug.Log("Graphics: Antialiasing is 8x"); }
         }
         else
         {
             QualitySettings.antiAliasing = 0;
-            Debug.Log("Graphics: Antialiasing is now standard (disabled)");
+            if (enableDebug) { Debug.Log("Graphics: Antialiasing is now standard (disabled)"); }
         }
         PlayerPrefs.SetInt("GraphicsAntialiasing", DropdownAntialiasing.value);
     }

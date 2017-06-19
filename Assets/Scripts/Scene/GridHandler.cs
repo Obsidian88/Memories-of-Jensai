@@ -116,7 +116,8 @@ public class GridHandler : MonoBehaviour {
             destroyChildren();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        // Needs to be triggered through GUI
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (!active & !channeling)
             {

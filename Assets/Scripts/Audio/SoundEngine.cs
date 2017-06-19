@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class SoundEngine : MonoBehaviour
 {
+
+    private bool enableDebug = false;
     public Text CurrentlyPlaying;
 
     private string absolutePathMusic = "Audio/Soundtrack";
@@ -82,7 +84,10 @@ public class SoundEngine : MonoBehaviour
                     break;
                 default:
                     currentRegion = "Suntower_Day";
-                    Debug.LogWarning("Invalid scenename: Scene '" + currentScene + "' could not be found.");
+                    if (enableDebug)
+                    {
+                    Debug.LogWarning("Audio: Invalid scenename: Scene '" + currentScene + "' could not be found.");
+                    }
                     break;
             }
 
@@ -93,10 +98,13 @@ public class SoundEngine : MonoBehaviour
             ambientClips = Resources.LoadAll <AudioClip> (absolutePathAmbient);
 
             // Debug
+            if(enableDebug)
+            { 
             Debug.Log("Audioclips (Music) were loaded from " + absolutePathMusic);
             Debug.Log("Amount of music clips: " + musicClips.Length);
             Debug.Log("Audioclips (Ambient) were loaded from " + absolutePathAmbient);
             Debug.Log("Amount of ambient clips: " + ambientClips.Length);
+            }
     }
 
     private int PlayMusic()
@@ -111,7 +119,10 @@ public class SoundEngine : MonoBehaviour
     private int PlayAmbient()
     {
         int clipToPlay = Random.Range(0, ambientClips.Length);
-        Debug.Log("Last Ambient was: " + lastAmbient);
+        if (enableDebug)
+        {
+            Debug.Log("Last Ambient was: " + lastAmbient);
+        }
         if (audioAmbient1.isPlaying)
         {
             audioAmbient2.clip = ambientClips[clipToPlay];

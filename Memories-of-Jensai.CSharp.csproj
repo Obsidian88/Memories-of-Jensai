@@ -104,9 +104,11 @@
     <Compile Include="Assets\Scripts\GUI\GUIAudio\ButtonAudioClick.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\GeneralAudio.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\SliderAudioClick.cs" />
+    <Compile Include="Assets\Scripts\GUI\GuiButtonHandler.cs" />
     <Compile Include="Assets\Scripts\GUI\Menu.cs" />
     <Compile Include="Assets\Scripts\GUI\SceneManagement.cs" />
     <Compile Include="Assets\Scripts\GUI\TextIdlePulseAnimation.cs" />
+    <Compile Include="Assets\Scripts\GUI\UIDrag.cs" />
     <Compile Include="Assets\Scripts\General\ColorConverter.cs" />
     <Compile Include="Assets\Scripts\General\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\General\RecalculateCubeTexture.cs" />

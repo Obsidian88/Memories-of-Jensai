@@ -3,6 +3,8 @@ using System.Collections;
 
 public class DontDestroyOnLoad : MonoBehaviour {
 
+    // being used on GameObject "PanelMenu"
+
 	// Use this for initialization
 	void Start () {
 	
