@@ -18,7 +18,13 @@ public class CharacterStatus : MonoBehaviour {
 
     public Animator HealthAnimator;
     public Image PanelDeath;
-    public Slider healthSlider;
+    public Image Healthbar;
+    public Text Healthbartext;
+
+    public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
+    public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
+    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
+    bool damaged;                                               // True when the player gets damaged.
 
     // Use this for initialization
     void Start () {
@@ -40,15 +46,33 @@ public class CharacterStatus : MonoBehaviour {
             move.enabled = true;
             takingDamage = false;
         }
-	}
+
+        // If the player has just been damaged...
+        if (damaged)
+        {
+            // ... set the colour of the damageImage to the flash colour.
+            damageImage.color = flashColour;
+        }
+        // Otherwise...
+        else
+        {
+            // ... transition the colour back to clear.
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+
+        // Reset the damaged flag.
+        damaged = false;
+    }
 
     void ApplyDamage(ApplyDamage.Parameter args)
     {
+        damaged = true;
         hp-=args.damage;
 
         // Refresh Healthbar-UI
         HealthAnimator.SetFloat("HealthBar", Mathf.Max(hp - args.damage, 0));
-        healthSlider.value = Mathf.Max(hp - args.damage, 0);
+        Healthbar.fillAmount = ((float)(hp - args.damage)) / 100f;
+        Healthbartext.text = "Health " + ((float)(hp - args.damage)).ToString() + " / " + maxHp.ToString();
         if (hp <= 0)
         {
             // Death-event //
