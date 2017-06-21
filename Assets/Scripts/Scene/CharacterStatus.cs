@@ -71,7 +71,10 @@ public class CharacterStatus : MonoBehaviour {
 
         // Refresh Healthbar-UI
         HealthAnimator.SetFloat("HealthBar", Mathf.Max(hp - args.damage, 0));
-        Healthbar.fillAmount = ((float)(hp - args.damage)) / 100f;
+
+        float damagedHealth = ((float)(hp - args.damage)) / 100f;
+        StartCoroutine(DecreaseHealthbarOverTime(damagedHealth));
+       
         Healthbartext.text = "Health " + ((float)(hp - args.damage)).ToString() + " / " + maxHp.ToString();
         if (hp <= 0)
         {
@@ -112,6 +115,17 @@ public class CharacterStatus : MonoBehaviour {
     public void PlayDeathSound()
     {
         //source.PlayOneShot(DeathSound, 1.0f);
+    }
+
+    // Make the healthbar loose health gradually over time
+    IEnumerator DecreaseHealthbarOverTime(float damagedHealth)
+    {
+        int Speedratio = 1; // Higher values make a faster healthbar-animation
+        while (Healthbar.fillAmount > damagedHealth)
+        {
+            Healthbar.fillAmount = Mathf.Lerp(Healthbar.fillAmount, damagedHealth-0.1f, Speedratio * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     IEnumerator DelayedReloadScene(float TimeToWait)
