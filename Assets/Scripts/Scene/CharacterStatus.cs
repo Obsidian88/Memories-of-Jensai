@@ -70,7 +70,7 @@ public class CharacterStatus : MonoBehaviour {
         hp-=args.damage;
 
         // Refresh Healthbar-UI
-        HealthAnimator.SetFloat("HealthBar", Mathf.Max(hp - args.damage, 0));
+        //HealthAnimator.SetFloat("HealthBar", Mathf.Max(hp - args.damage, 0));
 
         float damagedHealth = ((float)(hp - args.damage)) / 100f;
         StartCoroutine(DecreaseHealthbarOverTime(damagedHealth));
