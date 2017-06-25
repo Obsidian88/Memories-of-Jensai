@@ -103,6 +103,9 @@
     <Compile Include="Assets\Scripts\GUI\DragMe.cs" />
     <Compile Include="Assets\Scripts\GUI\DragPanel.cs" />
     <Compile Include="Assets\Scripts\GUI\DropMe.cs" />
+    <Compile Include="Assets\Scripts\GUI\ExplorationDetailsClose.cs" />
+    <Compile Include="Assets\Scripts\GUI\ExplorationDetailsRemain.cs" />
+    <Compile Include="Assets\Scripts\GUI\ExplorationDetailsShow.cs" />
     <Compile Include="Assets\Scripts\GUI\FadeScript.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\ButtonAudioClick.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\GeneralAudio.cs" />
@@ -113,6 +116,7 @@
     <Compile Include="Assets\Scripts\GUI\SceneManagement.cs" />
     <Compile Include="Assets\Scripts\GUI\TextIdlePulseAnimation.cs" />
     <Compile Include="Assets\Scripts\GUI\UIDrag.cs" />
+    <Compile Include="Assets\Scripts\GUI\Wiggle.cs" />
     <Compile Include="Assets\Scripts\General\ColorConverter.cs" />
     <Compile Include="Assets\Scripts\General\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\General\RecalculateCubeTexture.cs" />
@@ -149,6 +153,9 @@
     <None Include="Assets\Resources\Audio\Sounds\soundpack\readme_EN.txt" />
     <None Include="Assets\Resources\Audio\Sounds\soundpack\readme_JP.txt" />
     <None Include="Assets\Scripts\Scene\Shader\GlassStainedBumpDistort.shader" />
+    <None Include="Assets\Scripts\Scene\Shader\Sprite-Outline.shader" />
+    <None Include="Assets\Scripts\Scene\Shader\Sprite-Outline2.shader" />
+    <None Include="Assets\Scripts\Scene\Shader\Sprite-Outline3.shader" />
     <None Include="Assets\Scripts\Scene\Shader\SpriteShadow.shader" />
     <None Include="Assets\Scripts\Scene\Shader\Sprites-BumpedDiffuse.shader" />
     <None Include="Assets\Scripts\Scene\Shader\TestShader2.shader" />
