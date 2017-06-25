@@ -85,7 +85,6 @@ public class CharacterStatus : MonoBehaviour {
             PanelDeath.gameObject.SetActive(true);
             PanelDeath.GetComponentInChildren<IntegerCountdown>().StartCountdown();
             StartCoroutine(DelayedReloadScene(8f));
-			
         }
         countdown = damageTime;
         Vector3 incoming = args.direction;

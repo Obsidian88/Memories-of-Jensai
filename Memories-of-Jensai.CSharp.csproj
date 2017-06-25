@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\GUI\GUIAudio\GeneralAudio.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIAudio\SliderAudioClick.cs" />
     <Compile Include="Assets\Scripts\GUI\GuiButtonHandler.cs" />
+    <Compile Include="Assets\Scripts\GUI\Item.cs" />
     <Compile Include="Assets\Scripts\GUI\Menu.cs" />
     <Compile Include="Assets\Scripts\GUI\ResizePanel.cs" />
     <Compile Include="Assets\Scripts\GUI\SceneManagement.cs" />
