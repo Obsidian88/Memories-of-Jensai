@@ -26,8 +26,12 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 		m_DraggingIcons[eventData.pointerId].transform.SetAsLastSibling();
 
         var image = m_DraggingIcons[eventData.pointerId].AddComponent<Image>();
-		// Icontransparency
-		image.color = new Color(image.color.r, image.color.g, image.color.b, 0.5f);
+
+        // Resize the dragging-shadow-icon to a dimension of 80 / 80
+        m_DraggingIcons[eventData.pointerId].GetComponent<RectTransform>().sizeDelta = new Vector2(80f, 80f);
+
+        // Icontransparency
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 0.5f);
 
 		// The icon will be under the cursor.
 		// We want it to be ignored by the event system.
@@ -35,7 +39,7 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 		group.blocksRaycasts = false;
 
 		image.sprite = GetComponent<Image>().sprite;
-		image.SetNativeSize();
+		//image.SetNativeSize();
 		
 		if (dragOnSurfaces)
 			m_DraggingPlanes[eventData.pointerId] = transform as RectTransform;
@@ -60,20 +64,21 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 		Vector3 globalMousePos;
 		if (RectTransformUtility.ScreenPointToWorldPointInRectangle(m_DraggingPlanes[eventData.pointerId], eventData.position, eventData.pressEventCamera, out globalMousePos))
 		{
-			rt.position = globalMousePos;
-			rt.rotation = m_DraggingPlanes[eventData.pointerId].rotation;
+            // Drag the icon at the top left corner of the icon
+			rt.position = new Vector3(globalMousePos.x + 20, globalMousePos.y - 20, globalMousePos.z);
+            rt.rotation = m_DraggingPlanes[eventData.pointerId].rotation;
 		}
 	}
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
-		if (m_DraggingIcons[eventData.pointerId] != null)
-			Destroy(m_DraggingIcons[eventData.pointerId]);
+        if (m_DraggingIcons[eventData.pointerId] != null)
+            Destroy(m_DraggingIcons[eventData.pointerId]);
 
-		m_DraggingIcons[eventData.pointerId] = null;
-	}
+        m_DraggingIcons[eventData.pointerId] = null;
+    }
 
-	static public T FindInParents<T>(GameObject go) where T : Component
+    static public T FindInParents<T>(GameObject go) where T : Component
 	{
 		if (go == null) return null;
 		var comp = go.GetComponent<T>();

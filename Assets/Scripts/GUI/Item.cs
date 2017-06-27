@@ -47,17 +47,44 @@ public class Item : MonoBehaviour
 
     public void OnMouseDown()
     {
-        source.PlayOneShot(ItemPickupSound);
-
         foreach (Image slot in BagSlots)
         {
-            if(slot.gameObject.transform.parent.name == "Slot")
+            if (slot.gameObject.transform.parent.name == "Slot")
             {
+                // Item is already there
+                if (slot.sprite.name == gameObject.GetComponent<SpriteRenderer>().sprite.name && !pickedUp)
+                {
+                    pickedUp = true;
+                    source.PlayOneShot(ItemPickupSound);
+
+                    Text text = slot.gameObject.GetComponentInChildren<Text>();
+                    
+                    // Increment textcount with +1
+                    int x = -1;
+                    if (Int32.TryParse(text.text, out x))
+                    {
+                        text.text = (x+1).ToString();
+                    }
+                }
+            }
+        }
+        foreach (Image slot in BagSlots)
+        {
+            if (slot.gameObject.transform.parent.name == "Slot")
+            {
+                // Item is not there, take first free slot (free = background)
                 if (slot.sprite.name == "Background" && !pickedUp)
                 {
                     slot.sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
                     slot.color = new Color(1f, 1f, 1f, 1f);
+
                     pickedUp = true;
+                    source.PlayOneShot(ItemPickupSound);
+
+                    Text text = slot.gameObject.GetComponentInChildren<Text>(true);
+                    text.text = "1";
+                    //GameObject textObject = text.gameObject;
+                    //textObject.SetActive(true);
                 }
             }
         }
