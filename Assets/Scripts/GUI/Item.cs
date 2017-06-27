@@ -51,7 +51,7 @@ public class Item : MonoBehaviour
 
         foreach (Image slot in BagSlots)
         {
-            if(slot.gameObject.transform.parent.name == "Panel11")
+            if(slot.gameObject.transform.parent.name == "Slot")
             {
                 if (slot.sprite.name == "Background" && !pickedUp)
                 {

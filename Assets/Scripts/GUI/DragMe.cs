@@ -24,8 +24,8 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
 		m_DraggingIcons[eventData.pointerId].transform.SetParent (canvas.transform, false);
 		m_DraggingIcons[eventData.pointerId].transform.SetAsLastSibling();
-		
-		var image = m_DraggingIcons[eventData.pointerId].AddComponent<Image>();
+
+        var image = m_DraggingIcons[eventData.pointerId].AddComponent<Image>();
 		// Icontransparency
 		image.color = new Color(image.color.r, image.color.g, image.color.b, 0.5f);
 
