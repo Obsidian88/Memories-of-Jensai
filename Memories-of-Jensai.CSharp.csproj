@@ -113,7 +113,9 @@
     <Compile Include="Assets\Scripts\GUI\GuiButtonHandler.cs" />
     <Compile Include="Assets\Scripts\GUI\HoverTooltip.cs" />
     <Compile Include="Assets\Scripts\GUI\Item.cs" />
+    <Compile Include="Assets\Scripts\GUI\ItemGenerator.cs" />
     <Compile Include="Assets\Scripts\GUI\Menu.cs" />
+    <Compile Include="Assets\Scripts\GUI\PulseAnimation.cs" />
     <Compile Include="Assets\Scripts\GUI\ResizePanel.cs" />
     <Compile Include="Assets\Scripts\GUI\SceneManagement.cs" />
     <Compile Include="Assets\Scripts\GUI\TextIdlePulseAnimation.cs" />

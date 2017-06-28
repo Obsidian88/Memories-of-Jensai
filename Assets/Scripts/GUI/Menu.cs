@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
+using UnityEditor;
 
 public class Menu : MonoBehaviour
 {
@@ -51,7 +52,10 @@ public class Menu : MonoBehaviour
     void Start()
     {
         // Set all menues initially to invisible (just in case)
+        if(SceneManager.GetActiveScene().name != "DayNightCycle")
+        { 
         MenuCanvas.gameObject.SetActive(false);
+        }
         MenuPanel.gameObject.SetActive(false);
         OptionsPanel.gameObject.SetActive(false);
         OutsideMask.gameObject.SetActive(false);
