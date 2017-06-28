@@ -104,6 +104,7 @@ public class Item : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         itemgenerator.count--;
-        Destroy(gameObject);
+        GameObject parent = gameObject.transform.parent.gameObject;
+        Destroy(parent);
     }
 }

@@ -102,6 +102,8 @@ public class HoverTooltip : MonoBehaviour,  IPointerEnterHandler, IPointerExitHa
 
     IEnumerator FadeTooltip(bool fadeAway, GameObject Tooltip)
     {
+        //if(Tooltip != null)
+        //{ 
         if(Tooltip.GetComponent<Image>() != null)
         {
             //This is an image
@@ -149,6 +151,7 @@ public class HoverTooltip : MonoBehaviour,  IPointerEnterHandler, IPointerExitHa
                 }
             }
         }
+        //}
     }
 
 }

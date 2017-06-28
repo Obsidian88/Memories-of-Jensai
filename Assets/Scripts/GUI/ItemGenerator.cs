@@ -29,7 +29,8 @@ public class ItemGenerator : MonoBehaviour {
 
             //Vector3 randomPoint = GetPointOnMesh().point;
             Vector3 randomPoint = new Vector3(Random.Range(-300, 75), -3.891f, Random.Range(-20, 20));
-            Instantiate(ItemToSpawn, randomPoint, Quaternion.identity);
+            GameObject newItem = Instantiate(ItemToSpawn, randomPoint, Quaternion.identity);
+            newItem.SetActive(true);
             count++;
         }
     }
