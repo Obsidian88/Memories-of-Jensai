@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
-using UnityEditor;
 
 public class Menu : MonoBehaviour
 {
