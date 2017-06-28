@@ -22,6 +22,8 @@ public class Item : MonoBehaviour
     private Image[] BagSlots;
     private bool pickedUp = false;
 
+    public ItemGenerator itemgenerator;
+
     void Start()
     {
         ren = gameObject.GetComponent<SpriteRenderer>();
@@ -101,6 +103,7 @@ public class Item : MonoBehaviour
     private IEnumerator Delay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        itemgenerator.count--;
         Destroy(gameObject);
     }
 }
