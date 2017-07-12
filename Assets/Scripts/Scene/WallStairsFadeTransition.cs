@@ -34,7 +34,7 @@ public class WallStairsFadeTransition : MonoBehaviour {
                 FadeIn();
                 Debug.Log("Enter is active!");
             }
-            else if (gameObject.name == "ColliderExit")
+            else if (gameObject.name == "ColliderExit" || gameObject.name == "ColliderExit2")
             {
                 FadeOut();
                 Debug.Log("Exit is active!");
