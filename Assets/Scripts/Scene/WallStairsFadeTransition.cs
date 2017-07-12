@@ -11,6 +11,7 @@ public class WallStairsFadeTransition : MonoBehaviour {
     Material SolidBlack_ToFade;
 
     public GameObject OuterPlane;
+    public GameObject HeatDistortion;
 
     // Use this for initialization
     void Start () {
@@ -20,6 +21,7 @@ public class WallStairsFadeTransition : MonoBehaviour {
         Stairs_ToFade = Resources.Load("Materials/Stairs_ToFade", typeof(Material)) as Material;
         SolidBlack_ToFade = Resources.Load("Materials/SolidBlack_ToFade", typeof(Material)) as Material;
 
+        HeatDistortion.SetActive(false);
         FadeOut();
     }
 
@@ -43,6 +45,7 @@ public class WallStairsFadeTransition : MonoBehaviour {
     void FadeIn()
     {
         OuterPlane.SetActive(false);
+        HeatDistortion.SetActive(true);
         //SetTransparent(SolidBlack_ToFade);
 
         SetOpaque(Wall1_ToFade);
@@ -58,6 +61,7 @@ public class WallStairsFadeTransition : MonoBehaviour {
     void FadeOut()
     {
         OuterPlane.SetActive(true);
+        HeatDistortion.SetActive(false);
         //SetOpaque(SolidBlack_ToFade);
 
         SetTransparent(Wall1_ToFade);
