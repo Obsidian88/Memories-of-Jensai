@@ -12,6 +12,10 @@ public class AnimationHandler : MonoBehaviour {
     private Text textcomponent;         // Textcompontn on GameObject: Spacebar to continue
     private VideoPlayer videoPlayer1;
     private VideoPlayer videoPlayer2;
+
+    public VideoClip VideoIntro;
+    public VideoClip VideoMainTitle;
+
     private bool inLoop = false;
     private bool Continue = false;
 
@@ -33,13 +37,17 @@ public class AnimationHandler : MonoBehaviour {
         // Video1
         videoPlayer1 = camera.AddComponent<UnityEngine.Video.VideoPlayer>();
         videoPlayer1.renderMode = UnityEngine.Video.VideoRenderMode.CameraNearPlane;
-        videoPlayer1.url = "Assets/Resources/Videos/Intro.mp4";
+        //videoPlayer1.url = VideoIntro;
+        videoPlayer1.clip = VideoIntro;
+        //videoPlayer1.source = VideoSource.VideoIntro;
+        //videoPlayer1.url = "Assets/Resources/Videos/Intro.mp4";
         videoPlayer1.playbackSpeed = 1.0f;
 
         // Video2
         videoPlayer2 = camera.AddComponent<UnityEngine.Video.VideoPlayer>();
         videoPlayer2.renderMode = UnityEngine.Video.VideoRenderMode.CameraNearPlane;
-        videoPlayer2.url = "Assets/Resources/Videos/MainTitle.mp4";
+        videoPlayer2.clip = VideoMainTitle;
+        //videoPlayer2.url = "Assets/Resources/Videos/MainTitle.mp4";
         videoPlayer2.playbackSpeed = 1.0f;
         videoPlayer2.enabled = false;
 
