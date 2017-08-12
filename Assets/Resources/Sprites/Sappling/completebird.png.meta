@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 25bf1efe010038b468d43732310d1a6f
-timeCreated: 1499372879
+timeCreated: 1500226863
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -286,8 +286,8 @@ TextureImporter:
         y: 717
         width: 145
         height: 184
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5752719, y: 0.08477584}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -299,8 +299,8 @@ TextureImporter:
         y: 732
         width: 136
         height: 171
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14765617}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -308,12 +308,12 @@ TextureImporter:
       name: side-head
       rect:
         serializedVersion: 2
-        x: 950
+        x: 952
         y: 724
         width: 132
         height: 177
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.53543645, y: 0.1388274}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -322,11 +322,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 273
-        y: 781
+        y: 783
         width: 78
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.77985793, y: 0.4999986}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -351,8 +351,8 @@ TextureImporter:
         y: 775
         width: 81
         height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.84649134, y: 0.49999872}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -494,8 +494,8 @@ TextureImporter:
         y: 284
         width: 128
         height: 178
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16713518}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -507,8 +507,8 @@ TextureImporter:
         y: 407
         width: 52
         height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.70989287, y: 0.5899535}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -520,8 +520,8 @@ TextureImporter:
         y: 287
         width: 136
         height: 173
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5114643, y: 0.19356593}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -533,8 +533,8 @@ TextureImporter:
         y: 324
         width: 99
         height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.83074117, y: 0.59355104}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -546,8 +546,8 @@ TextureImporter:
         y: 332
         width: 74
         height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.22608495, y: 0.57252043}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -555,12 +555,12 @@ TextureImporter:
       name: wing-flap
       rect:
         serializedVersion: 2
-        x: 1277
+        x: 1280
         y: 289
         width: 63
         height: 87
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.30200583, y: 0.17740464}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -568,12 +568,12 @@ TextureImporter:
       name: wing-give
       rect:
         serializedVersion: 2
-        x: 1452
+        x: 1454
         y: 267
         width: 96
         height: 78
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.8573189, y: 0.44003022}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

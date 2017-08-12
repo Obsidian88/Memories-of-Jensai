@@ -78,7 +78,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CharacterControllerScript.cs" />
     <Compile Include="Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -127,10 +126,13 @@
     <Compile Include="Assets\Scripts\General\RecalculateCubeTexture.cs" />
     <Compile Include="Assets\Scripts\General\StaticData.cs" />
     <Compile Include="Assets\Scripts\General\StaticGetAllAvailableScenes.cs" />
+    <Compile Include="Assets\Scripts\Sappling\PlayerReached.cs" />
+    <Compile Include="Assets\Scripts\Sappling\SapplingAI.cs" />
     <Compile Include="Assets\Scripts\Scene\AnimationHandler.cs" />
     <Compile Include="Assets\Scripts\Scene\ApplyDamage.cs" />
     <Compile Include="Assets\Scripts\Scene\BorderController.cs" />
     <Compile Include="Assets\Scripts\Scene\CharacterAnimation.cs" />
+    <Compile Include="Assets\Scripts\Scene\CharacterControllerScript.cs" />
     <Compile Include="Assets\Scripts\Scene\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Scene\CharacterStatus.cs" />
     <Compile Include="Assets\Scripts\Scene\DayNightCycle\ClockHandler.cs" />
